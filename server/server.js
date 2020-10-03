@@ -45,6 +45,6 @@ const overallRisk = [
 var PAD = [0, 0];           //Probability of Action Deterrence
 var CFA = [0, 0];           //Contact Frequency Avoidance
 var RSV = [0, 0];           //Resistance Strength Vulnerability
-var SLMR = [0,0];           //Secondary Loss Magnitude Responsive
+var SLMR = [0, 0];          //Secondary Loss Magnitude Responsive
 var TC = 0;                 //Threat Capability
 var SLP = 0;                //Secondary Loss Probability
