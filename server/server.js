@@ -52,7 +52,8 @@ var SLP = 0;                //Secondary Loss Probability
 const {MongoClient} = require('mongodb');
 
 async function main(){
-  const url = "mongodb+srv://jortega43:Shinobu_101@cluster0.qq28k.mongodb.net/Cluster0?retryWrites=true&w=majority";
+  const url = "mongodb+srv://opportun16:nZJxFmLrhK5sWuZ@cluster0.qtrsx.mongodb.net/Cluster0?retryWrites=true&w=majority";
+  
   const client = new MongoClient(url, {useNewUrlParser: true, useUnifiedTopology: true});
 
   try{
