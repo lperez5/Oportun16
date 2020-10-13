@@ -58,7 +58,7 @@ async function main(){
 
   try{
     await client.connect();
-    await addDatabase(client);
+    //await addDatabase(client);
     await listDatabases(client);
   }
   catch(e){
@@ -71,19 +71,19 @@ async function main(){
 
 main().catch(console.error);
 
-async function addDatabase(db){
-  var FAIRdb = db.db("FAIR tool");
-  var myobj = {name:"John", date:"04-10-1999"};
-  FAIRdb.collection("data").insertOne(myobj, function(err,res){
-    if(err) throw err;
-    console.log("1 document added");
-    db.close();
-  });
-}
+// async function addDatabase(db){
+//   var FAIRdb = db.db("FAIR tool");
+//   var myobj = {name:"John", date:"04-10-1999"};
+//   FAIRdb.collection("data").insertOne(myobj, function(err,res){
+//     if(err) throw err;
+//     console.log("1 document added");
+//     db.close();
+//   });
+// }
 
 async function listDatabases(client){
   databasesList = await client.db().admin().listDatabases();
 
   console.log("Databases");
-  databasesList.databases.forEach(db => console.log(` -${db.name.documents}`));
+  databasesList.databases.forEach(db => console.log(` -${db.name}`));
 }
