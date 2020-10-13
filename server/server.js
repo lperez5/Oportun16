@@ -71,7 +71,7 @@ async function listDatabases(client){
   databasesList.databases.forEach(db => console.log(` -${db.name}`));
 }
 
-async function submitData(client, prompt){
+async function submitData(client, prompt){ 
   let newListing = {name: prompt("name: "), date: prompt("date: "), summary: prompt("summary: ")};
   const result = await client.db("FAIR").collection("Data").insertOne(newListing);
   console.log(`New listing created with the following id: ${result.insertedId}`);
@@ -91,8 +91,8 @@ async function findOneListingByName(client, prompt){
 }
 
 async function deleteData(client, prompt){
-  let nameOfListing = prompt("Enter the name of the document you want deleted: ")
+  let idOfListing = prompt("Enter the id of the document you want deleted: ")
 
-  result = await client.db("FAIR").collection("Data").deleteOne({name: nameOfListing});
+  result = await client.db("FAIR").collection("Data").deleteOne({_id: idOfListing});
   console.log('${result.deletedCount} document(s) was/were deleted.')
 }
