@@ -1,65 +1,44 @@
-const LEF = [
-    [3, 4, 5, 5, 5],
-    [2, 3, 4, 4, 4],
-    [1, 2, 3, 3, 3],
-    [1, 1, 2, 2, 2],
-    [1, 1, 1, 1, 1]
-  ];
-const vuln = [
-    [5, 5, 5, 4, 3],
-    [5, 5, 4, 3, 2],
-    [5, 4, 3, 2, 1],
-    [4, 3, 2, 1, 1],
-    [3, 2, 1, 1, 1]
-  ];
-const SLEF = [
-    [3, 4, 5, 5, 5],
-    [2, 3, 4, 5, 5],
-    [1, 2, 3, 4, 5],
-    [1, 1, 2, 3, 4],
-    [1, 1, 1, 2, 3]
-  ];
-const primaryRisk = [
-    [3, 4, 5, 5, 5],
-    [2, 3, 4, 5, 5],
-    [1, 2, 3, 4, 5],
-    [1, 1, 2, 3, 4],
-    [1, 1, 1, 2, 3]
-  ];
-const secondaryRisk = [
-    [3, 4, 5, 5, 5],
-    [2, 3, 4, 5, 5],
-    [1, 2, 3, 4, 5],
-    [1, 1, 2, 3, 4],
-    [1, 1, 1, 2, 3]
-  ];
-const overallRisk = [
-    [5, 5, 5, 5, 5],
-    [4, 4, 4, 4, 5],
-    [3, 3, 3, 4, 5],
-    [2, 2, 3, 4, 5],
-    [1, 2, 3, 4, 5]
-  ];
-//missing the Threat Event Frequency matrix, need from industry partner.
+const algo = require('./algo');
+const {MongoClient, DBRef} = require('mongodb');
 
-var PAD = [0, 0];           //Probability of Action Deterrence
-var CFA = [0, 0];           //Contact Frequency Avoidance
-var RSV = [0, 0];           //Resistance Strength Vulnerability
-var SLMR = [0, 0];          //Secondary Loss Magnitude Responsive
-var TC = 0;                 //Threat Capability
-var SLP = 0;                //Secondary Loss Probability
+//get from frontend inputs
+var PAD = [0, 0];                                    //Probability of Action Deterrence
+var CFA = [0, 0];                                    //Contact Frequency Avoidance
+var RSV = [0, 0];                                    //Resistance Strength Vulnerability
+var PLMR = [0,0];                                    //Primary Loss Magnitude Responsive
+var SLMR = [0, 0];                                   //Secondary Loss Magnitude Responsive
+var TC = 0;                                          //Threat Capability
+var SLP = 0;                                         //Secondary Loss Probability
 
-const {MongoClient} = require('mongodb');
+var PADout = 1;
+var CFAout = 2;
+//var TEFout = M_TEF[CFAout,PADout];                 //maybe reverse order of inputs in array?
+var RSVout = 3;                                      //this needs to be changed to the output of RSV matrix
+//var VULNout = M_VULN[TC, RSVout];
+//var LEFout = algo.M_PLEF[TEFout, VULNout];
+var PLMRout = 4;                                     //this needs to be changed to the output of PLMR matrix
+//var primaryRiskout = M_primaryRisk[PLMRout,LEFout];
+
+
 
 async function main(){
+
   const url = "mongodb+srv://opportun16:nZJxFmLrhK5sWuZ@cluster0.qtrsx.mongodb.net/Cluster0?retryWrites=true&w=majority";
-  
+
   const client = new MongoClient(url, {useNewUrlParser: true, useUnifiedTopology: true});
 
   try{
     await client.connect();
     //await addDatabase(client);
     await listDatabases(client);
+    // await submitData(client,
+    //   {
+    //       name: "Test1 from Mat",
+    //       summary: "A charming loft in Paris...",    //add db entry
+    //       bedrooms: 1,
+    //       bathrooms: 1
+    //   }
+    // );
   }
   catch(e){
     console.error(e);
@@ -86,4 +65,9 @@ async function listDatabases(client){
 
   console.log("Databases");
   databasesList.databases.forEach(db => console.log(` -${db.name}`));
+}
+
+async function submitData(client, newListing){
+  const result = await client.db("sample_airbnb").collection("listingsAndReviews").insertOne(newListing);
+  console.log(`New listing created with the following id: ${result.insertedId}`);
 }
