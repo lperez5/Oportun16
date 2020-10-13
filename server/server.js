@@ -26,19 +26,33 @@ async function main(){
   const url = "mongodb+srv://opportun16:nZJxFmLrhK5sWuZ@cluster0.qtrsx.mongodb.net/Cluster0?retryWrites=true&w=majority";
 
   const client = new MongoClient(url, {useNewUrlParser: true, useUnifiedTopology: true});
+  const prompt = require('prompt-sync')({sigint: true});
 
   try{
     await client.connect();
-    //await addDatabase(client);
-    await listDatabases(client);
-    // await submitData(client,
-    //   {
-    //       name: "Test1 from Mat",
-    //       summary: "A charming loft in Paris...",    //add db entry
-    //       bedrooms: 1,
-    //       bathrooms: 1
-    //   }
-    // );
+
+    //await functionNumber(client, prompt);
+    var bool = false;
+    while(!bool){
+      let answer = prompt("Enter function operation: ");
+      input = Number(answer);
+    
+      if(input === 1){
+        await submitData(client, prompt);
+      }
+      else if(input === 2){
+        await findOneListingByName(client, prompt);
+      }
+      else if(input === 3){
+        await listDatabases(client);
+      }
+      else if(input === 4){
+        await deleteData(client, prompt);
+      }
+      else
+        bool = true;
+    }
+
   }
   catch(e){
     console.error(e);
@@ -50,16 +64,6 @@ async function main(){
 
 main().catch(console.error);
 
-// async function addDatabase(db){
-//   var FAIRdb = db.db("FAIR tool");
-//   var myobj = {name:"John", date:"04-10-1999"};
-//   FAIRdb.collection("data").insertOne(myobj, function(err,res){
-//     if(err) throw err;
-//     console.log("1 document added");
-//     db.close();
-//   });
-// }
-
 async function listDatabases(client){
   databasesList = await client.db().admin().listDatabases();
 
@@ -67,7 +71,28 @@ async function listDatabases(client){
   databasesList.databases.forEach(db => console.log(` -${db.name}`));
 }
 
-async function submitData(client, newListing){
-  const result = await client.db("sample_airbnb").collection("listingsAndReviews").insertOne(newListing);
+async function submitData(client, prompt){
+  let newListing = {name: prompt("name: "), date: prompt("date: "), summary: prompt("summary: ")};
+  const result = await client.db("FAIR").collection("Data").insertOne(newListing);
   console.log(`New listing created with the following id: ${result.insertedId}`);
+}
+
+async function findOneListingByName(client, prompt){
+  var nameList = prompt("Enter name: ");
+  result = await client.db("FAIR").collection("Data").findOne({name: nameList});
+
+  if (result){
+    console.log('Found a listing in the collection')
+    console.log(result);
+  }
+  else{
+    console.log("No results");
+  }
+}
+
+async function deleteData(client, prompt){
+  let nameOfListing = prompt("Enter the name of the document you want deleted: ")
+
+  result = await client.db("FAIR").collection("Data").deleteOne({name: nameOfListing});
+  console.log('${result.deletedCount} document(s) was/were deleted.')
 }
