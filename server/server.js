@@ -1,5 +1,6 @@
 const algo = require('./algo');
 const {MongoClient, DBRef} = require('mongodb');
+// const {ObjectId} = require('mongodb');
 
 //get from frontend inputs
 var PAD = [0, 0];                                    //Probability of Action Deterrence
@@ -49,6 +50,9 @@ async function main(){
       else if(input === 4){
         await deleteData(client, prompt);
       }
+      else if(input === 5){
+        await update(client, prompt);
+      }
       else
         bool = true;
     }
@@ -78,7 +82,7 @@ async function submitData(client, prompt){
 }
 
 async function findOneListingByName(client, prompt){
-  var nameList = prompt("Enter name: ");
+  let nameList = prompt("Enter name of document: ");
   result = await client.db("FAIR").collection("Data").findOne({name: nameList});
 
   if (result){
@@ -95,4 +99,13 @@ async function deleteData(client, prompt){
 
   result = await client.db("FAIR").collection("Data").deleteOne({_id: idOfListing});
   console.log('${result.deletedCount} document(s) was/were deleted.')
+}
+
+async function update(client, prompt) {
+  let section_Update = prompt("Enter name of listing: ");
+
+  result = await client.db("FAIR").collection("Data").updateOne({ name: section_Update }, { $set: {name: "John"} });
+
+  console.log(`${result.matchedCount} document(s) matched the query criteria.`);
+  console.log(`${result.modifiedCount} document(s) was/were updated.`);
 }
