@@ -1,6 +1,6 @@
 //verylow=0, low=1, medium=2, high=3, veryhigh=4
 //flipped horizontally from excel tool's derivation page for matrix indecies
-M_PLEF = [
+const M_PLEF = [
     [0, 0, 0, 0, 0],
     [0, 0, 1, 1, 1],
     [0, 1, 2, 2, 2],

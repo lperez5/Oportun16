@@ -1,13 +1,14 @@
 const algo = require('./algo');
 const Database = require('./Database');
 const {MongoClient, DBRef} = require('mongodb');
-// const {ObjectId} = require('mongodb');
+require('dotenv').config();
+const {DBURL, PORT} = process.env;
 
 //get from frontend inputs
 var PAD = [0, 0];                                    //Probability of Action Deterrence
 var CFA = [0, 0];                                    //Contact Frequency Avoidance
 var RSV = [0, 0];                                    //Resistance Strength Vulnerability
-var PLMR = [0,0];                                    //Primary Loss Magnitude Responsive
+var PLMR = [0, 0];                                    //Primary Loss Magnitude Responsive
 var SLMR = [0, 0];                                   //Secondary Loss Magnitude Responsive
 var TC = 0;                                          //Threat Capability
 var SLP = 0;                                         //Secondary Loss Probability
@@ -25,9 +26,7 @@ var PLMRout = 4;                                     //this needs to be changed 
 
 async function main(){
 
-  const url = "mongodb+srv://opportun16:nZJxFmLrhK5sWuZ@cluster0.qtrsx.mongodb.net/Cluster0?retryWrites=true&w=majority";
-
-  const client = new MongoClient(url, {useNewUrlParser: true, useUnifiedTopology: true});
+  const client = new MongoClient(DBURL, {useNewUrlParser: true, useUnifiedTopology: true});
 
   try{
     await client.connect();
