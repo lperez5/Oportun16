@@ -1,5 +1,7 @@
 const algo = require('./algo');
+const Database = require('./Database');
 const {MongoClient, DBRef} = require('mongodb');
+// const {ObjectId} = require('mongodb');
 
 //get from frontend inputs
 var PAD = [0, 0];                                    //Probability of Action Deterrence
@@ -29,15 +31,9 @@ async function main(){
 
   try{
     await client.connect();
-    await listDatabases(client);
-    // await submitData(client,
-    //   {
-    //       name: "Test1 from Mat",
-    //       summary: "A charming loft in Paris...",    //add db entry
-    //       bedrooms: 1,
-    //       bathrooms: 1
-    //   }
-    // );
+
+    await Database.options(client);
+
   }
   catch(e){
     console.error(e);
@@ -49,14 +45,3 @@ async function main(){
 
 main().catch(console.error);
 
-async function listDatabases(client){
-  databasesList = await client.db().admin().listDatabases();
-
-  console.log("Databases");
-  databasesList.databases.forEach(db => console.log(` -${db.name}`));
-}
-
-async function submitData(client, newListing){
-  const result = await client.db("sample_airbnb").collection("listingsAndReviews").insertOne(newListing);
-  console.log(`New listing created with the following id: ${result.insertedId}`);
-}
