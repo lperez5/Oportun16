@@ -2,7 +2,6 @@ const algo = require('./algo');
 const Database = require('./Database');
 const {MongoClient, DBRef} = require('mongodb');
 require('dotenv').config();
-//const {DBURL, PORT} = process.env;
 
 //get from frontend inputs
 var PAD = [0, 0];                                    //Probability of Action Deterrence
