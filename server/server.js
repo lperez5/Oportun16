@@ -2,7 +2,7 @@ const algo = require('./algo');
 const Database = require('./Database');
 const {MongoClient, DBRef} = require('mongodb');
 require('dotenv').config();
-
+//
 //get from frontend inputs
 var PAD = [0, 0];                                    //Probability of Action Deterrence
 var CFA = [0, 0];                                    //Contact Frequency Avoidance
