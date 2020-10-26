@@ -2,7 +2,6 @@ const algo = require('./algo');
 const Database = require('./Database');
 const {MongoClient, DBRef} = require('mongodb');
 require('dotenv').config();
-const {DBURL, PORT} = process.env;
 
 //get from frontend inputs
 var PAD = [0, 0];                                    //Probability of Action Deterrence
@@ -25,7 +24,7 @@ var PLMRout = 4;                                     //this needs to be changed 
 
 
 async function main(){
-
+  const {DBURL, PORT} = process.env;
   const client = new MongoClient(DBURL, {useNewUrlParser: true, useUnifiedTopology: true});
 
   try{
