@@ -54,7 +54,7 @@ const M_TEF = [
   [4, 4, 4, 3, 2]
 ];
 
-//[inherent, controls] = residual
+//[inherent][controls] = residual
 const M_controls = [             //used for CFA, PAD, PLMR and SLMR
   [0, 0, 0, 0, 0],
   [1, 1, 0, 0, 0],
@@ -71,12 +71,12 @@ const M_controlsRS = [           //used for RS
 ];
 
 module.exports = { M_PLEF,
-                 M_VULN,
-                 M_SLEF,
-                 M_primaryRisk,
-                 M_secondaryRisk,
-                 M_overallRisk,
-                 M_TEF,
-                 M_controls,
-                 M_controlsRS
+                   M_VULN,
+                   M_SLEF,
+                   M_primaryRisk,
+                   M_secondaryRisk,
+                   M_overallRisk,
+                   M_TEF,
+                   M_controls,
+                   M_controlsRS
 };
