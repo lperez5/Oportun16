@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
 import Pagination from 'react-bootstrap/Pagination'
 import PageItem from 'react-bootstrap/PageItem'
-//import page1 from asdfasdf
-//import page2 from asdfasdfasdf
+import {Page1} from '../../Page1.jsx'
+// import {Page2} from '../../Page2.jsx'
+// import {Page3} from '../../Page3.jsx'
+// import {Page4} from '../../Page4.jsx'
+// import {Page5} from '../../Page5.jsx'
 
 export function Navbar(props){
     const [active,setActive] = useState(1);
@@ -19,7 +22,7 @@ export function Navbar(props){
             </Pagination>
         </div>
         <Pages >
-            <Page key={1} active={1 === active}>I am page 1</Page>
+            <Page1 key={1} active={1 === active}>I am page 1</Page1>
             <Page key={2} active={2 === active}>I am page 2</Page>
             <Page key={3} active={3 === active}>I am page 3</Page>
             <Page key={4} active={4 === active}>I am page 4</Page>
