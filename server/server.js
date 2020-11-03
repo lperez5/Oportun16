@@ -63,11 +63,10 @@ console.log("Overall Risk Inherent: " + ORInherent);
 console.log("Overall Risk Residual: " + ORResidual);
 
 
-
-
-
 async function main(){
-  const {DBURL, PORT} = process.env;
+  
+  //const {DBURL, PORT} = process.env;
+  const DBURL = process.env.DBURL;
   const client = new MongoClient(DBURL, {useNewUrlParser: true, useUnifiedTopology: true});
 
   // try{

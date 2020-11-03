@@ -1,3 +1,4 @@
+const Search = require('./search');
 var ObjectID = require('mongodb').ObjectID
 
 async function options(client){
@@ -23,35 +24,30 @@ async function options(client){
       else if(input === 5){
         await deleteData(client, prompt);
       }
+      else if(input === 6){
+        console.log(new Intl.DateTimeFormat('en-US').format(Date.now()));
+      }
       else
         bool = true;
     }
 }
 
 async function submitData(client, prompt){ 
-    let newListing = {name: prompt("name: "), date: prompt("date: "), summary: prompt("summary: ")};
+    let newListing = {name: prompt("name: "), date: new Intl.DateTimeFormat('en-US').format(Date.now()), summary: prompt("summary: ")};
     const result = await client.db("FAIR").collection("Data").insertOne(newListing);
     console.log(`New listing created with the following id: ${result.insertedId}`);
 }
   
 async function selectData(client, prompt){
-    let idSelect = prompt("Enter ID of document: ");
-    selectID = ObjectID(idSelect);
-    result = await client.db("FAIR").collection("Data").findOne({_id: selectID});
-  
-    if (result){
-      console.log('Found a listing in the collection')
-      console.log(result);
-    }
-    else{
-      console.log("No results");
-    }
+  await Search.filterSearch(client, prompt);
 }
    
 async function viewData(client){
     var array = await client.db("FAIR").collection("Data").find().toArray();
     for(i = 0; i < array.length; i++){
-        console.log(array[i]);
+      console.log();
+      console.log(`${i + 1}`);
+      console.log(array[i]);
     }
 }
 
@@ -71,4 +67,5 @@ async function deleteData(client, prompt){
     console.log(`${result.deletedCount} document(s) was/were deleted.`);
 }
   
-module.exports = {options};
+module.exports.options = options;
+module.exports.viewData = viewData;
