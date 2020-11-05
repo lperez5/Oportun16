@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const algo = require('./algo');
 const Database = require('./Database');
 const {MongoClient, DBRef} = require('mongodb');
@@ -43,3 +44,33 @@ async function main(){
 
 main().catch(console.error);
 
+=======
+const algo = require('./algo');
+const Database = require('./Database');
+const {MongoClient, DBRef} = require('mongodb');
+const { M_controlsRS, M_VULN } = require('./algo');
+require('dotenv').config();
+
+
+async function main(){
+  const {DBURL, PORT} = process.env;
+  const client = new MongoClient(DBURL, {useNewUrlParser: true, useUnifiedTopology: true});
+
+  algo.calculate();
+
+  // try{
+  //   await client.connect();
+
+  //   await Database.options(client);
+
+  // }
+  // catch(e){
+  //   console.error(e);
+  // }
+  // finally{
+  //   await client.close();
+  // }
+}
+
+main().catch(console.error);
+>>>>>>> 6e0e1bfbd0768b423b2ff3641c7a3ae3bc5c83cb
