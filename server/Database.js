@@ -8,7 +8,7 @@ async function options(client){
     while(!bool){
       let answer = prompt("Enter function operation: ");
       input = Number(answer);
-    
+
       if(input === 1){
         await submitData(client, prompt);
       }
@@ -32,16 +32,16 @@ async function options(client){
     }
 }
 
-async function submitData(client, prompt){ 
+async function submitData(client, prompt){
     let newListing = {name: prompt("name: "), date: new Intl.DateTimeFormat('en-US').format(Date.now()), summary: prompt("summary: ")};
     const result = await client.db("FAIR").collection("Data").insertOne(newListing);
     console.log(`New listing created with the following id: ${result.insertedId}`);
 }
-  
+
 async function selectData(client, prompt){
   await Search.filterSearch(client, prompt);
 }
-   
+
 async function viewData(client){
     var array = await client.db("FAIR").collection("Data").find().toArray();
     for(i = 0; i < array.length; i++){
@@ -55,17 +55,17 @@ async function updateData(client, prompt) {
     let idUpdate = prompt("Enter the ID of the document you want to update: ");
     updateID = ObjectID(idUpdate);
     result = await client.db("FAIR").collection("Data").updateOne({ _id: updateID }, { $set: {name: prompt("name: "), date: prompt("date: "), summary: prompt("summary: ")} });
-  
+
     console.log(`${result.matchedCount} document(s) matched the query criteria.`);
     console.log(`${result.modifiedCount} document(s) was/were updated.`);
 }
-  
+
 async function deleteData(client, prompt){
     let idDelete = prompt("Enter the ID of the document you want deleted: ")
     deleteID = ObjectID(idDelete);
     result = await client.db("FAIR").collection("Data").deleteOne({_id: deleteID});
     console.log(`${result.deletedCount} document(s) was/were deleted.`);
 }
-  
+
 module.exports.options = options;
 module.exports.viewData = viewData;
