@@ -69,18 +69,18 @@ async function main(){
   const DBURL = process.env.DBURL;
   const client = new MongoClient(DBURL, {useNewUrlParser: true, useUnifiedTopology: true});
 
-  // try{
-  //   await client.connect();
+  try{
+    await client.connect();
 
-  //   await Database.options(client);
+    await Database.options(client);
 
-  // }
-  // catch(e){
-  //   console.error(e);
-  // }
-  // finally{
-  //   await client.close();
-  // }
+  }
+  catch(e){
+    console.error(e);
+  }
+  finally{
+    await client.close();
+  }
   //testing to make sure node_modules does not push
 }
 
