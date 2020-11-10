@@ -5,17 +5,6 @@ import ToggleButton from 'react-bootstrap/ToggleButton'
 
 
 export function Page1(props){
-<<<<<<< HEAD
-  return(
-    <DropdownButton id="dropdown-item-button" title="Vuln">
-      <Dropdown.ItemText> </Dropdown.ItemText>
-      <Dropdown.Item as="button">1</Dropdown.Item>
-      <Dropdown.Item as="button">2</Dropdown.Item>
-      <Dropdown.Item as="button">3</Dropdown.Item>
-      <Dropdown.Item as="button">4</Dropdown.Item>
-      <Dropdown.Item as="button">5</Dropdown.Item>
-    </DropdownButton>
-=======
   const {active} = props;             //const active = props.active
   return(
     <div hidden={!active}>
@@ -28,6 +17,5 @@ export function Page1(props){
         <Dropdown.Item as="button">5</Dropdown.Item>
       </DropdownButton>
     </div>
->>>>>>> caab3480b81326d5a4adb77a01c22c9c16d45179
   );
 }
