@@ -81,6 +81,7 @@ async function main(){
   // finally{
   //   await client.close();
   // }
+  //getting rid of node modules
 }
 
 main().catch(console.error);
