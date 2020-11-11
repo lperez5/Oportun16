@@ -8,10 +8,6 @@ async function options(client){
     while(!bool){
       let answer = prompt("Enter function operation: ");
       input = Number(answer);
-<<<<<<< HEAD
-
-=======
->>>>>>> main
       if(input === 1){
         await submitData(client, prompt);
       }
