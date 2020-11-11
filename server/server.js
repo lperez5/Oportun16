@@ -1,7 +1,6 @@
 const algo = require('./algo');
 const Database = require('./Database');
 const {MongoClient, DBRef} = require('mongodb');
-const { M_controlsRS, M_VULN } = require('./algo');
 require('dotenv').config();
 
 
@@ -26,3 +25,4 @@ async function main(){
 }
 
 main().catch(console.error);
+
