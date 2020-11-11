@@ -36,8 +36,4 @@ function Pages(props){
     return(
         props.children
     );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> Terry
