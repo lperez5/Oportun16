@@ -29,17 +29,16 @@ export function Page2(props){
 
 
             <Container>
-  <Row>
-    <Col>1 of 2</Col>
-    <Col>2 of 2</Col>
-     <Col>2 of 2</Col>
-  </Row>
-  <Row>
-    <Col>1 of 3</Col>
-    
-  </Row>
-</Container>
-
+                <Row>
+                 <Col>1 of 2</Col>
+                 <Col>2 of 2</Col>
+                 <Col>2 of 2</Col>
+                </Row>
+                <Row>
+                <Col lg={8}>1 of 3</Col>
+                <Col><Button variant="primary">Button</Button>{' '}</Col>
+                </Row>
+                </Container>
         </div>
     );
 }
