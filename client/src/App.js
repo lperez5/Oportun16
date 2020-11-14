@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import {Navbar} from './components/SimonNavBar'
+import {Navbar} from './components/Navbar/index.jsx'
 
 function App() {
   return (
