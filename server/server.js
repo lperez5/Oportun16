@@ -9,18 +9,18 @@ async function main(){
 
   //connect to DB (client.connect())
 
-  // try{
-  //   await client.connect();
+  try{
+    await client.connect();
 
-  //   await Database.options(client);
+    await Database.options(client);
 
-  // }
-  // catch(e){
-  //   console.error(e);
-  // }
-  // finally{
-  //   await client.close();
-  // }
+  }
+  catch(e){
+    console.error(e);
+  }
+  finally{
+    await client.close();
+  }
 
   //start httpserver
   //begin listening on port = PORT for get requests to serve client application and post requests to update DB
