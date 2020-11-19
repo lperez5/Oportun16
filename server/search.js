@@ -1,68 +1,29 @@
 const Database = require('./Database');
+var namefilter = "";
+var datefilter = "";
+var arr;
 
 async function filterSearch(client, prompt){
-    let searchName = prompt("Enter name: ");
-    let searchDate = prompt("Enter Date(mm/d/yyyy): ");
-
-    if(searchName != "" && searchDate != ""){
-        await searchNameDate(client, searchName,searchDate);
-    }
-    else if(searchName != ""){
-        await searchbyName(client, searchName);
-    }
-    else if(searchDate != ""){
-        await searchbyDate(client,searchDate);
+    arr = await client.db("FAIR").collection("Data").find().toArray();
+    console.log(namefilter);
+    console.log(datefilter);
+    var result = arr;
+    let Name = prompt("Name: ");
+    if(Name != "" && result != namefilter){
+        namefilter = Name;
+        result = result.filter(o => o.name === Name);
     }
     else{
-        await Database.viewData(client);
+        result = result.filter(o => o.name === namefilter);
     }
-}
-
-async function searchNameDate(client, searchName, searchDate){
-    const results = await client.db("FAIR").collection("Data").find({name: { $eq: searchName },date: { $eq: searchDate}}).toArray();
-
-        if (results.length > 0) {
-            console.log(`Found result(s) with name and date: ${searchName}`);
-            results.forEach((result, i) => {
-
-                console.log();
-                console.log(`${i + 1}`);
-                console.log(result);
-            });
-        } else {
-            console.log(`No result found`);
-        }
-}
-
-async function searchbyName(client, searchName){
-    const results = await client.db("FAIR").collection("Data").find({name: { $eq: searchName }}).toArray();
-
-        if (results.length > 0) {
-            console.log(`Found result(s) with name: ${searchName}`);
-            results.forEach((result, i) => {
-
-                console.log();
-                console.log(`${i + 1}`);
-                console.log(result);
-            });
-        } else {
-            console.log(`No result found`);
-        }
-}
-
-async function searchbyDate(client, searchDate){
-    const results = await client.db("FAIR").collection("Data").find({date: { $eq: searchDate }}).toArray();
-        if (results.length > 0) {
-            console.log(`Found result(s) with date: ${searchDate}`);
-            results.forEach((result, i) => {
+    console.log(result);
+    let Date = prompt("Date: ");
+    if(Date != "" && Date != datefilter){
+        datefilter = Date;
+        result = result.filter(o => o.date === Date);
+    }
     
-                console.log();
-                console.log(`${i + 1}`);
-                console.log(result);
-            });
-        } else {
-            console.log(`No result found`);
-        }
+    console.log(result);
 }
 
 module.exports.filterSearch = filterSearch;
