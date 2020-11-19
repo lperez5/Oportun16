@@ -1,8 +1,11 @@
+
 import React, {useState} from 'react'
+import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton';
-
-
+import Form from 'react-bootstrap/Form'
+import Card from 'react-bootstrap/Card'
+import {  Container, Row, Col } from 'react-bootstrap';
 
 export function Page3(props){
     const {active} = props;
@@ -23,6 +26,22 @@ export function Page3(props){
                 <Dropdown.Item eventKey="4">3</Dropdown.Item>
                 <Dropdown.Item eventKey="5">3</Dropdown.Item>
             </DropdownButton>
+
+
+            <Container>
+  <Row>
+    <Col><Button variant="primary">Button</Button>{' '}
+    <Button variant="primary">Button</Button>{' '}</Col>
+    <Col lg = {8}> HEAT MAP</Col>
+
+  </Row>
+  <Row>
+  <Col><Button variant="primary">button</Button>{' '}</Col>
+    <Col lg={8}>HEAT MAP</Col>
+
+    
+  </Row>
+</Container>
 
         </div>
     );
