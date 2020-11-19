@@ -1,9 +1,12 @@
+
 import React, {useState} from 'react'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import Form from 'react-bootstrap/Form'
+import Card from 'react-bootstrap/Card'
+import {  Container, Row, Col } from 'react-bootstrap';
 import {getInstance} from './utils/ToolCalcs';
-
 
 
 export function Page1(props){
@@ -218,6 +221,89 @@ export function Page1(props){
             </DropdownButton>
 
             <h4>You selected {padI} and {padC}</h4>
+
+            <Container>
+        <Row>
+          <Col>
+            <Form>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Control type="email" placeholder="Search"/>
+              </Form.Group>
+            </Form>
+          </Col>
+          <Col>
+          <Form>
+  <Form.Group controlId="exampleForm.ControlSelect1">
+    <Form.Control as="select">
+      <option>Date</option>
+      <option>Date</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </Form.Control>
+  </Form.Group> 
+</Form>
+</Col>
+          <Col>
+          <Form>
+  <Form.Group controlId="exampleForm.ControlSelect1">
+    <Form.Control as="select">
+      <option>Category</option>
+      <option>Date</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </Form.Control>
+  </Form.Group> 
+</Form>
+          </Col>
+        </Row>
+      </Container>
+
+      <Container>
+  <Row>
+    <Col> NAME </Col>
+    <Col>
+      <Card style={{ width: '10rem' }}>
+      <Card.Body>
+        <Card.Text>
+        date
+        </Card.Text>
+      </Card.Body>
+      </Card>
+    </Col>
+     <Col>
+      <Card style={{ width: '10rem' }}>
+      <Card.Body>
+        <Card.Text>
+        category
+        </Card.Text>
+      </Card.Body>
+      </Card>
+     </Col>
+      <Col>
+       <Card style={{ width: '10rem' }}>
+      <Card.Body>
+        <Card.Text>
+        data
+        </Card.Text>
+      </Card.Body>
+      </Card>
+      </Col>
+       <Col>
+         <Button variant="primary">
+            Options
+          </Button>
+        </Col>
+      <Col>
+          <Button variant="primary">
+            Details
+          </Button>
+      </Col>
+   </Row>
+  </Container>
+
+
 
         </div>
     );
