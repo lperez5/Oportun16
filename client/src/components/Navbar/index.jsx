@@ -14,11 +14,10 @@ export function Navbar(props){
         <React.Fragment>
         <div>
             <Pagination size="lg">
-                <PageItem key={1} active={1 === active} onClick={()=>setActive(1)}>risk tool</PageItem>
-                <PageItem key={2} active={2 === active} onClick={()=>setActive(2)}>DB entires</PageItem>
+                <PageItem key={1} active={1 === active} onClick={()=>setActive(1)}>Risk Tool</PageItem>
+                <PageItem key={2} active={2 === active} onClick={()=>setActive(2)}>DB Entires</PageItem>
                 <PageItem key={3} active={3 === active} onClick={()=>setActive(3)}>Heatmap</PageItem>
-                <PageItem key={4} active={4 === active} onClick={()=>setActive(4)}>4</PageItem>
-                <PageItem key={5} active={5 === active} onClick={()=>setActive(5)}>5</PageItem>
+                <PageItem key={4} active={4 === active} onClick={()=>setActive(4)}>Info</PageItem>
             </Pagination>
         </div>
         <Pages >
@@ -26,7 +25,6 @@ export function Navbar(props){
             <Page2 key={2} active={2 === active}></Page2>
             <Page3 key={3} active={3 === active}></Page3>
             <Page4 key={4} active={4 === active}></Page4>
-            <Page5 key={5} active={5 === active}></Page5>
         </Pages>
         </React.Fragment>
     );

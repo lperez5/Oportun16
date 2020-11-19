@@ -31,13 +31,7 @@ export function Page2(props){
                     <Col>
                         <Form>
                             <Form.Group controlId="Date">
-                                <Form.Control as="select">
-                                <option>Date</option>
-                                <option>Date</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                </Form.Control>
+                                <Form.Control type="DateSearch" placeholder="Date Range"/>
                             </Form.Group>
                         </Form>
                     </Col>
@@ -45,11 +39,9 @@ export function Page2(props){
                         <Form>
                             <Form.Group controlId="Category">
                                 <Form.Control as="select">
-                                <option>Category1</option>
-                                <option>Category2</option>
-                                <option>Category3</option>
-                                <option>Category4</option>
-                                <option>Category5</option>
+                                <option>Confidentiality</option>
+                                <option>Integrity</option>
+                                <option>Availability</option>
                                 </Form.Control>
                             </Form.Group>
                         </Form>
