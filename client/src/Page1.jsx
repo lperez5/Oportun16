@@ -122,7 +122,6 @@ export function Page1(props){
     return(
         <div hidden={!active}>
             <Button  onClick={handleClick} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12} style={{backgroundColor: '#0B0C10', borderColor: '#45A293', color: '#45A293', borderRadius: '100px'}} >Submit</Button>{' '}
-
             <DropdownButton title={padI} id = "PADInherent">
                 <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadI(1)}>1</Dropdown.Item>
                 <Dropdown.Item eventKey="2" onSelect={()=>handleSelectpadI(2)}>2</Dropdown.Item>
@@ -220,90 +219,6 @@ export function Page1(props){
             </DropdownButton>
 
             <h4>You selected {padI} and {padC}</h4>
-
-            <Container>
-        <Row>
-          <Col>
-            <Form>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Search"/>
-              </Form.Group>
-            </Form>
-          </Col>
-          <Col>
-          <Form>
-  <Form.Group controlId="exampleForm.ControlSelect1">
-    <Form.Control as="select">
-      <option>Date</option>
-      <option>Date</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </Form.Control>
-  </Form.Group>
-</Form>
-</Col>
-          <Col>
-          <Form>
-  <Form.Group controlId="exampleForm.ControlSelect1">
-    <Form.Control as="select">
-      <option>Category</option>
-      <option>Date</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </Form.Control>
-  </Form.Group>
-</Form>
-          </Col>
-        </Row>
-      </Container>
-
-      <Container>
-  <Row>
-    <Col> NAME </Col>
-    <Col>
-      <Card style={{ width: '10rem' }}>
-      <Card.Body>
-        <Card.Text>
-        date
-        </Card.Text>
-      </Card.Body>
-      </Card>
-    </Col>
-     <Col>
-      <Card style={{ width: '10rem' }}>
-      <Card.Body>
-        <Card.Text>
-        category
-        </Card.Text>
-      </Card.Body>
-      </Card>
-     </Col>
-      <Col>
-       <Card style={{ width: '10rem' }}>
-      <Card.Body>
-        <Card.Text>
-        data
-        </Card.Text>
-      </Card.Body>
-      </Card>
-      </Col>
-       <Col>
-         <Button variant="primary">
-            Options
-          </Button>
-        </Col>
-      <Col>
-          <Button variant="primary">
-            Details
-          </Button>
-      </Col>
-   </Row>
-  </Container>
-
-
-
         </div>
     );
 }
