@@ -1,11 +1,10 @@
-
 import React, {useState} from 'react'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Form from 'react-bootstrap/Form'
 import Card from 'react-bootstrap/Card'
-import {  Container, Row, Col } from 'react-bootstrap';
+import { Table, Container, Row, Col } from 'react-bootstrap';
 import {getInstance} from './utils/ToolCalcs';
 
 
@@ -121,9 +120,108 @@ export function Page1(props){
     }
 
     return(
+      
         <div hidden={!active}>
-            <Button  onClick={handleClick} disabled={buttonDisabled, buttonDisabled2, buttonDisabled3, buttonDisabled4, buttonDisabled5, buttonDisabled6, buttonDisabled7, buttonDisabled8, buttonDisabled9, buttonDisabled10, buttonDisabled11, buttonDisabled12} style={{backgroundColor: '#0B0C10', borderColor: '#45A293', color: '#45A293', borderRadius: '100px'}} >Submit</Button>{' '}
+           
 
+           <Container>
+  <Row>
+  
+    <Col lg="8">
+    <Row>
+  <Col><Table striped bordered hover>
+  <thead>
+    <tr>
+      <th>Asset at Risk</th>
+      <th>Sensitive Personal Information</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Threat Community</td>
+      <td>Mark</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Jacob</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td colSpan="2">Larry the Bird</td>
+    </tr>
+  </tbody>
+</Table></Col>
+    <Col><Table striped bordered hover>
+  <thead>
+    <tr>
+      <th>Analyst</th>
+      <th>Scott Collins</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Notes</td>
+      <td>Primary Loss based on Verizon report; average is $3.5</td>
+    </tr>
+    
+  </tbody>
+</Table></Col>
+    </Row>
+    
+      <Row>
+  <Col>This is where that big chart goes</Col>
+   
+    </Row>
+    
+    </Col>
+    <Col><Table striped bordered hover>
+  <thead>
+    <tr>
+      <th>Asset at Risk</th>
+      <th>Sensitive Personal Information</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Threat Community</td>
+      <td>Mark</td>
+    </tr>
+    <tr>
+      <td>Threat Community</td>
+      <td>Mark</td>
+    </tr>
+    <tr>
+      <td>Threat Community</td>
+      <td>Mark</td>
+    </tr>
+    <tr>
+      <td>Threat Community</td>
+      <td>Mark</td>
+    </tr>
+    <tr>
+      <td>Threat Community</td>
+      <td>Mark</td>
+    </tr>
+    <tr>
+      <td>Threat Community</td>
+      <td>Mark</td>
+    </tr>
+    <tr>
+      <td>Threat Community</td>
+      <td>Mark</td>
+    </tr>
+    <tr>
+      <td>Threat Community</td>
+      <td>Mark</td>
+    </tr>
+    
+  </tbody>
+</Table></Col>
+  </Row>
+</Container>
+
+       
+            <Button  onClick={handleClick} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12} style={{backgroundColor: '#0B0C10', borderColor: '#45A293', color: '#45A293', borderRadius: '100px'}} >Submit</Button>{' '}
             <DropdownButton title={padI} id = "PADInherent">
                 <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadI(1)}>1</Dropdown.Item>
                 <Dropdown.Item eventKey="2" onSelect={()=>handleSelectpadI(2)}>2</Dropdown.Item>
@@ -219,92 +317,8 @@ export function Page1(props){
                 <Dropdown.Item eventKey="4" onSelect={()=>handleSelectslp(4)}>4</Dropdown.Item>
                 <Dropdown.Item eventKey="5" onSelect={()=>handleSelectslp(5)}>5</Dropdown.Item>
             </DropdownButton>
-
+           
             <h4>You selected {padI} and {padC}</h4>
-
-            <Container>
-        <Row>
-          <Col>
-            <Form>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Search"/>
-              </Form.Group>
-            </Form>
-          </Col>
-          <Col>
-          <Form>
-  <Form.Group controlId="exampleForm.ControlSelect1">
-    <Form.Control as="select">
-      <option>Date</option>
-      <option>Date</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </Form.Control>
-  </Form.Group> 
-</Form>
-</Col>
-          <Col>
-          <Form>
-  <Form.Group controlId="exampleForm.ControlSelect1">
-    <Form.Control as="select">
-      <option>Category</option>
-      <option>Date</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </Form.Control>
-  </Form.Group> 
-</Form>
-          </Col>
-        </Row>
-      </Container>
-
-      <Container>
-  <Row>
-    <Col> NAME </Col>
-    <Col>
-      <Card style={{ width: '10rem' }}>
-      <Card.Body>
-        <Card.Text>
-        date
-        </Card.Text>
-      </Card.Body>
-      </Card>
-    </Col>
-     <Col>
-      <Card style={{ width: '10rem' }}>
-      <Card.Body>
-        <Card.Text>
-        category
-        </Card.Text>
-      </Card.Body>
-      </Card>
-     </Col>
-      <Col>
-       <Card style={{ width: '10rem' }}>
-      <Card.Body>
-        <Card.Text>
-        data
-        </Card.Text>
-      </Card.Body>
-      </Card>
-      </Col>
-       <Col>
-         <Button variant="primary">
-            Options
-          </Button>
-        </Col>
-      <Col>
-          <Button variant="primary">
-            Details
-          </Button>
-      </Col>
-   </Row>
-  </Container>
-
-
-
         </div>
     );
 }
