@@ -12,18 +12,27 @@ export function Page2(props){
 
     const [d1, setd1] = useState('');
     const [nameEntered, setNameEntered] = useState('');
-
-    const handleSelect = (event) => {
-        console.log(event);
-        setd1(event);
-    }
+    const [categorySelected, setCategoryEntered] = useState('');
 
     const handleName = event => {
         setNameEntered(event.target.value);
     }
 
-    const JohnFunction = (document, nameEntered) => {
+    const handleCategory = event => {
+        setCategoryEntered(event.target.value);
+    }
+
+    const nameFilter = (document, nameEntered) => {
         if(document.name.includes(nameEntered)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    const categoryFilter = (document, categorySelected) => {
+        if(categorySelected == 'All' || document.category == (categorySelected)){
             return true;
         }
         else{
@@ -97,7 +106,8 @@ export function Page2(props){
                     <Col>
                         <Form>
                             <Form.Group controlId="Category">
-                                <Form.Control as="select">
+                                <Form.Control as="select" onChange={handleCategory}>
+                                <option>All</option>
                                 <option>Confidentiality</option>
                                 <option>Integrity</option>
                                 <option>Availability</option>
@@ -111,7 +121,8 @@ export function Page2(props){
             <Container fluid>
                 {
                     documentArray.length === 0 ? <p> "No results" </p> : documentArray
-                                                                            .filter(document => JohnFunction(document, nameEntered))
+                                                                            .filter(document => nameFilter(document, nameEntered))
+                                                                            .filter(document => categoryFilter(document, categorySelected))
                                                                             .map((document,index) => <DataRow key={index} {...document}/>)
                 }
                 <NumRows size = {2}/>
