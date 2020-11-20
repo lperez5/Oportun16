@@ -33,7 +33,7 @@ export function Page2(props){
 
     const documentArray=[
         {
-            name: "lanfear",
+            name: "sarah",
             date: "today",
             category: "Confidentiality",
             data: "[1,3]"
@@ -52,7 +52,25 @@ export function Page2(props){
         },
         {
             name: "daniel",
-            date: "yesterday",
+            date: "last year",
+            category: "Availability",
+            data: "[3,4,5]"
+        },
+        {
+            name: "daniel",
+            date: "today",
+            category: "Availability",
+            data: "[3,4,5]"
+        },
+        {
+            name: "daniel",
+            date: " last week",
+            category: "Availability",
+            data: "[3,4,5]"
+        },
+        {
+            name: "daniel",
+            date: "some day",
             category: "Availability",
             data: "[3,4,5]"
         },
