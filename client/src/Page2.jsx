@@ -12,7 +12,7 @@ export function Page2(props){
 
     const [d1, setd1] = useState('');
     const [nameEntered, setNameEntered] = useState('');
-    const [categorySelected, setCategoryEntered] = useState('');
+    const [categorySelected, setCategoryEntered] = useState('All');
 
     const handleName = event => {
         setNameEntered(event.target.value);
