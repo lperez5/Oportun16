@@ -13,7 +13,7 @@ export function Navbar(props){
     return(
         <React.Fragment>
         <div>
-            <Pagination size="lg">
+            <Pagination theme='green' size="lg">
                 <PageItem key={1} active={1 === active} onClick={()=>setActive(1)}>Risk Tool</PageItem>
                 <PageItem key={2} active={2 === active} onClick={()=>setActive(2)}>DB Entires</PageItem>
                 <PageItem key={3} active={3 === active} onClick={()=>setActive(3)}>Heatmap</PageItem>

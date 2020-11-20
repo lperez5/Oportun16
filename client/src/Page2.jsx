@@ -11,11 +11,52 @@ export function Page2(props){
     const {active} = props;
 
     const [d1, setd1] = useState('');
+    const [nameEntered, setNameEntered] = useState('');
 
-    const handleSelect=(e)=>{
-        console.log(e);
-        setd1(e);
+    const handleSelect = (event) => {
+        console.log(event);
+        setd1(event);
     }
+
+    const handleName = event => {
+        setNameEntered(event.target.value);
+    }
+
+    const JohnFunction = (document, nameEntered) => {
+        if(document.name.includes(nameEntered)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    const documentArray=[
+        {
+            name: "lanfear",
+            date: "today",
+            category: "Confidentiality",
+            data: "[1,3]"
+        },
+        {
+            name: "mat",
+            date: "today",
+            category: "Integrity",
+            data: "[3,4,5]"
+        },
+        {
+            name: "david",
+            date: "yesterday",
+            category: "Availability",
+            data: "[3,4,5]"
+        },
+        {
+            name: "daniel",
+            date: "yesterday",
+            category: "Availability",
+            data: "[3,4,5]"
+        },
+    ];
 
     return(
         <div hidden={!active}>
@@ -24,7 +65,7 @@ export function Page2(props){
                     <Col>
                         <Form>
                             <Form.Group controlId="Name">
-                                <Form.Control type="NameSearch" placeholder="Name"/>
+                                <Form.Control onChange={handleName} autocomplete="off" type="NameSearch" placeholder="Name"/>
                             </Form.Group>
                         </Form>
                     </Col>
@@ -49,368 +90,82 @@ export function Page2(props){
                 </Row>
             </Container>
 
-            <Container>
-                <Row>
-                    <Col> NAME returned </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    date returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    category returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    data returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Options
-                        </Button>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Details
-                        </Button>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col> NAME returned </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    date returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    category returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    data returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Options
-                        </Button>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Details
-                        </Button>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col> NAME returned </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    date returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    category returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    data returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Options
-                        </Button>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Details
-                        </Button>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col> NAME returned </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    date returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    category returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    data returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Options
-                        </Button>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Details
-                        </Button>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col> NAME returned </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    date returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    category returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    data returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Options
-                        </Button>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Details
-                        </Button>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col> NAME returned </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    date returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    category returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    data returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Options
-                        </Button>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Details
-                        </Button>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col> NAME returned </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    date returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    category returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    data returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Options
-                        </Button>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Details
-                        </Button>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col> NAME returned </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    date returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    category returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    data returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Options
-                        </Button>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Details
-                        </Button>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col> NAME returned </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    date returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    category returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '10rem' }}>
-                            <Card.Body>
-                                <Card.Text>
-                                    data returned
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Options
-                        </Button>
-                    </Col>
-                    <Col>
-                        <Button variant="primary">
-                            Details
-                        </Button>
-                    </Col>
-                </Row>
+            <Container fluid>
+                {
+                    documentArray.length === 0 ? <p> "No results" </p> : documentArray
+                                                                            .filter(document => JohnFunction(document, nameEntered))
+                                                                            .map((document,index) => <DataRow key={index} {...document}/>)
+                }
+                <NumRows size = {2}/>
             </Container>
         </div>
     );
+}
+
+function DataRow(props){
+    const{name, date, category, data} = props;
+    return(
+        <Row style={{ height: '8vh' }}>
+            <Col>
+                <Card style={{ width: '12rem', borderColor: 'white' }}>
+                    <Card.Body>
+                        <Card.Text style={{ textAlign: 'center' }}>
+                            {name}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </Col>
+            <Col>
+                <Card style={{ width: '12rem' }}>
+                    <Card.Body>
+                        <Card.Text>
+                            {date}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </Col>
+            <Col>
+                <Card style={{ width: '12rem' }}>
+                    <Card.Body>
+                        <Card.Text>
+                            {category}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </Col>
+            <Col>
+                <Card style={{ width: '12rem' }}>
+                    <Card.Body>
+                        <Card.Text>
+                            {data}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </Col>
+            <Col>
+                <Button variant="outline-success" size='lg' block>
+                    Options
+                </Button>
+            </Col>
+            <Col style={{justifyContent: 'stretch'}}>
+                <Button variant="outline-success" size='lg' block>
+                    Details
+                </Button>
+            </Col>
+        </Row>
+    )
+}
+
+function NumRows({size}){
+    return(
+        new Array(size).fill(0).map( (_,index) => {
+            const props = {
+                name: "Namegoeshere",
+                date: "date?",
+                category: "test",
+                data: "test2"
+            }
+            return <DataRow key={index} {...props}/>;
+        })
+    )
 }
