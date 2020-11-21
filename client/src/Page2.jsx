@@ -11,34 +11,190 @@ export function Page2(props){
     const {active} = props;
 
     const [d1, setd1] = useState('');
+    const [nameEntered, setNameEntered] = useState('');
+    const [categorySelected, setCategoryEntered] = useState('All');
 
-    const handleSelect=(e)=>{
-        console.log(e);
-        setd1(e);
+    const handleName = event => {
+        setNameEntered(event.target.value);
     }
+
+    const handleCategory = event => {
+        setCategoryEntered(event.target.value);
+    }
+
+    const nameFilter = (document, nameEntered) => {
+        if(document.name.includes(nameEntered)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    const categoryFilter = (document, categorySelected) => {
+        if(categorySelected == 'All' || document.category == (categorySelected)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    const documentArray=[
+        {
+            name: "sarah",
+            date: "today",
+            category: "Confidentiality",
+            data: "[1,3]"
+        },
+        {
+            name: "mat",
+            date: "today",
+            category: "Integrity",
+            data: "[3,4,5]"
+        },
+        {
+            name: "david",
+            date: "yesterday",
+            category: "Availability",
+            data: "[3,4,5]"
+        },
+        {
+            name: "daniel",
+            date: "last year",
+            category: "Availability",
+            data: "[3,4,5]"
+        },
+        {
+            name: "daniel",
+            date: "today",
+            category: "Availability",
+            data: "[3,4,5]"
+        },
+        {
+            name: "daniel",
+            date: " last week",
+            category: "Availability",
+            data: "[3,4,5]"
+        },
+        {
+            name: "daniel",
+            date: "some day",
+            category: "Availability",
+            data: "[3,4,5]"
+        },
+    ];
 
     return(
         <div hidden={!active}>
-            <DropdownButton title={d1} id = "dropdown" onSelect={handleSelect}>
-                <Dropdown.Item eventKey="1">1</Dropdown.Item>
-                <Dropdown.Item eventKey="2">2</Dropdown.Item>
-                <Dropdown.Item eventKey="3">3</Dropdown.Item>
-                <Dropdown.Item eventKey="4">3</Dropdown.Item>
-                <Dropdown.Item eventKey="5">3</Dropdown.Item>
-            </DropdownButton>
-
-
             <Container>
                 <Row>
-                 <Col>1 of 2</Col>
-                 <Col>2 of 2</Col>
-                 <Col>2 of 2</Col>
+                    <Col>
+                        <Form>
+                            <Form.Group controlId="Name">
+                                <Form.Control onChange={handleName} autocomplete="off" type="NameSearch" placeholder="Name"/>
+                            </Form.Group>
+                        </Form>
+                    </Col>
+                    <Col>
+                        <Form>
+                            <Form.Group controlId="Date">
+                                <Form.Control type="DateSearch" placeholder="Date Range"/>
+                            </Form.Group>
+                        </Form>
+                    </Col>
+                    <Col>
+                        <Form>
+                            <Form.Group controlId="Category">
+                                <Form.Control as="select" onChange={handleCategory}>
+                                <option>All</option>
+                                <option>Confidentiality</option>
+                                <option>Integrity</option>
+                                <option>Availability</option>
+                                </Form.Control>
+                            </Form.Group>
+                        </Form>
+                    </Col>
                 </Row>
-                <Row>
-                <Col lg={8}>1 of 3</Col>
-                <Col><Button variant="primary">Button</Button>{' '}</Col>
-                </Row>
-                </Container>
+            </Container>
+
+            <Container fluid>
+                {
+                    documentArray.length === 0 ? <p> "No results" </p> : documentArray
+                                                                            .filter(document => nameFilter(document, nameEntered))
+                                                                            .filter(document => categoryFilter(document, categorySelected))
+                                                                            .map((document,index) => <DataRow key={index} {...document}/>)
+                }
+                <NumRows size = {2}/>
+            </Container>
         </div>
     );
+}
+
+function DataRow(props){
+    const{name, date, category, data} = props;
+    return(
+        <Row style={{ height: '8vh' }}>
+            <Col>
+                <Card style={{ width: '12rem', borderColor: 'white' }}>
+                    <Card.Body>
+                        <Card.Text style={{ textAlign: 'center' }}>
+                            {name}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </Col>
+            <Col>
+                <Card style={{ width: '12rem' }}>
+                    <Card.Body>
+                        <Card.Text>
+                            {date}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </Col>
+            <Col>
+                <Card style={{ width: '12rem' }}>
+                    <Card.Body>
+                        <Card.Text>
+                            {category}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </Col>
+            <Col>
+                <Card style={{ width: '12rem' }}>
+                    <Card.Body>
+                        <Card.Text>
+                            {data}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </Col>
+            <Col>
+                <Button variant="outline-success" size='lg' block>
+                    Options
+                </Button>
+            </Col>
+            <Col style={{justifyContent: 'stretch'}}>
+                <Button variant="outline-success" size='lg' block>
+                    Details
+                </Button>
+            </Col>
+        </Row>
+    )
+}
+
+function NumRows({size}){
+    return(
+        new Array(size).fill(0).map( (_,index) => {
+            const props = {
+                name: "Namegoeshere",
+                date: "date?",
+                category: "test",
+                data: "test2"
+            }
+            return <DataRow key={index} {...props}/>;
+        })
+    )
 }
