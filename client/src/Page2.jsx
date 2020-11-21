@@ -10,12 +10,20 @@ import {  Container, Row, Col } from 'react-bootstrap';
 export function Page2(props){
     const {active} = props;
 
-    const [d1, setd1] = useState('');
     const [nameEntered, setNameEntered] = useState('');
+    const [date1, setDate1] = useState('');
+    const [date2, setDate2] = useState('');
     const [categorySelected, setCategoryEntered] = useState('All');
 
     const handleName = event => {
         setNameEntered(event.target.value);
+    }
+
+    const handleDate1 = event => {              //on button press in text field, do the sorting
+        setDate1(event.target.value);           //for date1 and date 2
+    }
+    const handleDate2 = event => {
+        setDate1(event.target.value);
     }
 
     const handleCategory = event => {
@@ -24,6 +32,15 @@ export function Page2(props){
 
     const nameFilter = (document, nameEntered) => {
         if(document.name.includes(nameEntered)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    const dateFilter = (document, date1, date2) => {
+        if(document.date >= date1 && document.date <= date2){
             return true;
         }
         else{
@@ -122,10 +139,10 @@ export function Page2(props){
                 {
                     documentArray.length === 0 ? <p> "No results" </p> : documentArray
                                                                             .filter(document => nameFilter(document, nameEntered))
+                                                                            //.filter(document => dateFilter(document, date1, date2))
                                                                             .filter(document => categoryFilter(document, categorySelected))
                                                                             .map((document,index) => <DataRow key={index} {...document}/>)
                 }
-                <NumRows size = {2}/>
             </Container>
         </div>
     );
