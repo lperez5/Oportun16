@@ -1,11 +1,9 @@
 
 import React, {useState} from 'react'
+import { FormControl, InputGroup, Container, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
-import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import Form from 'react-bootstrap/Form'
 import Card from 'react-bootstrap/Card'
-import {  Container, Row, Col } from 'react-bootstrap';
 
 export function Page2(props){
     const {active} = props;
@@ -114,11 +112,13 @@ export function Page2(props){
                         </Form>
                     </Col>
                     <Col>
-                        <Form>
-                            <Form.Group controlId="Date">
-                                <Form.Control type="DateSearch" placeholder="Date Range"/>
-                            </Form.Group>
-                        </Form>
+                    <InputGroup className="mb-3">
+                        <InputGroup.Prepend>
+                            <InputGroup.Text>Dates</InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl />
+                        <FormControl />
+                    </InputGroup>
                     </Col>
                     <Col>
                         <Form>
