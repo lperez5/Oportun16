@@ -4,8 +4,9 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Form from 'react-bootstrap/Form'
 import Card from 'react-bootstrap/Card'
-import { Table, Container, Row, Col } from 'react-bootstrap';
+import { ListGroup ,FormControl, InputGroup, Table, Container, Row, Col } from 'react-bootstrap';
 import {getInstance} from './utils/ToolCalcs';
+
 
 
 export function Page1(props){
@@ -122,101 +123,161 @@ export function Page1(props){
     return(
       
         <div hidden={!active}>
-           
 
-           <Container>
-  <Row>
-  
-    <Col lg="8">
-    <Row>
-  <Col><Table striped bordered hover>
-  <thead>
-    <tr>
-      <th>Asset at Risk</th>
-      <th>Sensitive Personal Information</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Threat Community</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td colSpan="2">Larry the Bird</td>
-    </tr>
-  </tbody>
-</Table></Col>
-    <Col><Table striped bordered hover>
-  <thead>
-    <tr>
-      <th>Analyst</th>
-      <th>Scott Collins</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Notes</td>
-      <td>Primary Loss based on Verizon report; average is $3.5</td>
-    </tr>
-    
-  </tbody>
-</Table></Col>
-    </Row>
-    
+
+<Container fluid="l">
       <Row>
-  <Col>This is where that big chart goes</Col>
-   
+        <Col lg="8">
+            <Row>
+                <Col>  
+    <div>
+  <InputGroup size="sm" className="mb-3">
+    <InputGroup.Prepend>
+      <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Asset At Risk</InputGroup.Text>
+    </InputGroup.Prepend>
+    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+  </InputGroup>
+  
+   <InputGroup size="sm" className="mb-3">
+    <InputGroup.Prepend>
+      <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Threat Community</InputGroup.Text>
+    </InputGroup.Prepend>
+    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+  </InputGroup>
+  
+   <InputGroup size="sm" className="mb-3">
+    <InputGroup.Prepend>
+      <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Loss Event</InputGroup.Text>
+    </InputGroup.Prepend>
+    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+  </InputGroup>
+  
+   <InputGroup size="sm" className="mb-3">
+    <InputGroup.Prepend>
+      <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Type of Loss Event</InputGroup.Text>
+    </InputGroup.Prepend>
+    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+  </InputGroup>
+ 
+  
+  
+  
+  
+  </div>
+
+    
+                </Col>
+        <Col>
+         <div>
+  <InputGroup  size="sm" className="mb-3">
+    <InputGroup.Prepend>
+      <InputGroup.Text style = {{width:100}} id="inputGroup-sizing">Analyst</InputGroup.Text>
+    </InputGroup.Prepend>
+    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+  </InputGroup>
+  
+   <InputGroup style = {{ height: 125}} size="sm" className="mb-3">
+    <InputGroup.Prepend>
+      <InputGroup.Text style = {{width:100, textAlign: 'center'}} id="inputGroup-sizing">Notes</InputGroup.Text>
+    </InputGroup.Prepend>
+    <FormControl style = {{height: 125}} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+  </InputGroup>
+  
+  </div>
+        </Col>
     </Row>
+    
+    <Row>
+        <Col>This is where that big chart goes</Col>
+    </Row>
+    
+        </Col>
+        <Col>
+        <Container fluid>
+  <Row>
+    <Col>
+    <Table striped bordered hover>
+      <thead>
+        <tr>
+            <th>Summary</th>
+            <th>Inherent</th>
+            <th>Residual</th>
+      
+        </tr>
+      </thead>
+  <tbody>
+    <tr>
+      <td>Overall Risk</td>
+      <td>Very High</td>
+      <td>Very Low</td>
+    </tr>
+    <tr>
+      <td>Primary LM</td>
+      <td> &#60;$9,999 </td>
+      <td> &#60;$9,999</td>
+    </tr>
+    <tr>
+      <td>Secondary LM</td>
+      <td>&#60;$10,000,000</td>
+      <td>&#60;$100,000</td>
+    </tr>
+  </tbody>
+ 
+</Table>
+    <Row>
+    <Col>
+    <ListGroup variant="flush" style={{fontSize:15}}>
+  <ListGroup.Item style={{fontWeight: 'bold'}}>Loss Magnitude</ListGroup.Item>
+  <ListGroup.Item>1. &#60;$9,999</ListGroup.Item>
+  <ListGroup.Item>2. $10,000 to $99,999</ListGroup.Item>
+  <ListGroup.Item>3. $100,000 to $999,999</ListGroup.Item>
+  <ListGroup.Item>4. $1,000,000 to $9,999,999</ListGroup.Item>      
+ <ListGroup.Item>5. &#62;$10,000,000</ListGroup.Item>
+</ListGroup>
+<br/>
+    <ListGroup variant="flush" style={{fontSize:15}}>
+  <ListGroup.Item   style={{fontWeight: 'bold'}}>Loss Magnitude </ListGroup.Item>
+  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+  <ListGroup.Item>Morbi leo risus</ListGroup.Item>
+  <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+</ListGroup>
+    </Col>
+    <Col>
+    <ListGroup variant="flush"  style={{fontSize:15}}>
+  <ListGroup.Item style={{fontWeight: 'bold'}}>Probability</ListGroup.Item>
+  <ListGroup.Item>1. 0% to 10%</ListGroup.Item>
+  <ListGroup.Item>2. 10% to 30%</ListGroup.Item>
+  <ListGroup.Item>3. 30% to 70%</ListGroup.Item>
+  <ListGroup.Item>4. 70% to 90%</ListGroup.Item>
+  <ListGroup.Item>5. 90% to 100%</ListGroup.Item>
+</ListGroup>
+<br/>
+    <ListGroup variant="flush">
+  <ListGroup.Item>Loss Magnitude</ListGroup.Item>
+  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+  <ListGroup.Item>Morbi leo risus</ListGroup.Item>
+  <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+</ListGroup>
+    </Col>
+  </Row>
+  <Row>
+    <Col>
+    <ListGroup variant="flush">
+  <ListGroup.Item style={{fontWeight: 'bold'}}>Resistance Strength</ListGroup.Item>
+  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+  <ListGroup.Item>Morbi leo risus</ListGroup.Item>
+  <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+</ListGroup>
+    
+    
     
     </Col>
-    <Col><Table striped bordered hover>
-  <thead>
-    <tr>
-      <th>Asset at Risk</th>
-      <th>Sensitive Personal Information</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Threat Community</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <td>Threat Community</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <td>Threat Community</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <td>Threat Community</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <td>Threat Community</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <td>Threat Community</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <td>Threat Community</td>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <td>Threat Community</td>
-      <td>Mark</td>
-    </tr>
+  </Row>
     
-  </tbody>
-</Table></Col>
+    </Col>
+  </Row>
+</Container>
+       </Col>
   </Row>
 </Container>
 
@@ -322,3 +383,31 @@ export function Page1(props){
         </div>
     );
 }
+<Table striped bordered hover>
+  <thead>
+    <tr>
+      <th>Summary</th>
+      <th>Inherent</th>
+      <th>Residual</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Overall Risk</td>
+      <td>Very High</td>
+      <td>Very Low</td>
+    </tr>
+    <tr>
+      <td>Primary LM</td>
+      <td> &#60;$9,999 </td>
+      <td> &#60;$9,999</td>
+    </tr>
+    <tr>
+      <td>Secondary LM</td>
+      <td>&#60;$10,000,000</td>
+      <td>&#60;$100,000</td>
+    </tr>
+  </tbody>
+</Table>
+
