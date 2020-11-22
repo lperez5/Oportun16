@@ -2,8 +2,6 @@ import React, {useState} from 'react'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import Form from 'react-bootstrap/Form'
-import Card from 'react-bootstrap/Card'
 import { ListGroup ,FormControl, InputGroup, Table, Container, Row, Col } from 'react-bootstrap';
 import {getInstance} from './utils/ToolCalcs';
 
@@ -11,277 +9,259 @@ import {getInstance} from './utils/ToolCalcs';
 
 export function Page1(props){
 
-    const Tool = getInstance();
+  const Tool = getInstance();
 
-    const {active} = props;
+  const {active} = props;
 
-    const [padI, setpadI] = useState('');
-    const [padC, setpadC] = useState('');
-    const [cfaI, setcfaI] = useState('');
-    const [cfaC, setcfaR] = useState('');
-    const [rsI, setrsI] = useState('');
-    const [rsC, setrsR] = useState('');
-    const [plmrI, setplmrI] = useState('');
-    const [plmrC, setplmrR] = useState('');
-    const [slmrI, setslmrI] = useState('');
-    const [slmrC, setslmrR] = useState('');
-    const [tc, settc] = useState('');
-    const [slp, setslp] = useState('');
+  const [padI, setpadI] = useState('');
+  const [padC, setpadC] = useState('');
+  const [cfaI, setcfaI] = useState('');
+  const [cfaC, setcfaR] = useState('');
+  const [rsI, setrsI] = useState('');
+  const [rsC, setrsR] = useState('');
+  const [plmrI, setplmrI] = useState('');
+  const [plmrC, setplmrR] = useState('');
+  const [slmrI, setslmrI] = useState('');
+  const [slmrC, setslmrR] = useState('');
+  const [tc, settc] = useState('');
+  const [slp, setslp] = useState('');
 
-    const [buttonDisabled, setButtonDisabled] = useState(true);
-    const [buttonDisabled2, setButtonDisabled2] = useState(true);
-    const [buttonDisabled3, setButtonDisabled3] = useState(true);
-    const [buttonDisabled4, setButtonDisabled4] = useState(true);
-    const [buttonDisabled5, setButtonDisabled5] = useState(true);
-    const [buttonDisabled6, setButtonDisabled6] = useState(true);
-    const [buttonDisabled7, setButtonDisabled7] = useState(true);
-    const [buttonDisabled8, setButtonDisabled8] = useState(true);
-    const [buttonDisabled9, setButtonDisabled9] = useState(true);
-    const [buttonDisabled10, setButtonDisabled10] = useState(true);
-    const [buttonDisabled11, setButtonDisabled11] = useState(true);
-    const [buttonDisabled12, setButtonDisabled12] = useState(true);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
+  const [buttonDisabled2, setButtonDisabled2] = useState(true);
+  const [buttonDisabled3, setButtonDisabled3] = useState(true);
+  const [buttonDisabled4, setButtonDisabled4] = useState(true);
+  const [buttonDisabled5, setButtonDisabled5] = useState(true);
+  const [buttonDisabled6, setButtonDisabled6] = useState(true);
+  const [buttonDisabled7, setButtonDisabled7] = useState(true);
+  const [buttonDisabled8, setButtonDisabled8] = useState(true);
+  const [buttonDisabled9, setButtonDisabled9] = useState(true);
+  const [buttonDisabled10, setButtonDisabled10] = useState(true);
+  const [buttonDisabled11, setButtonDisabled11] = useState(true);
+  const [buttonDisabled12, setButtonDisabled12] = useState(true);
 
-    const handleSelectpadI=(value)=>{
-        Tool.setPADInherent(value-1);
-        Tool.calculateTreeInherents();
-        //get potentially changed values of calculated variables
-        Tool.getState();
-        //update visuals of those variables
-        setpadI(value);
-        setButtonDisabled(false);
+  const handleSelectpadI=(value)=>{
+    Tool.setPADInherent(value-1);
+    Tool.calculateTreeInherents();
+    //get potentially changed values of calculated variables
+    Tool.getState();
+    //update visuals of those variables
+    setpadI(value);
+    setButtonDisabled(false);
+  }
+  const handleSelectpadC=(value)=>{
+    Tool.setPADControls(value-1);
+    Tool.calculateTreeResiduals();
+    setpadC(value);
+    setButtonDisabled2(false);
+  }
+  const handleSelectcfaI=(value)=>{
+    Tool.setCFAInherent(value-1);
+    Tool.calculateTreeInherents();
+    setcfaI(value);
+    setButtonDisabled3(false);
+  }
+  const handleSelectcfaC=(value)=>{
+    Tool.setCFAControls(value-1);
+    Tool.calculateTreeResiduals();
+    setcfaR(value);
+    setButtonDisabled4(false);
+  }
+  const handleSelectrsI=(value)=>{
+    Tool.setRSInherent(value-1);
+    Tool.calculateTreeInherents();
+    setrsI(value);
+    setButtonDisabled5(false);
+  }
+  const handleSelectrsC=(value)=>{
+    Tool.setRSControls(value-1);
+    Tool.calculateTreeResiduals();
+    setrsR(value);
+    setButtonDisabled6(false);
+  }
+  const handleSelectplmrI=(value)=>{
+    Tool.setPLMRInherent(value-1);
+    Tool.calculateTreeInherents();
+    setplmrI(value);
+    setButtonDisabled7(false);
+  }
+  const handleSelectplmrC=(value)=>{
+    Tool.setPLMRControls(value-1);
+    Tool.calculateTreeResiduals();
+    setplmrR(value);
+    setButtonDisabled8(false);
+  }
+  const handleSelectslmrI=(value)=>{
+    Tool.setSLMRInherent(value-1);
+    Tool.calculateTreeInherents();
+    setslmrI(value);
+    setButtonDisabled9(false);
+  }
+  const handleSelectslmrC=(value)=>{
+    Tool.setSLMRControls(value-1);
+    Tool.calculateTreeResiduals();
+    setslmrR(value);
+    setButtonDisabled10(false);
+  }
+  const handleSelecttc=(value)=>{
+    Tool.setTC(value-1);
+    Tool.calculateTree();
+    settc(value);
+    setButtonDisabled11(false);
     }
-    const handleSelectpadC=(value)=>{
-        Tool.setPADControls(value-1);
-        Tool.calculateTreeResiduals();
-        setpadC(value);
-        setButtonDisabled2(false);
-    }
-    const handleSelectcfaI=(value)=>{
-        Tool.setCFAInherent(value-1);
-        Tool.calculateTreeInherents();
-        setcfaI(value);
-        setButtonDisabled3(false);
-    }
-    const handleSelectcfaC=(value)=>{
-        Tool.setCFAControls(value-1);
-        Tool.calculateTreeResiduals();
-        setcfaR(value);
-        setButtonDisabled4(false);
-    }
-    const handleSelectrsI=(value)=>{
-        Tool.setRSInherent(value-1);
-        Tool.calculateTreeInherents();
-        setrsI(value);
-        setButtonDisabled5(false);
-    }
-    const handleSelectrsC=(value)=>{
-        Tool.setRSControls(value-1);
-        Tool.calculateTreeResiduals();
-        setrsR(value);
-        setButtonDisabled6(false);
-    }
-    const handleSelectplmrI=(value)=>{
-        Tool.setPLMRInherent(value-1);
-        Tool.calculateTreeInherents();
-        setplmrI(value);
-        setButtonDisabled7(false);
-    }
-    const handleSelectplmrC=(value)=>{
-        Tool.setPLMRControls(value-1);
-        Tool.calculateTreeResiduals();
-        setplmrR(value);
-        setButtonDisabled8(false);
-    }
-    const handleSelectslmrI=(value)=>{
-        Tool.setSLMRInherent(value-1);
-        Tool.calculateTreeInherents();
-        setslmrI(value);
-        setButtonDisabled9(false);
-    }
-    const handleSelectslmrC=(value)=>{
-        Tool.setSLMRControls(value-1);
-        Tool.calculateTreeResiduals();
-        setslmrR(value);
-        setButtonDisabled10(false);
-    }
-    const handleSelecttc=(value)=>{
-        Tool.setTC(value-1);
-        Tool.calculateTree();
-        settc(value);
-        setButtonDisabled11(false);}
-    const handleSelectslp=(value)=>{
-        Tool.setSLP(value-1);
-        Tool.calculateTree();
-        setslp(value);
-        setButtonDisabled12(false);
-    }
+  const handleSelectslp=(value)=>{
+    Tool.setSLP(value-1);
+    Tool.calculateTree();
+    setslp(value);
+    setButtonDisabled12(false);
+  }
 
-    const handleClick=(e)=>{
-        alert("You chose " + padI + " and " + padC);
-    }
+  const handleClick=(e)=>{
+    alert("You chose " + padI + " and " + padC);
+  }
 
-    return(
-      
-        <div hidden={!active}>
-
-
-<Container fluid="l">
-      <Row>
-        <Col lg="8">
+  return(
+    <div hidden={!active}>
+      <Container fluid="l">
+        <Row>
+          <Col lg="8">
             <Row>
-                <Col>  
-    <div>
-  <InputGroup size="sm" className="mb-3">
-    <InputGroup.Prepend>
-      <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Asset At Risk</InputGroup.Text>
-    </InputGroup.Prepend>
-    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-  </InputGroup>
-  
-   <InputGroup size="sm" className="mb-3">
-    <InputGroup.Prepend>
-      <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Threat Community</InputGroup.Text>
-    </InputGroup.Prepend>
-    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-  </InputGroup>
-  
-   <InputGroup size="sm" className="mb-3">
-    <InputGroup.Prepend>
-      <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Loss Event</InputGroup.Text>
-    </InputGroup.Prepend>
-    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-  </InputGroup>
-  
-   <InputGroup size="sm" className="mb-3">
-    <InputGroup.Prepend>
-      <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Type of Loss Event</InputGroup.Text>
-    </InputGroup.Prepend>
-    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-  </InputGroup>
- 
-  
-  
-  
-  
-  </div>
+              <Col>
+                <div>
+                  <InputGroup size="sm" className="mb-3">
+                    <InputGroup.Prepend>
+                      <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Asset At Risk</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  </InputGroup>
 
-    
+                  <InputGroup size="sm" className="mb-3">
+                    <InputGroup.Prepend>
+                      <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Threat Community</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  </InputGroup>
+
+                  <InputGroup size="sm" className="mb-3">
+                    <InputGroup.Prepend>
+                      <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Loss Event</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  </InputGroup>
+
+                  <InputGroup size="sm" className="mb-3">
+                    <InputGroup.Prepend>
+                      <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Type of Loss Event</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  </InputGroup>
+                </div>
+              </Col>
+              <Col>
+                <div>
+                  <InputGroup  size="sm" className="mb-3">
+                    <InputGroup.Prepend>
+                      <InputGroup.Text style = {{width:80}} id="inputGroup-sizing">Analyst</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  </InputGroup>
+
+                  <InputGroup style = {{ height: 125}} size="sm" className="mb-3">
+                    <InputGroup.Prepend>
+                      <InputGroup.Text style = {{width:80, textAlign: 'center'}} id="inputGroup-sizing">Notes</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <FormControl as="textarea" style = {{height: 125}} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                  </InputGroup>
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col>This is where that big chart goes</Col>
+            </Row>
+          </Col>
+          <Col>
+            <Container fluid>
+              <Row>
+                <Col>
+                  <Table striped bordered hover>
+                    <thead>
+                      <tr>
+                        <th>Summary</th>
+                        <th>Inherent</th>
+                        <th>Residual</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Overall Risk</td>
+                        <td>Very High</td>
+                        <td>Very Low</td>
+                      </tr>
+                      <tr>
+                        <td>Primary LM</td>
+                        <td> &#60;$9,999 </td>
+                        <td> &#60;$9,999</td>
+                      </tr>
+                      <tr>
+                        <td>Secondary LM</td>
+                        <td>&#60;$10,000,000</td>
+                        <td>&#60;$100,000</td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                <Row>
+                  <Col>
+                    <ListGroup variant="flush" style={{fontSize:14}}>
+                      <ListGroup.Item style={{fontWeight: 'bold'}}>Loss Magnitude</ListGroup.Item>
+                      <ListGroup.Item>1. &#60;$9,999</ListGroup.Item>
+                      <ListGroup.Item>2. $10,000 to $99,999</ListGroup.Item>
+                      <ListGroup.Item>3. $100,000 to $999,999</ListGroup.Item>
+                      <ListGroup.Item>4. $1,000,000 to $9,999,999</ListGroup.Item>
+                      <ListGroup.Item>5. &#62;$10,000,000</ListGroup.Item>
+                    </ListGroup>
+                    <br/>
+                    <ListGroup variant="flush" style={{fontSize:14}}>
+                      <ListGroup.Item   style={{fontWeight: 'bold'}}>Loss Magnitude </ListGroup.Item>
+                      <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                      <ListGroup.Item>Morbi leo risus</ListGroup.Item>
+                      <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+                    </ListGroup>
+                  </Col>
+                  <Col>
+                    <ListGroup variant="flush"  style={{fontSize:14}}>
+                      <ListGroup.Item style={{fontWeight: 'bold'}}>Probability</ListGroup.Item>
+                      <ListGroup.Item>1. 0% to 10%</ListGroup.Item>
+                      <ListGroup.Item>2. 10% to 30%</ListGroup.Item>
+                      <ListGroup.Item>3. 30% to 70%</ListGroup.Item>
+                      <ListGroup.Item>4. 70% to 90%</ListGroup.Item>
+                      <ListGroup.Item>5. 90% to 100%</ListGroup.Item>
+                    </ListGroup>
+                    <br/>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item>Loss Magnitude</ListGroup.Item>
+                      <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                      <ListGroup.Item>Morbi leo risus</ListGroup.Item>
+                      <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+                    </ListGroup>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item style={{fontWeight: 'bold'}}>Resistance Strength</ListGroup.Item>
+                      <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                      <ListGroup.Item>Morbi leo risus</ListGroup.Item>
+                      <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+                    </ListGroup>
+                  </Col>
+                  </Row>
                 </Col>
-        <Col>
-         <div>
-  <InputGroup  size="sm" className="mb-3">
-    <InputGroup.Prepend>
-      <InputGroup.Text style = {{width:100}} id="inputGroup-sizing">Analyst</InputGroup.Text>
-    </InputGroup.Prepend>
-    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-  </InputGroup>
-  
-   <InputGroup style = {{ height: 125}} size="sm" className="mb-3">
-    <InputGroup.Prepend>
-      <InputGroup.Text style = {{width:100, textAlign: 'center'}} id="inputGroup-sizing">Notes</InputGroup.Text>
-    </InputGroup.Prepend>
-    <FormControl style = {{height: 125}} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-  </InputGroup>
-  
-  </div>
-        </Col>
-    </Row>
-    
-    <Row>
-        <Col>This is where that big chart goes</Col>
-    </Row>
-    
-        </Col>
-        <Col>
-        <Container fluid>
-  <Row>
-    <Col>
-    <Table striped bordered hover>
-      <thead>
-        <tr>
-            <th>Summary</th>
-            <th>Inherent</th>
-            <th>Residual</th>
-      
-        </tr>
-      </thead>
-  <tbody>
-    <tr>
-      <td>Overall Risk</td>
-      <td>Very High</td>
-      <td>Very Low</td>
-    </tr>
-    <tr>
-      <td>Primary LM</td>
-      <td> &#60;$9,999 </td>
-      <td> &#60;$9,999</td>
-    </tr>
-    <tr>
-      <td>Secondary LM</td>
-      <td>&#60;$10,000,000</td>
-      <td>&#60;$100,000</td>
-    </tr>
-  </tbody>
- 
-</Table>
-    <Row>
-    <Col>
-    <ListGroup variant="flush" style={{fontSize:15}}>
-  <ListGroup.Item style={{fontWeight: 'bold'}}>Loss Magnitude</ListGroup.Item>
-  <ListGroup.Item>1. &#60;$9,999</ListGroup.Item>
-  <ListGroup.Item>2. $10,000 to $99,999</ListGroup.Item>
-  <ListGroup.Item>3. $100,000 to $999,999</ListGroup.Item>
-  <ListGroup.Item>4. $1,000,000 to $9,999,999</ListGroup.Item>      
- <ListGroup.Item>5. &#62;$10,000,000</ListGroup.Item>
-</ListGroup>
-<br/>
-    <ListGroup variant="flush" style={{fontSize:15}}>
-  <ListGroup.Item   style={{fontWeight: 'bold'}}>Loss Magnitude </ListGroup.Item>
-  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-  <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-  <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-</ListGroup>
-    </Col>
-    <Col>
-    <ListGroup variant="flush"  style={{fontSize:15}}>
-  <ListGroup.Item style={{fontWeight: 'bold'}}>Probability</ListGroup.Item>
-  <ListGroup.Item>1. 0% to 10%</ListGroup.Item>
-  <ListGroup.Item>2. 10% to 30%</ListGroup.Item>
-  <ListGroup.Item>3. 30% to 70%</ListGroup.Item>
-  <ListGroup.Item>4. 70% to 90%</ListGroup.Item>
-  <ListGroup.Item>5. 90% to 100%</ListGroup.Item>
-</ListGroup>
-<br/>
-    <ListGroup variant="flush">
-  <ListGroup.Item>Loss Magnitude</ListGroup.Item>
-  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-  <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-  <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-</ListGroup>
-    </Col>
-  </Row>
-  <Row>
-    <Col>
-    <ListGroup variant="flush">
-  <ListGroup.Item style={{fontWeight: 'bold'}}>Resistance Strength</ListGroup.Item>
-  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-  <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-  <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-</ListGroup>
-    
-    
-    
-    </Col>
-  </Row>
-    
-    </Col>
-  </Row>
-</Container>
-       </Col>
-  </Row>
-</Container>
+              </Row>
+            </Container>
+          </Col>
+        </Row>
+      </Container>
 
-       
+
             <Button  onClick={handleClick} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12} style={{backgroundColor: '#0B0C10', borderColor: '#45A293', color: '#45A293', borderRadius: '100px'}} >Submit</Button>{' '}
             <DropdownButton title={padI} id = "PADInherent">
                 <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadI(1)}>1</Dropdown.Item>
@@ -378,7 +358,7 @@ export function Page1(props){
                 <Dropdown.Item eventKey="4" onSelect={()=>handleSelectslp(4)}>4</Dropdown.Item>
                 <Dropdown.Item eventKey="5" onSelect={()=>handleSelectslp(5)}>5</Dropdown.Item>
             </DropdownButton>
-           
+
             <h4>You selected {padI} and {padC}</h4>
         </div>
     );
@@ -389,7 +369,7 @@ export function Page1(props){
       <th>Summary</th>
       <th>Inherent</th>
       <th>Residual</th>
-      
+
     </tr>
   </thead>
   <tbody>
@@ -410,4 +390,3 @@ export function Page1(props){
     </tr>
   </tbody>
 </Table>
-
