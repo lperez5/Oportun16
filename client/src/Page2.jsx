@@ -1,5 +1,4 @@
-
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { FormControl, InputGroup, Container, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
@@ -125,9 +124,9 @@ export function Page2(props){
                             <Form.Group controlId="Category">
                                 <Form.Control as="select" onChange={handleCategory}>
                                 <option>All</option>
+                                <option>Availability</option>
                                 <option>Confidentiality</option>
                                 <option>Integrity</option>
-                                <option>Availability</option>
                                 </Form.Control>
                             </Form.Group>
                         </Form>
