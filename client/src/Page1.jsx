@@ -363,30 +363,3 @@ export function Page1(props){
     </div>
     );
 }
-<Table striped bordered hover>
-  <thead>
-    <tr>
-      <th>Summary</th>
-      <th>Inherent</th>
-      <th>Residual</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Overall Risk</td>
-      <td>Very High</td>
-      <td>Very Low</td>
-    </tr>
-    <tr>
-      <td>Primary LM</td>
-      <td> &#60;$9,999 </td>
-      <td> &#60;$9,999</td>
-    </tr>
-    <tr>
-      <td>Secondary LM</td>
-      <td>&#60;$10,000,000</td>
-      <td>&#60;$100,000</td>
-    </tr>
-  </tbody>
-</Table>
