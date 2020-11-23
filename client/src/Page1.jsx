@@ -121,10 +121,6 @@ export function Page1(props){
     console.log(treeData);
   }
 
-  const prependDocArray=(document) => {
-
-  }
-
   return(
     <div hidden={!active}>
       <Container fluid="l">
