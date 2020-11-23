@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import { ListGroup ,FormControl, InputGroup, Table, Container, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
-import { ListGroup ,FormControl, InputGroup, Table, Container, Row, Col } from 'react-bootstrap'
 import {getInstance} from './utils/ToolCalcs'
 
 
@@ -119,10 +119,6 @@ export function Page1(props){
     alert("You chose " + padI + " and " + padC);
     var treeData = Tool.getTreeData();
     console.log(treeData);
-  }
-
-  const prependDocArray=(document) => {
-
   }
 
   return(
@@ -255,10 +251,10 @@ export function Page1(props){
                 </DropdownButton>
 
                 <DropdownButton title={slmrC} id = "SLMRControls">
-                    <Dropdown.Item eventKey="1" onSelect={()=>handleSelectslmrC(5)}>1</Dropdown.Item>
-                    <Dropdown.Item eventKey="2" onSelect={()=>handleSelectslmrC(5)}>2</Dropdown.Item>
-                    <Dropdown.Item eventKey="3" onSelect={()=>handleSelectslmrC(5)}>3</Dropdown.Item>
-                    <Dropdown.Item eventKey="4" onSelect={()=>handleSelectslmrC(5)}>4</Dropdown.Item>
+                    <Dropdown.Item eventKey="1" onSelect={()=>handleSelectslmrC(1)}>1</Dropdown.Item>
+                    <Dropdown.Item eventKey="2" onSelect={()=>handleSelectslmrC(2)}>2</Dropdown.Item>
+                    <Dropdown.Item eventKey="3" onSelect={()=>handleSelectslmrC(3)}>3</Dropdown.Item>
+                    <Dropdown.Item eventKey="4" onSelect={()=>handleSelectslmrC(4)}>4</Dropdown.Item>
                     <Dropdown.Item eventKey="5" onSelect={()=>handleSelectslmrC(5)}>5</Dropdown.Item>
                 </DropdownButton>
 
@@ -367,30 +363,3 @@ export function Page1(props){
     </div>
     );
 }
-<Table striped bordered hover>
-  <thead>
-    <tr>
-      <th>Summary</th>
-      <th>Inherent</th>
-      <th>Residual</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Overall Risk</td>
-      <td>Very High</td>
-      <td>Very Low</td>
-    </tr>
-    <tr>
-      <td>Primary LM</td>
-      <td> &#60;$9,999 </td>
-      <td> &#60;$9,999</td>
-    </tr>
-    <tr>
-      <td>Secondary LM</td>
-      <td>&#60;$10,000,000</td>
-      <td>&#60;$100,000</td>
-    </tr>
-  </tbody>
-</Table>
