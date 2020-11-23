@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import { ListGroup ,FormControl, InputGroup, Table, Container, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
-import { ListGroup ,FormControl, InputGroup, Table, Container, Row, Col } from 'react-bootstrap'
 import {getInstance} from './utils/ToolCalcs'
 import {submit} from './utils/submit'
 
@@ -140,10 +140,6 @@ export function Page1(props){
     console.log(treeData);
     submit(treeData, nameEntered, categoryEntered, notesEntered);
   };
-
-  const prependDocArray=(document) => {
-
-  }
 
   return(
     <div hidden={!active}>
@@ -387,30 +383,3 @@ export function Page1(props){
     </div>
     );
 }
-<Table striped bordered hover>
-  <thead>
-    <tr>
-      <th>Summary</th>
-      <th>Inherent</th>
-      <th>Residual</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Overall Risk</td>
-      <td>Very High</td>
-      <td>Very Low</td>
-    </tr>
-    <tr>
-      <td>Primary LM</td>
-      <td> &#60;$9,999 </td>
-      <td> &#60;$9,999</td>
-    </tr>
-    <tr>
-      <td>Secondary LM</td>
-      <td>&#60;$10,000,000</td>
-      <td>&#60;$100,000</td>
-    </tr>
-  </tbody>
-</Table>
