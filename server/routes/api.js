@@ -19,10 +19,18 @@ router.get('/',(req, res) => {
 });   
 
 router.post('/save', (req, res) => {
-  //console.log('ooga booga');
-  console.log('name:', req.name);
-  res.json({
-    msg: 'Data received'
+  console.log('name:', req.body);
+  const data = req.body;
+
+  const newentry = new entrymodel(data);
+
+  newentry.save((error) => {
+    if(error){
+      res.status(500).json({msg: 'Internal server error'});
+    }
+    else{
+      res.json({msg: 'Data received'});
+    }
   });
 });
 

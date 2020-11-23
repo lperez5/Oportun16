@@ -14,6 +14,10 @@ export function Page1(props){
 
   const {active} = props;
 
+  const [nameEntered, setNameEntered] = useState('');
+  const [categoryEntered, setCategoryEntered] = useState('');
+  const [notesEntered, setNotesEntered] = useState('');
+
   const [padI, setpadI] = useState('');
   const [padC, setpadC] = useState('');
   const [cfaI, setcfaI] = useState('');
@@ -39,6 +43,19 @@ export function Page1(props){
   const [buttonDisabled10, setButtonDisabled10] = useState(true);
   const [buttonDisabled11, setButtonDisabled11] = useState(true);
   const [buttonDisabled12, setButtonDisabled12] = useState(true);
+
+  const handleName = event => {
+    setNameEntered(event.target.value);
+  }
+
+  const handleCategory = event => {
+    setCategoryEntered(event.target.value);
+  }
+
+  const handleNotes = event => {
+    setNotesEntered(event.target.value);
+    console.log(notesEntered);
+  }
 
   const handleSelectpadI=(value)=>{
     Tool.setPADInherent(value-1);
@@ -121,7 +138,7 @@ export function Page1(props){
     alert("You chose " + padI + " and " + padC);
     var treeData = Tool.getTreeData();
     console.log(treeData);
-    submit(treeData);
+    submit(treeData, nameEntered, categoryEntered, notesEntered);
   };
 
   const prependDocArray=(document) => {
@@ -161,7 +178,7 @@ export function Page1(props){
                     <InputGroup.Prepend>
                       <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Type of Loss Event</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <FormControl onChange={handleCategory} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </InputGroup>
                 </div>
               </Col>
@@ -171,14 +188,14 @@ export function Page1(props){
                     <InputGroup.Prepend>
                       <InputGroup.Text style = {{width:80}} id="inputGroup-sizing">Analyst</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <FormControl onChange={handleName} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </InputGroup>
 
                   <InputGroup style = {{ height: 125}} size="sm" className="mb-3">
                     <InputGroup.Prepend>
                       <InputGroup.Text style = {{width:80, textAlign: 'center'}} id="inputGroup-sizing">Notes</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl as="textarea" style = {{height: 125}} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <FormControl onChange={handleNotes} as="textarea" style = {{height: 125}} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </InputGroup>
                 </div>
               </Col>
@@ -258,10 +275,10 @@ export function Page1(props){
                 </DropdownButton>
 
                 <DropdownButton title={slmrC} id = "SLMRControls">
-                    <Dropdown.Item eventKey="1" onSelect={()=>handleSelectslmrC(5)}>1</Dropdown.Item>
-                    <Dropdown.Item eventKey="2" onSelect={()=>handleSelectslmrC(5)}>2</Dropdown.Item>
-                    <Dropdown.Item eventKey="3" onSelect={()=>handleSelectslmrC(5)}>3</Dropdown.Item>
-                    <Dropdown.Item eventKey="4" onSelect={()=>handleSelectslmrC(5)}>4</Dropdown.Item>
+                    <Dropdown.Item eventKey="1" onSelect={()=>handleSelectslmrC(1)}>1</Dropdown.Item>
+                    <Dropdown.Item eventKey="2" onSelect={()=>handleSelectslmrC(2)}>2</Dropdown.Item>
+                    <Dropdown.Item eventKey="3" onSelect={()=>handleSelectslmrC(3)}>3</Dropdown.Item>
+                    <Dropdown.Item eventKey="4" onSelect={()=>handleSelectslmrC(4)}>4</Dropdown.Item>
                     <Dropdown.Item eventKey="5" onSelect={()=>handleSelectslmrC(5)}>5</Dropdown.Item>
                 </DropdownButton>
 

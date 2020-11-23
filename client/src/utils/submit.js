@@ -1,12 +1,13 @@
 import axios from 'axios';
 
-export function submit(treeData){
+export function submit(treeData, nameEntered, categoryEntered, notesEntered){
     const payload = {
-        name: "Luis",
-        category: "Availability",
-        data: treeData
-      }
-      console.log(treeData);
+        name: nameEntered,
+        category: categoryEntered,
+        data: treeData,
+        notes: notesEntered
+    };
+    console.log(payload.name);
 
     axios({
         url: '/api/save',
