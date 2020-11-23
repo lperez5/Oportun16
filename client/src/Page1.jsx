@@ -17,6 +17,9 @@ export function Page1(props){
   const [nameEntered, setNameEntered] = useState('');
   const [categoryEntered, setCategoryEntered] = useState('');
   const [notesEntered, setNotesEntered] = useState('');
+  const [assetEntered, setAssetEntered] = useState('');
+  const [threatEntered, setThreatEntered] = useState('');
+  const [lossEntered, setLossEntered] = useState('');
 
   const [padI, setpadI] = useState('');
   const [padC, setpadC] = useState('');
@@ -54,7 +57,18 @@ export function Page1(props){
 
   const handleNotes = event => {
     setNotesEntered(event.target.value);
-    console.log(notesEntered);
+  }
+
+  const handleAsset = event => {
+    setAssetEntered(event.target.value);
+  }
+
+  const handleThreat = event => {
+    setThreatEntered(event.target.value);
+  }
+
+  const handleLoss = event => {
+    setLossEntered(event.target.value);
   }
 
   const handleSelectpadI=(value)=>{
@@ -138,7 +152,7 @@ export function Page1(props){
     alert("You chose " + padI + " and " + padC);
     var treeData = Tool.getTreeData();
     console.log(treeData);
-    submit(treeData, nameEntered, categoryEntered, notesEntered);
+    submit(treeData, nameEntered, categoryEntered, notesEntered, assetEntered, threatEntered, lossEntered);
   };
 
   const prependDocArray=(document) => {
@@ -157,21 +171,21 @@ export function Page1(props){
                     <InputGroup.Prepend>
                       <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Asset At Risk</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <FormControl onChange={handleAsset} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </InputGroup>
 
                   <InputGroup size="sm" className="mb-3">
                     <InputGroup.Prepend>
                       <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Threat Community</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <FormControl onChange={handleThreat} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </InputGroup>
 
                   <InputGroup size="sm" className="mb-3">
                     <InputGroup.Prepend>
                       <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Loss Event</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <FormControl onChange={handleLoss} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </InputGroup>
 
                   <InputGroup size="sm" className="mb-3">

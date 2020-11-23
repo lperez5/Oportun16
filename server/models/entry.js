@@ -6,9 +6,12 @@ const entry = new Schema({
   name: String,
   category: String,
   data: Array,
-  dateCreated: {type: String, default: Date.now()},
-  lastUpdated: {type: String, default: Date.now()},
-  notes: String
+  notes: String,
+  asset: String,
+  threat: String,
+  loss: String,
+  dateCreated: {type: String, default: new Intl.DateTimeFormat('en-US').format(Date.now())},
+  lastUpdated: {type: String, default: new Intl.DateTimeFormat('en-US').format(Date.now())},
 });
 
 //Model
