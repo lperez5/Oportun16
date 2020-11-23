@@ -7,7 +7,7 @@ const entry = new Schema({
   dateCreated: {type: String, default: Date.now()},
   lastUpdated: {type: String, default: Date.now()},
   category: String,
-  treeData: Array
+  data: Array
 });
 
 //Model
