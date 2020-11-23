@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import {getInstance} from './utils/ToolCalcs'
+import {submit} from './utils/submit'
 
 
 
@@ -12,6 +13,10 @@ export function Page1(props){
   const Tool = getInstance();
 
   const {active} = props;
+
+  const [nameEntered, setNameEntered] = useState('');
+  const [categoryEntered, setCategoryEntered] = useState('');
+  const [notesEntered, setNotesEntered] = useState('');
 
   const [padI, setpadI] = useState('');
   const [padC, setpadC] = useState('');
@@ -38,6 +43,19 @@ export function Page1(props){
   const [buttonDisabled10, setButtonDisabled10] = useState(true);
   const [buttonDisabled11, setButtonDisabled11] = useState(true);
   const [buttonDisabled12, setButtonDisabled12] = useState(true);
+
+  const handleName = event => {
+    setNameEntered(event.target.value);
+  }
+
+  const handleCategory = event => {
+    setCategoryEntered(event.target.value);
+  }
+
+  const handleNotes = event => {
+    setNotesEntered(event.target.value);
+    console.log(notesEntered);
+  }
 
   const handleSelectpadI=(value)=>{
     Tool.setPADInherent(value-1);
@@ -115,11 +133,13 @@ export function Page1(props){
     setButtonDisabled12(false);
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (event) => {
+    event.preventDefault()
     alert("You chose " + padI + " and " + padC);
     var treeData = Tool.getTreeData();
     console.log(treeData);
-  }
+    submit(treeData, nameEntered, categoryEntered, notesEntered);
+  };
 
   return(
     <div hidden={!active}>
@@ -154,7 +174,7 @@ export function Page1(props){
                     <InputGroup.Prepend>
                       <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Type of Loss Event</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <FormControl onChange={handleCategory} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </InputGroup>
                 </div>
               </Col>
@@ -164,20 +184,20 @@ export function Page1(props){
                     <InputGroup.Prepend>
                       <InputGroup.Text style = {{width:80}} id="inputGroup-sizing">Analyst</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <FormControl onChange={handleName} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </InputGroup>
 
                   <InputGroup style = {{ height: 125}} size="sm" className="mb-3">
                     <InputGroup.Prepend>
                       <InputGroup.Text style = {{width:80, textAlign: 'center'}} id="inputGroup-sizing">Notes</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl as="textarea" style = {{height: 125}} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <FormControl onChange={handleNotes} as="textarea" style = {{height: 125}} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </InputGroup>
                 </div>
               </Col>
             </Row>
             <Row>
-              <Col><Button  onClick={handleSubmit} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12} style={{backgroundColor: '#0B0C10', borderColor: '#45A293', color: '#45A293', borderRadius: '100px'}} >Submit</Button>{' '}
+              <Col><Button onClick = {handleSubmit} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12} style={{backgroundColor: '#0B0C10', borderColor: '#45A293', color: '#45A293', borderRadius: '100px'}} >Submit</Button>{' '}
                 <DropdownButton title={padI} id = "PADInherent">
                     <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadI(1)}>1</Dropdown.Item>
                     <Dropdown.Item eventKey="2" onSelect={()=>handleSelectpadI(2)}>2</Dropdown.Item>
