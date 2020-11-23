@@ -19,7 +19,7 @@ router.get('/',(req, res) => {
 });   
 
 router.post('/save', (req, res) => {
-  console.log('name:', req.body);
+  //console.log('name:', req.body);
   const data = req.body;
 
   const newentry = new entrymodel(data);

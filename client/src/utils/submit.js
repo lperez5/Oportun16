@@ -10,7 +10,7 @@ export function submit(treeData, nameEntered, categoryEntered, notesEntered, ass
         threat: threatEntered,
         loss: lossEntered
     };
-    console.log(payload.notes);
+    //console.log(payload.notes);
 
     axios({
         url: '/api/save',
