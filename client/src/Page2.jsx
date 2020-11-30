@@ -5,8 +5,7 @@ import Form from 'react-bootstrap/Form'
 import Card from 'react-bootstrap/Card'
 
 export function Page2(props){
-    const {active} = props;
-    const {dbCacheArray} = props;
+    const {active, dbCacheArray, setdbCacheArray} = props;
 
     const [nameEntered, setNameEntered] = useState('');
     const [date1, setDate1] = useState('');
@@ -47,7 +46,7 @@ export function Page2(props){
     }
 
     const categoryFilter = (document, categorySelected) => {
-        if(categorySelected == 'All' || document.category == (categorySelected)){
+        if(categorySelected === 'All' || document.category === (categorySelected)){
             return true;
         }
         else{
@@ -62,7 +61,7 @@ export function Page2(props){
                     <Col>
                         <Form>
                             <Form.Group controlId="Name">
-                                <Form.Control onChange={handleName} autocomplete="off" type="NameSearch" placeholder="Name"/>
+                                <Form.Control onChange={handleName} autoComplete="off" type="NameSearch" placeholder="Name"/>
                             </Form.Group>
                         </Form>
                     </Col>
