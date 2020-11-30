@@ -149,7 +149,6 @@ export function Page1(props){
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert("You chose " + padI + " and " + padC);
     var treeData = Tool.getTreeData();
     submit(treeData, nameEntered, categoryEntered, notesEntered, assetEntered, threatEntered, lossEntered);
   };
@@ -306,8 +305,6 @@ export function Page1(props){
                     <Dropdown.Item eventKey="4" onSelect={()=>handleSelectslp(4)}>4</Dropdown.Item>
                     <Dropdown.Item eventKey="5" onSelect={()=>handleSelectslp(5)}>5</Dropdown.Item>
                 </DropdownButton>
-
-                <h4>You selected {padI} and {padC}</h4>
               </Col>
             </Row>
           </Col>

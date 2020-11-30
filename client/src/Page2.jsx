@@ -67,6 +67,9 @@ export function Page2(props){
                     </Col>
                     <Col>
                     <InputGroup className="mb-3">
+                    <InputGroup.Prepend>
+                        <Button variant="outline-secondary">Filter</Button>
+                    </InputGroup.Prepend>
                         <InputGroup.Prepend>
                             <InputGroup.Text>Dates</InputGroup.Text>
                         </InputGroup.Prepend>

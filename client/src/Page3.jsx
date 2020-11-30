@@ -6,6 +6,16 @@ export function Page3(props){
 
   const {active, dbCacheArray, setdbCacheArray} = props;
 
+  const totalDocs = dbCacheArray.length;
+  var numVeryHighInherentOR = 0;
+
+  for(var j=0; j<totalDocs; j++){
+    if(dbCacheArray[j].data[0] === 4){
+      numVeryHighInherentOR += 1;
+      console.log(numVeryHighInherentOR);
+    };
+  }
+
   return(
     <div hidden={!active}>
       <Container>
