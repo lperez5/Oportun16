@@ -41,8 +41,8 @@ export function Navbar(){
         </div>
         <Pages >
             <Page1 key={1} active={1 === active}></Page1>
-            <Page2 key={2} active={2 === active} dbCacheArray={temp} dbCacheSetter={setTemp}></Page2>
-            <Page3 key={3} active={3 === active} dbCacheArray={temp} dbCacheSetter={setTemp}></Page3>
+            <Page2 key={2} active={2 === active} dbCacheArray={temp} setdbCacheArray={setTemp}></Page2>
+            <Page3 key={3} active={3 === active} dbCacheArray={temp} setdbCacheArray={setTemp}></Page3>
             <Page4 key={4} active={4 === active}></Page4>
         </Pages>
         </React.Fragment>
