@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card'
 
 export function Page2(props){
     const {active} = props;
+    const {dbCacheArray} = props;
 
     const [nameEntered, setNameEntered] = useState('');
     const [date1, setDate1] = useState('');
@@ -54,51 +55,6 @@ export function Page2(props){
         }
     }
 
-    const documentArray=[
-        {
-            name: "sarah",
-            date: "today",
-            category: "Confidentiality",
-            data: "[1,3]"
-        },
-        {
-            name: "mat",
-            date: "today",
-            category: "Integrity",
-            data: "[3,4,5]"
-        },
-        {
-            name: "david",
-            date: "yesterday",
-            category: "Availability",
-            data: "[3,4,5]"
-        },
-        {
-            name: "daniel",
-            date: "last year",
-            category: "Availability",
-            data: "[3,4,5]"
-        },
-        {
-            name: "daniel",
-            date: "today",
-            category: "Availability",
-            data: "[3,4,5]"
-        },
-        {
-            name: "daniel",
-            date: " last week",
-            category: "Availability",
-            data: "[3,4,5]"
-        },
-        {
-            name: "daniel",
-            date: "some day",
-            category: "Availability",
-            data: "[3,4,5]"
-        },
-    ];
-
     return(
         <div hidden={!active}>
             <Container>
@@ -136,7 +92,7 @@ export function Page2(props){
 
             <Container fluid>
                 {
-                    documentArray.length === 0 ? <p> "No results" </p> : documentArray
+                    dbCacheArray.length === 0 ? <p> "No results" </p> : dbCacheArray
                                                                             .filter(document => nameFilter(document, nameEntered))
                                                                             //.filter(document => dateFilter(document, date1, date2))
                                                                             .filter(document => categoryFilter(document, categorySelected))

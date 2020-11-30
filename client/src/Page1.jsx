@@ -151,7 +151,6 @@ export function Page1(props){
     event.preventDefault()
     alert("You chose " + padI + " and " + padC);
     var treeData = Tool.getTreeData();
-    //console.log(treeData);
     submit(treeData, nameEntered, categoryEntered, notesEntered, assetEntered, threatEntered, lossEntered);
   };
 
@@ -344,47 +343,53 @@ export function Page1(props){
                   </Table>
                 <Row>
                   <Col>
-                    <ListGroup variant="flush" style={{fontSize:14}}>
+                    <ListGroup variant="flush" style={{fontSize:12}}>
                       <ListGroup.Item style={{fontWeight: 'bold'}}>Loss Magnitude</ListGroup.Item>
                       <ListGroup.Item>1. &#60;$9,999</ListGroup.Item>
-                      <ListGroup.Item>2. $10,000 to $99,999</ListGroup.Item>
-                      <ListGroup.Item>3. $100,000 to $999,999</ListGroup.Item>
-                      <ListGroup.Item>4. $1,000,000 to $9,999,999</ListGroup.Item>
+                      <ListGroup.Item>2. $10,000 - $99,999</ListGroup.Item>
+                      <ListGroup.Item>3. $100,000 - $999,999</ListGroup.Item>
+                      <ListGroup.Item>4. $1,000,000 - $9,999,999</ListGroup.Item>
                       <ListGroup.Item>5. &#62;$10,000,000</ListGroup.Item>
                     </ListGroup>
                     <br/>
-                    <ListGroup variant="flush" style={{fontSize:14}}>
-                      <ListGroup.Item   style={{fontWeight: 'bold'}}>Loss Magnitude </ListGroup.Item>
-                      <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                      <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-                      <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+                    <ListGroup variant="flush" style={{fontSize:12}}>
+                      <ListGroup.Item   style={{fontWeight: 'bold'}}>Contact Frequency</ListGroup.Item>
+                      <ListGroup.Item>1. &#60;0.1 times per year</ListGroup.Item>
+                      <ListGroup.Item>2. 0.1 - 1 times per year</ListGroup.Item>
+                      <ListGroup.Item>3. 1 - 10 times per year</ListGroup.Item>
+                      <ListGroup.Item>4. 10 - 100 times per year</ListGroup.Item>
+                      <ListGroup.Item>5. &#62;100 times per year</ListGroup.Item>
                     </ListGroup>
                   </Col>
                   <Col>
-                    <ListGroup variant="flush"  style={{fontSize:14}}>
+                    <ListGroup variant="flush"  style={{fontSize:12}}>
                       <ListGroup.Item style={{fontWeight: 'bold'}}>Probability</ListGroup.Item>
-                      <ListGroup.Item>1. 0% to 10%</ListGroup.Item>
-                      <ListGroup.Item>2. 10% to 30%</ListGroup.Item>
-                      <ListGroup.Item>3. 30% to 70%</ListGroup.Item>
-                      <ListGroup.Item>4. 70% to 90%</ListGroup.Item>
-                      <ListGroup.Item>5. 90% to 100%</ListGroup.Item>
+                      <ListGroup.Item>1. 0% - 10%</ListGroup.Item>
+                      <ListGroup.Item>2. 10% - 30%</ListGroup.Item>
+                      <ListGroup.Item>3. 30% - 70%</ListGroup.Item>
+                      <ListGroup.Item>4. 70% - 90%</ListGroup.Item>
+                      <ListGroup.Item>5. 90% - 100%</ListGroup.Item>
                     </ListGroup>
                     <br/>
-                    <ListGroup variant="flush">
-                      <ListGroup.Item>Loss Magnitude</ListGroup.Item>
-                      <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                      <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-                      <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+                    <ListGroup variant="flush" style={{fontSize:12}}>
+                      <ListGroup.Item style={{fontWeight: 'bold'}}>Threat Capability</ListGroup.Item>
+                      <ListGroup.Item>1. No technical skills</ListGroup.Item>
+                      <ListGroup.Item>2. Some technical skills</ListGroup.Item>
+                      <ListGroup.Item>3. Advanced computer user</ListGroup.Item>
+                      <ListGroup.Item>4. Network and programming skills</ListGroup.Item>
+                      <ListGroup.Item>5. Security penetration skills</ListGroup.Item>
                     </ListGroup>
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                    <ListGroup variant="flush">
+                    <ListGroup variant="flush" style={{fontSize:12}}>
                       <ListGroup.Item style={{fontWeight: 'bold'}}>Resistance Strength</ListGroup.Item>
-                      <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                      <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-                      <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+                      <ListGroup.Item>1. Only protects against bottom 2% of an average threat population</ListGroup.Item>
+                      <ListGroup.Item>2. Only protects against bottom 16% of an average threat population</ListGroup.Item>
+                      <ListGroup.Item>3. Protects against the average threat agent</ListGroup.Item>
+                      <ListGroup.Item>4. Protects against all but the top 16% of an average threat population</ListGroup.Item>
+                      <ListGroup.Item>5. Protects against all but the top 2% of an average threat population</ListGroup.Item>
                     </ListGroup>
                   </Col>
                   </Row>
