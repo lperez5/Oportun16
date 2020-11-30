@@ -6,6 +6,13 @@ import {Page2} from '../../Page2.jsx'
 import {Page3} from '../../Page3.jsx'
 import {Page4} from '../../Page4.jsx'
 import {Page5} from '../../Page5.jsx'
+var DBcache = [];
+
+export function handleCache(data){
+    DBcache = data;
+    console.log(DBcache[0]);
+    console.log(DBcache[1]);
+}
 
 export function Navbar(props){
     const [active,setActive] = useState(1);
