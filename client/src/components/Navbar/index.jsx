@@ -8,18 +8,18 @@ import {Page4} from '../../Page4.jsx'
 import {Page5} from '../../Page5.jsx'
 
 export function Navbar(props){
-    
+
     const {dbArray} = props;
     const [active,setActive] = useState(1);
     const [temp,setTemp] = useState([]);
-    
+
     return(
         <React.Fragment>
         <div>
             <Pagination theme='green' size="lg">
                 <PageItem key={1} active={1 === active} onClick={()=>setActive(1)}>Risk Tool</PageItem>
                 <PageItem key={2} active={2 === active} onClick={()=>{setActive(2);setTemp(dbArray)}}>DB Entires</PageItem>
-                <PageItem key={3} active={3 === active} onClick={()=>setActive(3)}>Heatmap</PageItem>
+                <PageItem key={3} active={3 === active} onClick={()=>{setActive(3);setTemp(dbArray)}}>Heatmap</PageItem>
                 <PageItem key={4} active={4 === active} onClick={()=>setActive(4)}>Info</PageItem>
             </Pagination>
         </div>
