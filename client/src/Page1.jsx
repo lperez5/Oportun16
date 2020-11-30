@@ -151,7 +151,6 @@ export function Page1(props){
     event.preventDefault()
     alert("You chose " + padI + " and " + padC);
     var treeData = Tool.getTreeData();
-    //console.log(treeData);
     submit(treeData, nameEntered, categoryEntered, notesEntered, assetEntered, threatEntered, lossEntered);
   };
 

@@ -6,6 +6,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 
 export function Page3(props){
     const {active} = props;
+    const {dbCacheArray} = props;
 
     const [d1, setd1] = useState('');
 
