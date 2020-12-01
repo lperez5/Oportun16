@@ -7,16 +7,15 @@ router.get('/',(req, res) => {
       username: 'jortega',
       age: 21
     };
-  
+
     entrymodel.find({ })
       .then((data)=>{
-        console.log('Data: ', data);
         res.json(data);
       })
       .catch((error)=> {
         console.log('error');
       });
-});   
+});
 
 router.post('/save', (req, res) => {
   //console.log('name:', req.body);
