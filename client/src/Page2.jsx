@@ -149,8 +149,8 @@ export function Page2(props){
                         <InputGroup.Prepend>
                             <InputGroup.Text>Dates</InputGroup.Text>
                         </InputGroup.Prepend>
-                        <Form.Control onChange={handleDate1} />
-                        <Form.Control onChange={handleDate2}/>
+                        <FormControl onChange={handleDate1} />
+                        <FormControl onChange={handleDate2}/>
                         <InputGroup.Prepend>
                         <Button variant="outline-secondary"
                         // onClick={dbCacheArray.filter(document => dateFilter(document, date1, date2))}
