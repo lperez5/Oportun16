@@ -9,24 +9,23 @@ import {Page5} from '../../Page5.jsx'
 
 export function Navbar(props){
 
-    const {dbArray} = props;
+    const {dbCacheArray, setdbCacheArray} = props;
     const [active,setActive] = useState(1);
-    const [temp,setTemp] = useState([]);
 
     return(
         <React.Fragment>
         <div>
             <Pagination theme='green' size="lg">
                 <PageItem key={1} active={1 === active} onClick={()=>setActive(1)}>Risk Tool</PageItem>
-                <PageItem key={2} active={2 === active} onClick={()=>{setActive(2);setTemp(dbArray)}}>DB Entires</PageItem>
-                <PageItem key={3} active={3 === active} onClick={()=>{setActive(3);setTemp(dbArray)}}>Heatmap</PageItem>
+                <PageItem key={2} active={2 === active} onClick={()=>setActive(2)}>DB Entires</PageItem>
+                <PageItem key={3} active={3 === active} onClick={()=>setActive(3)}>Heatmap</PageItem>
                 <PageItem key={4} active={4 === active} onClick={()=>setActive(4)}>Info</PageItem>
             </Pagination>
         </div>
         <Pages>
-            <Page1 key={1} active={1 === active}></Page1>
-            <Page2 key={2} active={2 === active} dbCacheArray={temp} setdbCacheArray={setTemp}></Page2>
-            <Page3 key={3} active={3 === active} dbCacheArray={temp} setdbCacheArray={setTemp}></Page3>
+            <Page1 key={1} active={1 === active} dbCacheArray={dbCacheArray} setdbCacheArray={setdbCacheArray}></Page1>
+            <Page2 key={2} active={2 === active} dbCacheArray={dbCacheArray} setdbCacheArray={setdbCacheArray}></Page2>
+            <Page3 key={3} active={3 === active} dbCacheArray={dbCacheArray} setdbCacheArray={setdbCacheArray}></Page3>
             <Page4 key={4} active={4 === active}></Page4>
         </Pages>
         </React.Fragment>

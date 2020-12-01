@@ -1,32 +1,36 @@
-import React, {useState} from 'react'
+import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {Navbar} from './components/Navbar/index.jsx'
 
-var DBarray = [];
 class App extends React.Component {
 
-  state = {
-    title: '',
-    body: '',
-    posts: []
-  };
+  constructor(){
+    super();
+    this.state = {
+      posts: [],
+    };
+    this.setStateHandler = this.setStateHandler.bind(this);
+  }
 
   async componentDidMount() {
     const URL = '/api';
     const response = await fetch(URL);
-    DBarray = await response.json();
-    this.setState({posts: DBarray});
-    //console.log(DBarray[0])
-    console.log('Data received')
+    const posts = await response.json();
+    posts.reverse();
+    this.setState({posts});
+    console.log("mounted");
   };
+
+  setStateHandler(posts){
+    this.setState({posts});
+  }
+
   render() {
 
-    console.log('State: ', this.state);
-    //JSX
     return(
           <div className="App">
-            <Navbar dbArray = {DBarray} />
+            <Navbar dbCacheArray = {this.state.posts} setdbCacheArray = {this.setStateHandler} />
           </div>
     );
   }

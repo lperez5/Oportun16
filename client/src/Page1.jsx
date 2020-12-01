@@ -12,7 +12,7 @@ export function Page1(props){
 
   const Tool = getInstance();
 
-  const {active} = props;
+  const {active, dbCacheArray, setdbCacheArray} = props;
 
   const [nameEntered, setNameEntered] = useState('');
   const [categoryEntered, setCategoryEntered] = useState('');
@@ -148,9 +148,20 @@ export function Page1(props){
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-    var treeData = Tool.getTreeData();
-    submit(treeData, nameEntered, categoryEntered, notesEntered, assetEntered, threatEntered, lossEntered);
+    event.preventDefault();
+    const treeData = Tool.getTreeData();
+    const newEntry = {
+      name: nameEntered,
+      category: categoryEntered,
+      data: treeData,
+      notes: notesEntered,
+      asset: assetEntered,
+      threat: threatEntered,
+      loss: lossEntered
+    };
+    console.log(dbCacheArray);
+    setdbCacheArray([newEntry,...dbCacheArray]);
+    submit(newEntry);
   };
 
   return(

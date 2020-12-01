@@ -54,6 +54,26 @@ export function Page2(props){
         }
     }
 
+    const DataRows = () => {
+        if(dbCacheArray.length === 0){
+            return(<p> "No results" </p>)
+        }
+        else{
+            const Rows = [];
+            let i = 0;
+            while (i < dbCacheArray.length){
+                console.log(nameEntered, categorySelected);
+                if(nameFilter(dbCacheArray[i], nameEntered) === true &&
+                categoryFilter(dbCacheArray[i], categorySelected) === true){
+                    Rows.push(<DataRow key={i} {...dbCacheArray[i]}/>);
+                }
+                i++;
+            }
+            Rows.length = 10;
+            return(<> {Rows} </>)
+        }
+    }
+
     return(
         <div hidden={!active}>
             <Container>
@@ -93,13 +113,7 @@ export function Page2(props){
             </Container>
 
             <Container fluid>
-                {
-                    dbCacheArray.length === 0 ? <p> "No results" </p> : dbCacheArray
-                                                                            .filter(document => nameFilter(document, nameEntered))
-                                                                            //.filter(document => dateFilter(document, date1, date2))
-                                                                            .filter(document => categoryFilter(document, categorySelected))
-                                                                            .map((document,index) => <DataRow key={index} {...document}/>)
-                }
+                <DataRows/>
             </Container>
         </div>
     );

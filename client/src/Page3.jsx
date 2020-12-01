@@ -5,9 +5,9 @@ import Button from 'react-bootstrap/Button'
 export function Page3(props){
 
   const {active, dbCacheArray, setdbCacheArray} = props;
-  var numVeryHighInherentOR = 0;
+  let numVeryHighInherentOR = 0;
 
-  for(var j=0; j<getTotalDocs(dbCacheArray); j++){
+  for(let j=0; j<getTotalDocs(dbCacheArray); j++){
     if(dbCacheArray[j].data[0] === 4){
       numVeryHighInherentOR += 1;
     };
@@ -36,7 +36,7 @@ export function Page3(props){
 
 function xRecent(arr, x){
   const newArr = [];
-  for(var i=arr.length-1; i>=(arr.length-5); i--){
+  for(let i=arr.length-1; i>=(arr.length-5); i--){
     newArr.push(arr[i]);
   }
   console.log(newArr);
@@ -49,9 +49,9 @@ function getTotalDocs(arr){
 }
 
 function monthlyChangePRInherent(arr){
-  var thisMonthAvg = 0;
-  var lastMonthAvg = 0;
-  var difference = 0;
+  let thisMonthAvg = 0;
+  let lastMonthAvg = 0;
+  let difference = 0;
   //for loop check every date until we leave this month
   //for loop check every date after ^^ until we leave the month before this month
   //this month avg - [last month avg]
