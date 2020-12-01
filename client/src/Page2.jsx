@@ -33,7 +33,8 @@ export function Page2(props){
     }
 
     const nameFilter = (document, nameEntered) => {
-        if(document.name.includes(nameEntered)){
+        const lowerName = document.name.toLowerCase();
+        if(lowerName.includes(nameEntered.toLowerCase())){
             return true;
         }
         else{
@@ -42,7 +43,7 @@ export function Page2(props){
     }
 
     const dateFilter = (document, date1, date2) => {
-        if(document.date >= date1 && document.date <= date2){
+        if(document.dateCreated >= date1 && document.dateCreated <= date2){
             return true;
         }
         else{
@@ -74,12 +75,13 @@ export function Page2(props){
                 i++;
             }
             Rows.length = 10;
+            console.log(Rows);
             return(<> {Rows} </>)
         }
     }
 
     function DataRow(props){
-        const{name, date, category, data} = props;
+        const{name, dateCreated, category, data} = props;
         return(
             <Row style={{ height: '8vh' }}>
                 <Col>
@@ -95,7 +97,7 @@ export function Page2(props){
                     <Card style={{ width: '12rem' }}>
                         <Card.Body>
                             <Card.Text>
-                                {date}
+                                {dateCreated}
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -113,7 +115,7 @@ export function Page2(props){
                     <Card style={{ width: '12rem' }}>
                         <Card.Body>
                             <Card.Text>
-                                {data}
+                                {data[0]}, {data[1]}
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -151,7 +153,8 @@ export function Page2(props){
                         <FormControl />
                         <FormControl />
                         <InputGroup.Prepend>
-                        <Button variant="outline-secondary">Filter</Button>
+                        <Button variant="outline-secondary" onClick={dbCacheArray
+                                                                        .filter(document => dateFilter(document, date1, date2))}>Filter</Button>
                         </InputGroup.Prepend>
                     </InputGroup>
                     </Col>
