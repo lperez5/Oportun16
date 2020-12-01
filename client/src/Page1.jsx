@@ -119,7 +119,7 @@ export function Page1(props){
 
     return(
         <div hidden={!active}>
-            <Button  onClick={handleClick} disabled={buttonDisabled, buttonDisabled2, buttonDisabled3, buttonDisabled4, buttonDisabled5, buttonDisabled6, buttonDisabled7, buttonDisabled8, buttonDisabled9, buttonDisabled10, buttonDisabled11, buttonDisabled12} style={{backgroundColor: '#0B0C10', borderColor: '#45A293', color: '#45A293', borderRadius: '100px'}} >Submit</Button>{' '}
+            <Button  onClick={handleClick} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12} style={{backgroundColor: '#0B0C10', borderColor: '#45A293', color: '#45A293', borderRadius: '100px'}} >Submit</Button>{' '}
 
             <DropdownButton title={padI} id = "PADInherent">
                 <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadI(1)}>1</Dropdown.Item>

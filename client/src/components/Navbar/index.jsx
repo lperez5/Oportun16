@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import Pagination from 'react-bootstrap/Pagination'
 import PageItem from 'react-bootstrap/PageItem'
+import '../../Navbar.css'
+import logo from '../../logo.png'
 import {Page1} from '../../Page1.jsx'
 import {Page2} from '../../Page2.jsx'
 import {Page3} from '../../Page3.jsx'
@@ -13,13 +15,16 @@ export function Navbar(props){
     return(
         <React.Fragment>
         <div>
-            <Pagination size="lg">
-                <PageItem key={1} active={1 === active} onClick={()=>setActive(1)}>risk tool</PageItem>
-                <PageItem key={2} active={2 === active} onClick={()=>setActive(2)}>DB entires</PageItem>
-                <PageItem key={3} active={3 === active} onClick={()=>setActive(3)}>Heatmap</PageItem>
-                <PageItem key={4} active={4 === active} onClick={()=>setActive(4)}>4</PageItem>
-                <PageItem key={5} active={5 === active} onClick={()=>setActive(5)}>5</PageItem>
-            </Pagination>
+            <nav className="NavbarItems">
+                <h1><img className="logo-style" src={logo}/></h1>
+                <Pagination size="lg">
+                    <PageItem key={1} active={1 === active} onClick={()=>setActive(1)}>risk tool</PageItem>
+                    <PageItem key={2} active={2 === active} onClick={()=>setActive(2)}>DB entires</PageItem>
+                    <PageItem key={3} active={3 === active} onClick={()=>setActive(3)}>Heatmap</PageItem>
+                    <PageItem key={4} active={4 === active} onClick={()=>setActive(4)}>4</PageItem>
+                    <PageItem key={5} active={5 === active} onClick={()=>setActive(5)}>5</PageItem>
+                </Pagination>
+            </nav>
         </div>
         <Pages >
             <Page1 key={1} active={1 === active}></Page1>
