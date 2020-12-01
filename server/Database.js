@@ -1,9 +1,9 @@
 const Search = require('./search');
-var ObjectID = require('mongodb').ObjectID
+const ObjectID = require('mongodb').ObjectID
 
 async function options(client){
     const prompt = require('prompt-sync')({sigint: true});
-    var bool = false;
+    let bool = false;
 
     while(!bool){
       let answer = prompt("Enter function operation: ");
@@ -42,7 +42,7 @@ async function selectData(client, prompt){
 }
 
 async function viewData(client){
-    var array = await client.db("FAIR").collection("Data").find().toArray();
+    let array = await client.db("FAIR").collection("Data").find().toArray();
     for(i = 0; i < array.length; i++){
       console.log();
       console.log(`${i + 1}`);

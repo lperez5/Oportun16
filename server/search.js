@@ -1,13 +1,13 @@
 const Database = require('./Database');
-var namefilter = "";
-var datefilter = "";
-var arr;
+let namefilter = "";
+let datefilter = "";
+let arr;
 
 async function filterSearch(client, prompt){
     arr = await client.db("FAIR").collection("Data").find().toArray();
     console.log(namefilter);
     console.log(datefilter);
-    var result = arr;
+    let result = arr;
     let Name = prompt("Name: ");
     if(Name != "" && result != namefilter){
         namefilter = Name;
@@ -22,7 +22,7 @@ async function filterSearch(client, prompt){
         datefilter = Date;
         result = result.filter(o => o.date === Date);
     }
-    
+
     console.log(result);
 }
 

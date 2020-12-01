@@ -12,7 +12,7 @@ export function Page1(props){
 
   const Tool = getInstance();
 
-  const {active} = props;
+  const {active, dbCacheArray, setdbCacheArray} = props;
 
   const [nameEntered, setNameEntered] = useState('');
   const [categoryEntered, setCategoryEntered] = useState('');
@@ -148,10 +148,20 @@ export function Page1(props){
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-    alert("You chose " + padI + " and " + padC);
-    var treeData = Tool.getTreeData();
-    submit(treeData, nameEntered, categoryEntered, notesEntered, assetEntered, threatEntered, lossEntered);
+    event.preventDefault();
+    const treeData = Tool.getTreeData();
+    const newEntry = {
+      name: nameEntered,
+      category: categoryEntered,
+      data: treeData,
+      notes: notesEntered,
+      asset: assetEntered,
+      threat: threatEntered,
+      loss: lossEntered
+    };
+    console.log(dbCacheArray);
+    setdbCacheArray([newEntry,...dbCacheArray]);
+    submit(newEntry);
   };
 
   return(
@@ -306,8 +316,6 @@ export function Page1(props){
                     <Dropdown.Item eventKey="4" onSelect={()=>handleSelectslp(4)}>4</Dropdown.Item>
                     <Dropdown.Item eventKey="5" onSelect={()=>handleSelectslp(5)}>5</Dropdown.Item>
                 </DropdownButton>
-
-                <h4>You selected {padI} and {padC}</h4>
               </Col>
             </Row>
           </Col>
