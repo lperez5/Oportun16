@@ -8,7 +8,7 @@ export function Page3(props){
   let numVeryHighInherentOR = 0;
 
   for(let j=0; j<getTotalDocs(dbCacheArray); j++){
-    if(dbCacheArray[j].data[0] === 4){
+    if(dbCacheArray[j].data[2] === 4){
       numVeryHighInherentOR += 1;
     };
   }
