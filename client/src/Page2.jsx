@@ -32,8 +32,6 @@ export function Page2(props){
     const handleDelete = event => {
         console.log(event);
         deleteEntry(event);
-        //get ID of document and delete from DB
-        //delete from dbCacheArray using setdbCacheArray()
     }
 
     const nameFilter = (document, nameEntered) => {
@@ -83,7 +81,7 @@ export function Page2(props){
     }
 
     function DataRow(props){
-        const{name, dateCreated, category, data, _id} = props;
+        const{name, dateCreated, category, data} = props;
         return(
             <Row style={{ height: '8vh' }}>
                 <Col>

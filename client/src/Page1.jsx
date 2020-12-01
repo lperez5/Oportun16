@@ -153,6 +153,7 @@ export function Page1(props){
     const newEntry = {
       name: nameEntered,
       category: categoryEntered,
+      dateCreated: "added in current session",
       data: treeData,
       notes: notesEntered,
       asset: assetEntered,
