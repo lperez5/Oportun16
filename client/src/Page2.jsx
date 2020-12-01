@@ -20,7 +20,7 @@ export function Page2(props){
         setDate1(event.target.value);           //for date1 and date 2
     }
     const handleDate2 = event => {
-        setDate1(event.target.value);
+        setDate2(event.target.value);
     }
 
     const handleCategory = event => {
@@ -28,12 +28,13 @@ export function Page2(props){
     }
 
     const handleDelete = event => {
+        console.log(event);
         //get ID of document and delete from DB
         //delete from dbCacheArray using setdbCacheArray()
     }
 
     const nameFilter = (document, nameEntered) => {
-        if(document.name.includes(nameEntered)){
+        if(document.name.toLowerCase().includes(nameEntered.toLowerCase())){
             return true;
         }
         else{
@@ -42,7 +43,7 @@ export function Page2(props){
     }
 
     const dateFilter = (document, date1, date2) => {
-        if(document.date >= date1 && document.date <= date2){
+        if(document.dateCreated >= date1 && document.dateCreated <= date2){
             return true;
         }
         else{
@@ -79,7 +80,7 @@ export function Page2(props){
     }
 
     function DataRow(props){
-        const{name, date, category, data} = props;
+        const{name, dateCreated, category, data, _id} = props;
         return(
             <Row style={{ height: '8vh' }}>
                 <Col>
@@ -95,7 +96,7 @@ export function Page2(props){
                     <Card style={{ width: '12rem' }}>
                         <Card.Body>
                             <Card.Text>
-                                {date}
+                                {dateCreated}
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -113,7 +114,7 @@ export function Page2(props){
                     <Card style={{ width: '12rem' }}>
                         <Card.Body>
                             <Card.Text>
-                                {data}
+                                {data[0]}, {data[1]}
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -124,7 +125,7 @@ export function Page2(props){
                     </Button>
                 </Col>
                 <Col style={{justifyContent: 'stretch'}}>
-                    <Button variant="outline-danger" size='lg' block onClick={handleDelete}>
+                    <Button variant="outline-danger" size='lg' onClick={()=>handleDelete(_id)} block>
                         Delete
                     </Button>
                 </Col>
@@ -148,10 +149,12 @@ export function Page2(props){
                         <InputGroup.Prepend>
                             <InputGroup.Text>Dates</InputGroup.Text>
                         </InputGroup.Prepend>
-                        <FormControl />
-                        <FormControl />
+                        <Form.Control onChange={handleDate1} />
+                        <Form.Control onChange={handleDate2}/>
                         <InputGroup.Prepend>
-                        <Button variant="outline-secondary">Filter</Button>
+                        <Button variant="outline-secondary"
+                        // onClick={dbCacheArray.filter(document => dateFilter(document, date1, date2))}
+                        >Filter</Button>
                         </InputGroup.Prepend>
                     </InputGroup>
                     </Col>
@@ -175,18 +178,4 @@ export function Page2(props){
             </Container>
         </div>
     );
-}
-
-function NumRows({size}){
-    return(
-        new Array(size).fill(0).map( (_,index) => {
-            const props = {
-                name: "Namegoeshere",
-                date: "date?",
-                category: "test",
-                data: "test2"
-            }
-            return <DataRow key={index} {...props}/>;
-        })
-    )
 }
