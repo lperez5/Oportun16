@@ -20,7 +20,7 @@ export function Page2(props){
         setDate1(event.target.value);           //for date1 and date 2
     }
     const handleDate2 = event => {
-        setDate1(event.target.value);
+        setDate2(event.target.value);
     }
 
     const handleCategory = event => {
@@ -33,8 +33,7 @@ export function Page2(props){
     }
 
     const nameFilter = (document, nameEntered) => {
-        const lowerName = document.name.toLowerCase();
-        if(lowerName.includes(nameEntered.toLowerCase())){
+        if(document.name.toLowerCase().includes(nameEntered.toLowerCase())){
             return true;
         }
         else{
@@ -75,7 +74,6 @@ export function Page2(props){
                 i++;
             }
             Rows.length = 10;
-            console.log(Rows);
             return(<> {Rows} </>)
         }
     }
@@ -150,11 +148,12 @@ export function Page2(props){
                         <InputGroup.Prepend>
                             <InputGroup.Text>Dates</InputGroup.Text>
                         </InputGroup.Prepend>
-                        <FormControl />
-                        <FormControl />
+                        <Form.Control onChange={handleDate1} />
+                        <Form.Control onChange={handleDate2}/>
                         <InputGroup.Prepend>
-                        <Button variant="outline-secondary" onClick={dbCacheArray
-                                                                        .filter(document => dateFilter(document, date1, date2))}>Filter</Button>
+                        <Button variant="outline-secondary"
+                        // onClick={dbCacheArray.filter(document => dateFilter(document, date1, date2))}
+                        >Filter</Button>
                         </InputGroup.Prepend>
                     </InputGroup>
                     </Col>
@@ -178,18 +177,4 @@ export function Page2(props){
             </Container>
         </div>
     );
-}
-
-function NumRows({size}){
-    return(
-        new Array(size).fill(0).map( (_,index) => {
-            const props = {
-                name: "Namegoeshere",
-                date: "date?",
-                category: "test",
-                data: "test2"
-            }
-            return <DataRow key={index} {...props}/>;
-        })
-    )
 }
