@@ -355,40 +355,40 @@ export function Page1(props){
                 <Row>
                   <Col>
                     <ListGroup variant="flush" style={{fontSize:12}}>
-                      <ListGroup.Item style={{fontWeight: 'bold'}}>Loss Magnitude</ListGroup.Item>
-                      <ListGroup.Item>1. &#60;$9,999</ListGroup.Item>
-                      <ListGroup.Item>2. $10,000 - $99,999</ListGroup.Item>
-                      <ListGroup.Item>3. $100,000 - $999,999</ListGroup.Item>
-                      <ListGroup.Item>4. $1,000,000 - $9,999,999</ListGroup.Item>
-                      <ListGroup.Item>5. &#62;$10,000,000</ListGroup.Item>
+                      <ListGroup.Item style={{fontWeight: 'bold', padding: 6}}>Loss Magnitude</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>1. &#60;$9,999</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>2. $10,000 - $99,999</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>3. $100,000 - $999,999</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>4. $1,000,000 - $9,999,999</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. &#62;$10,000,000</ListGroup.Item>
                     </ListGroup>
                     <br/>
                     <ListGroup variant="flush" style={{fontSize:12}}>
-                      <ListGroup.Item   style={{fontWeight: 'bold'}}>Contact Frequency</ListGroup.Item>
-                      <ListGroup.Item>1. &#60;0.1 times per year</ListGroup.Item>
-                      <ListGroup.Item>2. 0.1 - 1 times per year</ListGroup.Item>
-                      <ListGroup.Item>3. 1 - 10 times per year</ListGroup.Item>
-                      <ListGroup.Item>4. 10 - 100 times per year</ListGroup.Item>
-                      <ListGroup.Item>5. &#62;100 times per year</ListGroup.Item>
+                      <ListGroup.Item style={{fontWeight: 'bold', padding: 6}}>Contact Frequency</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>1. &#60;0.1 times per year</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>2. 0.1 - 1 times per year</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>3. 1 - 10 times per year</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>4. 10 - 100 times per year</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. &#62;100 times per year</ListGroup.Item>
                     </ListGroup>
                   </Col>
                   <Col>
                     <ListGroup variant="flush"  style={{fontSize:12}}>
-                      <ListGroup.Item style={{fontWeight: 'bold'}}>Probability</ListGroup.Item>
-                      <ListGroup.Item>1. 0% - 10%</ListGroup.Item>
-                      <ListGroup.Item>2. 10% - 30%</ListGroup.Item>
-                      <ListGroup.Item>3. 30% - 70%</ListGroup.Item>
-                      <ListGroup.Item>4. 70% - 90%</ListGroup.Item>
-                      <ListGroup.Item>5. 90% - 100%</ListGroup.Item>
+                      <ListGroup.Item style={{fontWeight: 'bold', padding: 6}}>Probability</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>1. 0% - 10%</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>2. 10% - 30%</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>3. 30% - 70%</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>4. 70% - 90%</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. 90% - 100%</ListGroup.Item>
                     </ListGroup>
                     <br/>
                     <ListGroup variant="flush" style={{fontSize:12}}>
-                      <ListGroup.Item style={{fontWeight: 'bold'}}>Threat Capability</ListGroup.Item>
-                      <ListGroup.Item>1. No technical skills</ListGroup.Item>
-                      <ListGroup.Item>2. Some technical skills</ListGroup.Item>
-                      <ListGroup.Item>3. Advanced computer user</ListGroup.Item>
-                      <ListGroup.Item>4. Network and programming skills</ListGroup.Item>
-                      <ListGroup.Item>5. Security penetration skills</ListGroup.Item>
+                      <ListGroup.Item style={{fontWeight: 'bold', padding: 6}}>Threat Capability</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>1. No technical skills</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>2. Some technical skills</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>3. Advanced computer user</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>4. Network and programming skills</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. Security penetration skills</ListGroup.Item>
                     </ListGroup>
                   </Col>
                 </Row>
@@ -396,11 +396,11 @@ export function Page1(props){
                   <Col>
                     <ListGroup variant="flush" style={{fontSize:12}}>
                       <ListGroup.Item style={{fontWeight: 'bold'}}>Resistance Strength</ListGroup.Item>
-                      <ListGroup.Item>1. Only protects against bottom 2% of an average threat population</ListGroup.Item>
-                      <ListGroup.Item>2. Only protects against bottom 16% of an average threat population</ListGroup.Item>
-                      <ListGroup.Item>3. Protects against the average threat agent</ListGroup.Item>
-                      <ListGroup.Item>4. Protects against all but the top 16% of an average threat population</ListGroup.Item>
-                      <ListGroup.Item>5. Protects against all but the top 2% of an average threat population</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>1. Only protects against bottom 2% of an average threat population</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>2. Only protects against bottom 16% of an average threat population</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>3. Protects against the average threat agent</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>4. Protects against all but the top 16% of an average threat population</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. Protects against all but the top 2% of an average threat population</ListGroup.Item>
                     </ListGroup>
                   </Col>
                   </Row>
