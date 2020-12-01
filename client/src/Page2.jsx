@@ -4,11 +4,10 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Card from 'react-bootstrap/Card'
 import {deleteEntry} from './utils/delete'
-//import { delete } from '../../server/routes/api'
 
 export function Page2(props){
 
-    const {active, dbCacheArray, setdbCacheArray} = props;
+    const {active, dbCacheArray, setdbCacheArray, setActive} = props;
 
     const [nameEntered, setNameEntered] = useState('');
     const [date1, setDate1] = useState('');
@@ -23,8 +22,8 @@ export function Page2(props){
         setNameEntered(event.target.value);
     }
 
-    const handleDate1 = event => {              //on button press in text field, do the sorting
-        setDate1(event.target.value);           //for date1 and date 2
+    const handleDate1 = event => {
+        setDate1(event.target.value);
     }
 
     const handleDate2 = event => {
@@ -37,13 +36,14 @@ export function Page2(props){
 
     const handleDelete = props => {
         deleteEntry(props);
-        //setdbCacheArray();
+        //delete entry from dbCacheArray
     }
 
     const handleEdit = event => {
         console.log("edit me");
         console.log(event);
-        //take object, load into page 1
+        setActive(5);
+        //pass event into page5
     }
 
     const nameFilter = (document, nameEntered) => {
@@ -55,7 +55,7 @@ export function Page2(props){
         }
     }
 
-    const dateFilter = (document, date1, date2, hasClickedDateButton) => {
+    const dateFilter = (document, date1, date2) => {
         if(!hasFilteredDate){
             return true;
         }

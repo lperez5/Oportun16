@@ -24,9 +24,10 @@ export function Navbar(props){
         </div>
         <Pages>
             <Page1 key={1} active={1 === active} dbCacheArray={dbCacheArray} setdbCacheArray={setdbCacheArray}></Page1>
-            <Page2 key={2} active={2 === active} dbCacheArray={dbCacheArray} setdbCacheArray={setdbCacheArray}></Page2>
+            <Page2 key={2} active={2 === active} dbCacheArray={dbCacheArray} setdbCacheArray={setdbCacheArray} setActive={setActive}></Page2>
             <Page3 key={3} active={3 === active} dbCacheArray={dbCacheArray} setdbCacheArray={setdbCacheArray}></Page3>
             <Page4 key={4} active={4 === active}></Page4>
+            <Page5 key={5} active={5 === active} dbCacheArray={dbCacheArray} setdbCacheArray={setdbCacheArray}></Page5>
         </Pages>
         </React.Fragment>
     );
