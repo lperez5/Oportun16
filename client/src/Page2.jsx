@@ -62,7 +62,6 @@ export function Page2(props){
             const Rows = [];
             let i = 0;
             while (i < dbCacheArray.length){
-                console.log(nameEntered, categorySelected);
                 if(nameFilter(dbCacheArray[i], nameEntered) === true &&
                 categoryFilter(dbCacheArray[i], categorySelected) === true){
                     Rows.push(<DataRow key={i} {...dbCacheArray[i]}/>);
