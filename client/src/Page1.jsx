@@ -159,7 +159,6 @@ export function Page1(props){
       threat: threatEntered,
       loss: lossEntered
     };
-    console.log(dbCacheArray);
     setdbCacheArray([newEntry,...dbCacheArray]);
     submit(newEntry);
   };
