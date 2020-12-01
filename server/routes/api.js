@@ -33,4 +33,17 @@ router.post('/save', (req, res) => {
   });
 });
 
+router.delete('/delete', (req, res) => {
+  var id = req.body._id;
+  console.log(id)
+  entrymodel.findOneAndRemove({_id: id}, function(err){
+    if(err){
+      console.log('Problem deleting data');
+    }
+    else{
+      console.log('Data deleted');
+    }
+  });
+});
+
 module.exports = router;
