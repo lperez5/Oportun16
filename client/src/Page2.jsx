@@ -27,6 +27,11 @@ export function Page2(props){
         setCategoryEntered(event.target.value);
     }
 
+    const handleDelete = event => {
+        //get ID of document and delete from DB
+        //delete from dbCacheArray using setdbCacheArray()
+    }
+
     const nameFilter = (document, nameEntered) => {
         if(document.name.includes(nameEntered)){
             return true;
@@ -73,6 +78,60 @@ export function Page2(props){
         }
     }
 
+    function DataRow(props){
+        const{name, date, category, data} = props;
+        return(
+            <Row style={{ height: '8vh' }}>
+                <Col>
+                    <Card style={{ width: '12rem', borderColor: 'white' }}>
+                        <Card.Body>
+                            <Card.Text style={{ textAlign: 'center' }}>
+                                {name}
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col>
+                    <Card style={{ width: '12rem' }}>
+                        <Card.Body>
+                            <Card.Text>
+                                {date}
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col>
+                    <Card style={{ width: '12rem' }}>
+                        <Card.Body>
+                            <Card.Text>
+                                {category}
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col>
+                    <Card style={{ width: '12rem' }}>
+                        <Card.Body>
+                            <Card.Text>
+                                {data}
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col>
+                    <Button variant="outline-success" size='lg' block>
+                        View/Edit
+                    </Button>
+                </Col>
+                <Col style={{justifyContent: 'stretch'}}>
+                    <Button variant="outline-danger" size='lg' block onClick={handleDelete}>
+                        Delete
+                    </Button>
+                </Col>
+            </Row>
+        )
+    }
+
     return(
         <div hidden={!active}>
             <Container>
@@ -116,60 +175,6 @@ export function Page2(props){
             </Container>
         </div>
     );
-}
-
-function DataRow(props){
-    const{name, date, category, data} = props;
-    return(
-        <Row style={{ height: '8vh' }}>
-            <Col>
-                <Card style={{ width: '12rem', borderColor: 'white' }}>
-                    <Card.Body>
-                        <Card.Text style={{ textAlign: 'center' }}>
-                            {name}
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-            </Col>
-            <Col>
-                <Card style={{ width: '12rem' }}>
-                    <Card.Body>
-                        <Card.Text>
-                            {date}
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-            </Col>
-            <Col>
-                <Card style={{ width: '12rem' }}>
-                    <Card.Body>
-                        <Card.Text>
-                            {category}
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-            </Col>
-            <Col>
-                <Card style={{ width: '12rem' }}>
-                    <Card.Body>
-                        <Card.Text>
-                            {data}
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-            </Col>
-            <Col>
-                <Button variant="outline-success" size='lg' block>
-                    Options
-                </Button>
-            </Col>
-            <Col style={{justifyContent: 'stretch'}}>
-                <Button variant="outline-success" size='lg' block>
-                    Details
-                </Button>
-            </Col>
-        </Row>
-    )
 }
 
 function NumRows({size}){
