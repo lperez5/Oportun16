@@ -28,6 +28,7 @@ export function Page2(props){
     }
 
     const handleDelete = event => {
+        console.log(event);
         //get ID of document and delete from DB
         //delete from dbCacheArray using setdbCacheArray()
     }
@@ -79,7 +80,7 @@ export function Page2(props){
     }
 
     function DataRow(props){
-        const{name, dateCreated, category, data} = props;
+        const{name, dateCreated, category, data, _id} = props;
         return(
             <Row style={{ height: '8vh' }}>
                 <Col>
@@ -124,7 +125,7 @@ export function Page2(props){
                     </Button>
                 </Col>
                 <Col style={{justifyContent: 'stretch'}}>
-                    <Button variant="outline-danger" size='lg' block onClick={handleDelete}>
+                    <Button variant="outline-danger" size='lg' onClick={()=>handleDelete(_id)} block>
                         Delete
                     </Button>
                 </Col>
