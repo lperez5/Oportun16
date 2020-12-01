@@ -3,6 +3,8 @@ import { FormControl, InputGroup, Container, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Card from 'react-bootstrap/Card'
+import {deleteEntry} from './utils/delete'
+//import { delete } from '../../server/routes/api'
 
 export function Page2(props){
     const {active, dbCacheArray, setdbCacheArray} = props;
@@ -29,6 +31,7 @@ export function Page2(props){
 
     const handleDelete = event => {
         console.log(event);
+        deleteEntry(event);
         //get ID of document and delete from DB
         //delete from dbCacheArray using setdbCacheArray()
     }
@@ -125,7 +128,7 @@ export function Page2(props){
                     </Button>
                 </Col>
                 <Col style={{justifyContent: 'stretch'}}>
-                    <Button variant="outline-danger" size='lg' onClick={()=>handleDelete(_id)} block>
+                    <Button variant="outline-danger" size='lg' onClick={()=>handleDelete(props)} block>
                         Delete
                     </Button>
                 </Col>
