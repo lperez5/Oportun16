@@ -149,11 +149,12 @@ export function Page1(props){
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const tempDateCreated = new Intl.DateTimeFormat('en-US').format(Date.now());
     const treeData = Tool.getTreeData();
     const newEntry = {
       name: nameEntered,
       category: categoryEntered,
-      dateCreated: "added in current session",
+      dateCreated: tempDateCreated,
       data: treeData,
       notes: notesEntered,
       asset: assetEntered,
@@ -220,7 +221,9 @@ export function Page1(props){
               </Col>
             </Row>
             <Row>
-              <Col><Button onClick = {handleSubmit} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12} style={{backgroundColor: '#0B0C10', borderColor: '#45A293', color: '#45A293', borderRadius: '100px'}} >Submit</Button>{' '}
+              <Col><Button onClick = {handleSubmit} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12}
+                            variant={'success'}
+                            >Submit</Button>{' '}
                 <DropdownButton title={padI} id = "PADInherent">
                     <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadI(1)}>1</Dropdown.Item>
                     <Dropdown.Item eventKey="2" onSelect={()=>handleSelectpadI(2)}>2</Dropdown.Item>

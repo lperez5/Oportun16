@@ -7,12 +7,17 @@ import {deleteEntry} from './utils/delete'
 //import { delete } from '../../server/routes/api'
 
 export function Page2(props){
+
     const {active, dbCacheArray, setdbCacheArray} = props;
 
     const [nameEntered, setNameEntered] = useState('');
     const [date1, setDate1] = useState('');
     const [date2, setDate2] = useState('');
     const [categorySelected, setCategoryEntered] = useState('All');
+
+    const [visibleIndicies, setVisibleIndicies] = useState('');
+
+    const [hasFilteredDate, sethasFilteredDate] = useState(false);
 
     const handleName = event => {
         setNameEntered(event.target.value);
@@ -21,6 +26,7 @@ export function Page2(props){
     const handleDate1 = event => {              //on button press in text field, do the sorting
         setDate1(event.target.value);           //for date1 and date 2
     }
+
     const handleDate2 = event => {
         setDate2(event.target.value);
     }
@@ -29,9 +35,15 @@ export function Page2(props){
         setCategoryEntered(event.target.value);
     }
 
-    const handleDelete = event => {
+    const handleDelete = props => {
+        deleteEntry(props);
+        //setdbCacheArray();
+    }
+
+    const handleEdit = event => {
+        console.log("edit me");
         console.log(event);
-        deleteEntry(event);
+        //take object, load into page 1
     }
 
     const nameFilter = (document, nameEntered) => {
@@ -43,8 +55,11 @@ export function Page2(props){
         }
     }
 
-    const dateFilter = (document, date1, date2) => {
-        if(document.dateCreated >= date1 && document.dateCreated <= date2){
+    const dateFilter = (document, date1, date2, hasClickedDateButton) => {
+        if(!hasFilteredDate){
+            return true;
+        }
+        else if(document.dateCreated >= date1 && document.dateCreated <= date2){
             return true;
         }
         else{
@@ -68,20 +83,24 @@ export function Page2(props){
         else{
             const Rows = [];
             let i = 0;
+            //const tempVisible = [];
             while (i < dbCacheArray.length){
                 if(nameFilter(dbCacheArray[i], nameEntered) === true &&
-                categoryFilter(dbCacheArray[i], categorySelected) === true){
+                categoryFilter(dbCacheArray[i], categorySelected) === true &&
+                (dateFilter(dbCacheArray[i], date1, date2) === true)){
                     Rows.push(<DataRow key={i} {...dbCacheArray[i]}/>);
+                    //tempVisible.push(i);
                 }
                 i++;
             }
+            //setVisibleIndicies(tempVisible);
             Rows.length = 10;
             return(<> {Rows} </>)
         }
     }
 
     function DataRow(props){
-        const{name, dateCreated, category, data} = props;
+        const {name, dateCreated, category, data} = props;
         return(
             <Row style={{ height: '8vh' }}>
                 <Col>
@@ -121,7 +140,7 @@ export function Page2(props){
                     </Card>
                 </Col>
                 <Col>
-                    <Button variant="outline-success" size='lg' block>
+                    <Button variant="outline-success" size='lg' onClick={()=>handleEdit(props)} block>
                         View/Edit
                     </Button>
                 </Col>
@@ -150,12 +169,10 @@ export function Page2(props){
                         <InputGroup.Prepend>
                             <InputGroup.Text>Dates</InputGroup.Text>
                         </InputGroup.Prepend>
-                        <FormControl onChange={handleDate1} />
-                        <FormControl onChange={handleDate2}/>
+                        <FormControl onChange={(event)=>{handleDate1(event); sethasFilteredDate(false); console.log("filter date false");}}/>
+                        <FormControl onChange={(event)=>{handleDate2(event); sethasFilteredDate(false); console.log("filter date false");}}/>
                         <InputGroup.Prepend>
-                        <Button variant="outline-secondary"
-                        // onClick={dbCacheArray.filter(document => dateFilter(document, date1, date2))}
-                        >Filter</Button>
+                            <Button variant="outline-secondary" onClick={()=>sethasFilteredDate(true)}>Filter</Button>
                         </InputGroup.Prepend>
                     </InputGroup>
                     </Col>
