@@ -6,8 +6,6 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 import {getInstance} from './utils/ToolCalcs'
 //import {update} from './utils/update'
 
-//temp
-
 export function Page5(props){
 
   const Tool = getInstance();
@@ -62,18 +60,30 @@ export function Page5(props){
     setThreatEntered(Entry.threat);
     setLossEntered(Entry.loss);
     //set tree vars
-    setcfaI(Entry.data[14]);
-    setcfaC(Entry.data[15]);
-    settc(Entry.data[17]);
-    setslp(Entry.data[18]);
-    setpadI(Entry.data[19]);
-    setpadC(Entry.data[20]);
-    setrsI(Entry.data[22]);
-    setrsC(Entry.data[23]);
-    setplmrI(Entry.data[25]);
-    setplmrC(Entry.data[26]);
-    setslmrI(Entry.data[28]);
-    setslmrC(Entry.data[29]);
+    setcfaI(Entry.data[14]+1);
+    Tool.setCFAInherent(Entry.data[14]);
+    setcfaC(Entry.data[15]+1);
+    Tool.setCFAControls(Entry.data[15]);
+    settc(Entry.data[17]+1);
+    Tool.setTC(Entry.data[17]);
+    setslp(Entry.data[18]+1);
+    Tool.setSLP(Entry.data[18]);
+    setpadI(Entry.data[19]+1);
+    Tool.setPadInherent(Entry.data[19]);
+    setpadC(Entry.data[20]+1);
+    Tool.setPADControls(Entry.data[20]);
+    setrsI(Entry.data[22]+1);
+    Tool.setRSInherent(Entry.data[22]);
+    setrsC(Entry.data[23]+1);
+    Tool.setRSControls(Entry.data[23]);
+    setplmrI(Entry.data[25]+1);
+    Tool.setPLMRInherent(Entry.data[25]);
+    setplmrC(Entry.data[26]+1);
+    Tool.setPLMRControls(Entry.data[26]);
+    setslmrI(Entry.data[28]+1);
+    Tool.setSLMRInherent(Entry.data[28]);
+    setslmrC(Entry.data[29]+1);
+    Tool.setSLMRControls(Entry.data[29]);
 
     Tool.calculateTree();
   }, [Entry, Tool])
@@ -229,7 +239,16 @@ export function Page5(props){
       threat: threatEntered,
       loss: lossEntered
     };
-    //setdbCacheArray([Entry,...dbCacheArray]);  ??
+    //update dbCacheArray
+    const temp = new Array(dbCacheArray.length);
+    let currentIndex = 0;
+    for(let i = 0; i < dbCacheArray.length; i++){
+        if(props._id !== dbCacheArray[i]._id){
+            temp[currentIndex] = dbCacheArray[i];
+            currentIndex++;
+        }
+    }
+    setdbCacheArray(temp);
     //update(Entry);
   };
 
