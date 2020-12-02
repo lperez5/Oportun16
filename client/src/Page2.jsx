@@ -40,9 +40,6 @@ export function Page2(props){
         //delete entry from dbCacheArray
         const temp = new Array(dbCacheArray.length);
         let currentIndex = 0;
-
-        console.log(props);
-
         for(let i = 0; i < dbCacheArray.length; i++){
             if(props._id !== dbCacheArray[i]._id){
                 temp[currentIndex] = dbCacheArray[i];
