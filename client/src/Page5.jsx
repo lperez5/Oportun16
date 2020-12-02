@@ -251,7 +251,7 @@ export function Page5(props){
     //     }
     // }
     //setdbCacheArray(temp);
-    update(Entry);
+    update(updatedEntry);
   };
 
   return(
