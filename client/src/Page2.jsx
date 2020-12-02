@@ -7,7 +7,7 @@ import {deleteEntry} from './utils/delete'
 
 export function Page2(props){
 
-    const {active, dbCacheArray, setdbCacheArray, setActive} = props;
+    const {active, dbCacheArray, setdbCacheArray, setActive, setEntryToUpdate} = props;
 
     const [nameEntered, setNameEntered] = useState('');
     const [date1, setDate1] = useState('');
@@ -42,8 +42,8 @@ export function Page2(props){
     const handleEdit = event => {
         console.log("edit me");
         console.log(event);
+        setEntryToUpdate(event);
         setActive(5);
-        //pass event into page5
     }
 
     const nameFilter = (document, nameEntered) => {

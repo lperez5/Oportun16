@@ -46,29 +46,71 @@ export function Page1(props){
   const [buttonDisabled10, setButtonDisabled10] = useState(true);
   const [buttonDisabled11, setButtonDisabled11] = useState(true);
   const [buttonDisabled12, setButtonDisabled12] = useState(true);
+  const [textbool1, settextbool1] = useState(true);
+  const [textbool2, settextbool2] = useState(true);
+  const [textbool3, settextbool3] = useState(true);
+  const [textbool4, settextbool4] = useState(true);
+  const [textbool5, settextbool5] = useState(true);
+  const [textbool6, settextbool6] = useState(true);
 
   const handleName = event => {
     setNameEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool1(true);
+    }
+    else{
+      settextbool1(false);
+    }
   }
 
   const handleCategory = event => {
     setCategoryEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool2(true);
+    }
+    else{
+      settextbool2(false);
+    }
   }
 
   const handleNotes = event => {
     setNotesEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool3(true);
+    }
+    else{
+      settextbool3(false);
+    }
   }
 
   const handleAsset = event => {
     setAssetEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool4(true);
+    }
+    else{
+      settextbool4(false);
+    }
   }
 
   const handleThreat = event => {
     setThreatEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool5(true);
+    }
+    else{
+      settextbool5(false);
+    }
   }
 
   const handleLoss = event => {
     setLossEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool6(true);
+    }
+    else{
+      settextbool6(false);
+    }
   }
 
   const handleSelectpadI=(value)=>{
@@ -221,9 +263,10 @@ export function Page1(props){
               </Col>
             </Row>
             <Row>
-              <Col><Button onClick = {handleSubmit} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12}
+              <Col><Button onClick = {handleSubmit} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12
+                                                              || textbool1 || textbool2 || textbool3 || textbool4 || textbool5 || textbool6}
                             variant={'success'}
-                            >Submit</Button>{' '}
+                            >Submit</Button>
                 <DropdownButton title={padI} id = "PADInherent">
                     <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadI(1)}>1</Dropdown.Item>
                     <Dropdown.Item eventKey="2" onSelect={()=>handleSelectpadI(2)}>2</Dropdown.Item>

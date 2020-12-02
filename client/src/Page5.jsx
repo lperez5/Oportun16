@@ -12,7 +12,11 @@ export function Page5(props){
 
   const Tool = getInstance();
 
-  const {active, dbCacheArray, setdbCacheArray} = props;
+  const {active, dbCacheArray, setdbCacheArray, Entry} = props;
+
+  // call all the setters:
+
+  // Tool.calculateTree
 
   const [nameEntered, setNameEntered] = useState('');
   const [categoryEntered, setCategoryEntered] = useState('');
@@ -34,41 +38,83 @@ export function Page5(props){
   const [tc, settc] = useState('');
   const [slp, setslp] = useState('');
 
-  const [buttonDisabled, setButtonDisabled] = useState(true);
-  const [buttonDisabled2, setButtonDisabled2] = useState(true);
-  const [buttonDisabled3, setButtonDisabled3] = useState(true);
-  const [buttonDisabled4, setButtonDisabled4] = useState(true);
-  const [buttonDisabled5, setButtonDisabled5] = useState(true);
-  const [buttonDisabled6, setButtonDisabled6] = useState(true);
-  const [buttonDisabled7, setButtonDisabled7] = useState(true);
-  const [buttonDisabled8, setButtonDisabled8] = useState(true);
-  const [buttonDisabled9, setButtonDisabled9] = useState(true);
-  const [buttonDisabled10, setButtonDisabled10] = useState(true);
-  const [buttonDisabled11, setButtonDisabled11] = useState(true);
-  const [buttonDisabled12, setButtonDisabled12] = useState(true);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+  const [buttonDisabled2, setButtonDisabled2] = useState(false);
+  const [buttonDisabled3, setButtonDisabled3] = useState(false);
+  const [buttonDisabled4, setButtonDisabled4] = useState(false);
+  const [buttonDisabled5, setButtonDisabled5] = useState(false);
+  const [buttonDisabled6, setButtonDisabled6] = useState(false);
+  const [buttonDisabled7, setButtonDisabled7] = useState(false);
+  const [buttonDisabled8, setButtonDisabled8] = useState(false);
+  const [buttonDisabled9, setButtonDisabled9] = useState(false);
+  const [buttonDisabled10, setButtonDisabled10] = useState(false);
+  const [buttonDisabled11, setButtonDisabled11] = useState(false);
+  const [buttonDisabled12, setButtonDisabled12] = useState(false);
+  const [textbool1, settextbool1] = useState(false);
+  const [textbool2, settextbool2] = useState(false);
+  const [textbool3, settextbool3] = useState(false);
+  const [textbool4, settextbool4] = useState(false);
+  const [textbool5, settextbool5] = useState(false);
+  const [textbool6, settextbool6] = useState(false);
 
   const handleName = event => {
     setNameEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool1(true);
+    }
+    else{
+      settextbool1(false);
+    }
   }
 
   const handleCategory = event => {
     setCategoryEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool2(true);
+    }
+    else{
+      settextbool2(false);
+    }
   }
 
   const handleNotes = event => {
     setNotesEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool3(true);
+    }
+    else{
+      settextbool3(false);
+    }
   }
 
   const handleAsset = event => {
     setAssetEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool4(true);
+    }
+    else{
+      settextbool4(false);
+    }
   }
 
   const handleThreat = event => {
     setThreatEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool5(true);
+    }
+    else{
+      settextbool5(false);
+    }
   }
 
   const handleLoss = event => {
     setLossEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool6(true);
+    }
+    else{
+      settextbool6(false);
+    }
   }
 
   const handleSelectpadI=(value)=>{
@@ -221,9 +267,10 @@ export function Page5(props){
               </Col>
             </Row>
             <Row>
-              <Col><Button onClick = {handleUpdate} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12}
+            <Col><Button onClick = {handleUpdate} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12
+                                                              || textbool1 || textbool2 || textbool3 || textbool4 || textbool5 || textbool6}
                             variant={'success'}
-                            >Update</Button>{' '}
+                            >Submit</Button>
                 <DropdownButton title={padI} id = "PADInherent">
                     <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadI(1)}>1</Dropdown.Item>
                     <Dropdown.Item eventKey="2" onSelect={()=>handleSelectpadI(2)}>2</Dropdown.Item>
