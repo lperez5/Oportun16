@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import {getInstance} from './utils/ToolCalcs'
-//import {update} from './utils/update'
+import {update} from './utils/update'
 
 //temp
 
@@ -215,11 +215,36 @@ export function Page5(props){
     setButtonDisabled12(false);
   }
 
+  const blankEntries = () =>{
+    if(nameEntered === ''){
+      nameEntered = Entry.name;
+    }
+    if(categoryEntered === ''){
+      categoryEntered = Entry.category;
+    }
+    if(notesEntered === ''){
+      notesEntered = Entry.notes;
+    }
+    if(assetEntered === ''){
+      assetEntered = Entry.asset;
+    }
+    if(threatEntered === ''){
+      threatEntered = Entry.threat;
+    }
+    if(lossEntered === ''){
+      threatEntered = Entry.loss;
+    }
+  }
+
   const handleUpdate = (event) => {
     event.preventDefault();
     const tempLastUpdated = new Intl.DateTimeFormat('en-US').format(Date.now());
     const treeData = Tool.getTreeData();
-    const Entry = {
+    const id = Entry._id;
+
+    blankEntries();
+    //console.log(nameEntered);
+    const updatedEntry = {
       name: nameEntered,
       category: categoryEntered,
       lastUpdated: tempLastUpdated,
@@ -227,10 +252,11 @@ export function Page5(props){
       notes: notesEntered,
       asset: assetEntered,
       threat: threatEntered,
-      loss: lossEntered
+      loss: lossEntered,
+      IDtoUpdate: id
     };
     //setdbCacheArray([Entry,...dbCacheArray]);  ??
-    //update(Entry);
+    update(updatedEntry);
   };
 
   return(

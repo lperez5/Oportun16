@@ -53,8 +53,8 @@ export function Page2(props){
     }
 
     const handleEdit = event => {
-        console.log("edit me");
-        console.log(event);
+        //console.log("edit me");
+        //console.log(event);
         setEntryToUpdate(event);
         setActive(5);
     }
