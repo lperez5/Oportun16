@@ -14,8 +14,6 @@ export function Page2(props){
     const [date2, setDate2] = useState('');
     const [categorySelected, setCategoryEntered] = useState('All');
 
-    const [visibleIndicies, setVisibleIndicies] = useState('');
-
     const [hasFilteredDate, sethasFilteredDate] = useState(false);
 
     const handleName = event => {
@@ -40,9 +38,6 @@ export function Page2(props){
         //delete entry from dbCacheArray
         const temp = new Array(dbCacheArray.length);
         let currentIndex = 0;
-
-        console.log(props);
-
         for(let i = 0; i < dbCacheArray.length; i++){
             if(props._id !== dbCacheArray[i]._id){
                 temp[currentIndex] = dbCacheArray[i];
@@ -96,17 +91,14 @@ export function Page2(props){
         else{
             const Rows = [];
             let i = 0;
-            //const tempVisible = [];
             while (i < dbCacheArray.length){
                 if(nameFilter(dbCacheArray[i], nameEntered) === true &&
                 categoryFilter(dbCacheArray[i], categorySelected) === true &&
                 (dateFilter(dbCacheArray[i], date1, date2) === true)){
                     Rows.push(<DataRow key={i} {...dbCacheArray[i]}/>);
-                    //tempVisible.push(i);
                 }
                 i++;
             }
-            //setVisibleIndicies(tempVisible);
             Rows.length = 10;
             return(<> {Rows} </>)
         }
