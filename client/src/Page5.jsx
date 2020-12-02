@@ -69,7 +69,7 @@ export function Page5(props){
     setslp(Entry.data[18]+1);
     Tool.setSLP(Entry.data[18]);
     setpadI(Entry.data[19]+1);
-    Tool.setPadInherent(Entry.data[19]);
+    Tool.setPADInherent(Entry.data[19]);
     setpadC(Entry.data[20]+1);
     Tool.setPADControls(Entry.data[20]);
     setrsI(Entry.data[22]+1);
