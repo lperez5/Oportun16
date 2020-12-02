@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import {getInstance} from './utils/ToolCalcs'
-//import {update} from './utils/update'
+import {update} from './utils/update'
 
 export function Page5(props){
 
@@ -228,7 +228,9 @@ export function Page5(props){
     event.preventDefault();
     const tempLastUpdated = new Intl.DateTimeFormat('en-US').format(Date.now());
     const treeData = Tool.getTreeData();
-    const Entry = {
+    const id = Entry._id;
+
+    const updatedEntry = {
       name: nameEntered,
       category: categoryEntered,
       lastUpdated: tempLastUpdated,
@@ -236,19 +238,20 @@ export function Page5(props){
       notes: notesEntered,
       asset: assetEntered,
       threat: threatEntered,
-      loss: lossEntered
+      loss: lossEntered,
+      IDtoUpdate: id
     };
     //update dbCacheArray
-    const temp = new Array(dbCacheArray.length);
-    let currentIndex = 0;
-    for(let i = 0; i < dbCacheArray.length; i++){
-        if(props._id !== dbCacheArray[i]._id){
-            temp[currentIndex] = dbCacheArray[i];
-            currentIndex++;
-        }
-    }
-    setdbCacheArray(temp);
-    //update(Entry);
+    // const temp = new Array(dbCacheArray.length);
+    // let currentIndex = 0;
+    // for(let i = 0; i < dbCacheArray.length; i++){
+    //     if(props._id !== dbCacheArray[i]._id){
+    //         temp[currentIndex] = dbCacheArray[i];
+    //         currentIndex++;
+    //     }
+    // }
+    //setdbCacheArray(temp);
+    update(updatedEntry);
   };
 
   return(
