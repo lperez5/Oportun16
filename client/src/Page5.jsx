@@ -18,12 +18,12 @@ export function Page5(props){
 
   // Tool.calculateTree
 
-  const [nameEntered, setNameEntered] = useState('');
-  const [categoryEntered, setCategoryEntered] = useState('');
-  const [notesEntered, setNotesEntered] = useState('');
-  const [assetEntered, setAssetEntered] = useState('');
-  const [threatEntered, setThreatEntered] = useState('');
-  const [lossEntered, setLossEntered] = useState('');
+  let [nameEntered, setNameEntered] = useState('');
+  let [categoryEntered, setCategoryEntered] = useState('');
+  let [notesEntered, setNotesEntered] = useState('');
+  let [assetEntered, setAssetEntered] = useState('');
+  let [threatEntered, setThreatEntered] = useState('');
+  let [lossEntered, setLossEntered] = useState('');
 
   const [padI, setpadI] = useState('');
   const [padC, setpadC] = useState('');
