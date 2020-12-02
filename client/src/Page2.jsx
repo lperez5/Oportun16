@@ -48,8 +48,6 @@ export function Page2(props){
     }
 
     const handleEdit = event => {
-        //console.log("edit me");
-        //console.log(event);
         setEntryToUpdate(event);
         setActive(5);
     }
@@ -174,8 +172,8 @@ export function Page2(props){
                         <InputGroup.Prepend>
                             <InputGroup.Text>Dates</InputGroup.Text>
                         </InputGroup.Prepend>
-                        <FormControl onChange={(event)=>{handleDate1(event); sethasFilteredDate(false); console.log("filter date false");}}/>
-                        <FormControl onChange={(event)=>{handleDate2(event); sethasFilteredDate(false); console.log("filter date false");}}/>
+                        <FormControl onChange={(event)=>{handleDate1(event); sethasFilteredDate(false);}}/>
+                        <FormControl onChange={(event)=>{handleDate2(event); sethasFilteredDate(false);}}/>
                         <InputGroup.Prepend>
                             <Button variant="outline-secondary" onClick={()=>sethasFilteredDate(true)}>Filter</Button>
                         </InputGroup.Prepend>
