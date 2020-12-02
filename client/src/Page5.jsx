@@ -119,7 +119,6 @@ export function Page5(props){
   }
 
   const handleAsset = event => {
-    console.log(`handle asset: ${event.target.value}`)
     setAssetEntered(event.target.value);
     if(event.target.value === ''){
       settextbool4(true);
