@@ -46,4 +46,17 @@ router.delete('/delete', (req, res) => {
   });
 });
 
+router.put('/update', (req,res ) => {
+  var id = req.body.IDtoUpdate;
+  //console.log(id);
+  entrymodel.updateOne({_id: id}, {$set: {name: req.body.name, category: req.body.category, notes: req.body.notes, asset: req.body.asset, threat: req.body.threat, loss: req.body.loss, data: req.body.data, lastUpdated: req.body.lastUpdated}}, function(err){
+    if(err){
+      console.log('Problem updating data');
+    }
+    else{
+      console.log('Entry succesully updated');
+    }
+  })
+});
+
 module.exports = router;
