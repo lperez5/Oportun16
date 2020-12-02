@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ListGroup ,FormControl, InputGroup, Table, Container, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -14,10 +14,6 @@ export function Page5(props){
 
   const {active, dbCacheArray, setdbCacheArray, Entry} = props;
 
-  // call all the setters:
-
-  // Tool.calculateTree
-
   const [nameEntered, setNameEntered] = useState('');
   const [categoryEntered, setCategoryEntered] = useState('');
   const [notesEntered, setNotesEntered] = useState('');
@@ -28,13 +24,13 @@ export function Page5(props){
   const [padI, setpadI] = useState('');
   const [padC, setpadC] = useState('');
   const [cfaI, setcfaI] = useState('');
-  const [cfaC, setcfaR] = useState('');
+  const [cfaC, setcfaC] = useState('');
   const [rsI, setrsI] = useState('');
-  const [rsC, setrsR] = useState('');
+  const [rsC, setrsC] = useState('');
   const [plmrI, setplmrI] = useState('');
-  const [plmrC, setplmrR] = useState('');
+  const [plmrC, setplmrC] = useState('');
   const [slmrI, setslmrI] = useState('');
-  const [slmrC, setslmrR] = useState('');
+  const [slmrC, setslmrC] = useState('');
   const [tc, settc] = useState('');
   const [slp, setslp] = useState('');
 
@@ -56,6 +52,31 @@ export function Page5(props){
   const [textbool4, settextbool4] = useState(false);
   const [textbool5, settextbool5] = useState(false);
   const [textbool6, settextbool6] = useState(false);
+
+  useEffect(()=>{
+    //set
+    setNameEntered(Entry.name);
+    setCategoryEntered(Entry.category);
+    setNotesEntered(Entry.notes);
+    setAssetEntered(Entry.asset);
+    setThreatEntered(Entry.threat);
+    setLossEntered(Entry.loss);
+    //set tree vars
+    setcfaI(Entry.data[14]);
+    setcfaC(Entry.data[15]);
+    settc(Entry.data[17]);
+    setslp(Entry.data[18]);
+    setpadI(Entry.data[19]);
+    setpadC(Entry.data[20]);
+    setrsI(Entry.data[22]);
+    setrsC(Entry.data[23]);
+    setplmrI(Entry.data[25]);
+    setplmrC(Entry.data[26]);
+    setslmrI(Entry.data[28]);
+    setslmrC(Entry.data[29]);
+
+    Tool.calculateTree();
+  }, [Entry, Tool])
 
   const handleName = event => {
     setNameEntered(event.target.value);
@@ -88,6 +109,7 @@ export function Page5(props){
   }
 
   const handleAsset = event => {
+    console.log(`handle asset: ${event.target.value}`)
     setAssetEntered(event.target.value);
     if(event.target.value === ''){
       settextbool4(true);
@@ -141,7 +163,7 @@ export function Page5(props){
   const handleSelectcfaC=(value)=>{
     Tool.setCFAControls(value-1);
     Tool.calculateTreeResiduals();
-    setcfaR(value);
+    setcfaC(value);
     setButtonDisabled4(false);
   }
   const handleSelectrsI=(value)=>{
@@ -153,7 +175,7 @@ export function Page5(props){
   const handleSelectrsC=(value)=>{
     Tool.setRSControls(value-1);
     Tool.calculateTreeResiduals();
-    setrsR(value);
+    setrsC(value);
     setButtonDisabled6(false);
   }
   const handleSelectplmrI=(value)=>{
@@ -165,7 +187,7 @@ export function Page5(props){
   const handleSelectplmrC=(value)=>{
     Tool.setPLMRControls(value-1);
     Tool.calculateTreeResiduals();
-    setplmrR(value);
+    setplmrC(value);
     setButtonDisabled8(false);
   }
   const handleSelectslmrI=(value)=>{
@@ -177,7 +199,7 @@ export function Page5(props){
   const handleSelectslmrC=(value)=>{
     Tool.setSLMRControls(value-1);
     Tool.calculateTreeResiduals();
-    setslmrR(value);
+    setslmrC(value);
     setButtonDisabled10(false);
   }
   const handleSelecttc=(value)=>{
@@ -223,28 +245,29 @@ export function Page5(props){
                     <InputGroup.Prepend>
                       <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Asset At Risk</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={handleAsset} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-                  </InputGroup>
+                    <FormControl value={assetEntered} onChange={handleAsset} aria-label="Small" aria-describedby="inputGroup-sizing-sm" >
+                    </FormControl>
+                    </InputGroup>
 
                   <InputGroup size="sm" className="mb-3">
                     <InputGroup.Prepend>
                       <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Threat Community</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={handleThreat} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <FormControl value={threatEntered} onChange={handleThreat} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </InputGroup>
 
                   <InputGroup size="sm" className="mb-3">
                     <InputGroup.Prepend>
                       <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Loss Event</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={handleLoss} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <FormControl value={lossEntered} onChange={handleLoss} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </InputGroup>
 
                   <InputGroup size="sm" className="mb-3">
                     <InputGroup.Prepend>
                       <InputGroup.Text style = {{width:170}} id="inputGroup-sizing">Type of Loss Event</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={handleCategory} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <FormControl value={categoryEntered} onChange={handleCategory} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </InputGroup>
                 </div>
               </Col>
@@ -254,14 +277,14 @@ export function Page5(props){
                     <InputGroup.Prepend>
                       <InputGroup.Text style = {{width:80}} id="inputGroup-sizing">Analyst</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={handleName} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <FormControl value={nameEntered} onChange={handleName} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </InputGroup>
 
                   <InputGroup style = {{ height: 125}} size="sm" className="mb-3">
                     <InputGroup.Prepend>
                       <InputGroup.Text style = {{width:80, textAlign: 'center'}} id="inputGroup-sizing">Notes</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={handleNotes} as="textarea" style = {{height: 125}} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+                    <FormControl value={notesEntered} onChange={handleNotes} as="textarea" style = {{height: 125}} aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
                   </InputGroup>
                 </div>
               </Col>
@@ -270,7 +293,7 @@ export function Page5(props){
             <Col><Button onClick = {handleUpdate} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12
                                                               || textbool1 || textbool2 || textbool3 || textbool4 || textbool5 || textbool6}
                             variant={'success'}
-                            >Submit</Button>
+                            >Update</Button>
                 <DropdownButton title={padI} id = "PADInherent">
                     <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadI(1)}>1</Dropdown.Item>
                     <Dropdown.Item eventKey="2" onSelect={()=>handleSelectpadI(2)}>2</Dropdown.Item>
@@ -401,41 +424,41 @@ export function Page5(props){
                   </Table>
                 <Row>
                   <Col>
-                    <ListGroup variant="flush" style={{fontSize:12}}>
-                      <ListGroup.Item style={{fontWeight: 'bold'}}>Loss Magnitude</ListGroup.Item>
-                      <ListGroup.Item>1. &#60;$9,999</ListGroup.Item>
-                      <ListGroup.Item>2. $10,000 - $99,999</ListGroup.Item>
-                      <ListGroup.Item>3. $100,000 - $999,999</ListGroup.Item>
-                      <ListGroup.Item>4. $1,000,000 - $9,999,999</ListGroup.Item>
-                      <ListGroup.Item>5. &#62;$10,000,000</ListGroup.Item>
+                  <ListGroup variant="flush" style={{fontSize:12}}>
+                      <ListGroup.Item style={{fontWeight: 'bold', padding: 6}}>Loss Magnitude</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>1. &#60;$9,999</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>2. $10,000 - $99,999</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>3. $100,000 - $999,999</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>4. $1,000,000 - $9,999,999</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. &#62;$10,000,000</ListGroup.Item>
                     </ListGroup>
                     <br/>
                     <ListGroup variant="flush" style={{fontSize:12}}>
-                      <ListGroup.Item   style={{fontWeight: 'bold'}}>Contact Frequency</ListGroup.Item>
-                      <ListGroup.Item>1. &#60;0.1 times per year</ListGroup.Item>
-                      <ListGroup.Item>2. 0.1 - 1 times per year</ListGroup.Item>
-                      <ListGroup.Item>3. 1 - 10 times per year</ListGroup.Item>
-                      <ListGroup.Item>4. 10 - 100 times per year</ListGroup.Item>
-                      <ListGroup.Item>5. &#62;100 times per year</ListGroup.Item>
+                      <ListGroup.Item style={{fontWeight: 'bold', padding: 6}}>Contact Frequency</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>1. &#60;0.1 times per year</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>2. 0.1 - 1 times per year</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>3. 1 - 10 times per year</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>4. 10 - 100 times per year</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. &#62;100 times per year</ListGroup.Item>
                     </ListGroup>
                   </Col>
                   <Col>
                     <ListGroup variant="flush"  style={{fontSize:12}}>
-                      <ListGroup.Item style={{fontWeight: 'bold'}}>Probability</ListGroup.Item>
-                      <ListGroup.Item>1. 0% - 10%</ListGroup.Item>
-                      <ListGroup.Item>2. 10% - 30%</ListGroup.Item>
-                      <ListGroup.Item>3. 30% - 70%</ListGroup.Item>
-                      <ListGroup.Item>4. 70% - 90%</ListGroup.Item>
-                      <ListGroup.Item>5. 90% - 100%</ListGroup.Item>
+                      <ListGroup.Item style={{fontWeight: 'bold', padding: 6}}>Probability</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>1. 0% - 10%</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>2. 10% - 30%</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>3. 30% - 70%</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>4. 70% - 90%</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. 90% - 100%</ListGroup.Item>
                     </ListGroup>
                     <br/>
                     <ListGroup variant="flush" style={{fontSize:12}}>
-                      <ListGroup.Item style={{fontWeight: 'bold'}}>Threat Capability</ListGroup.Item>
-                      <ListGroup.Item>1. No technical skills</ListGroup.Item>
-                      <ListGroup.Item>2. Some technical skills</ListGroup.Item>
-                      <ListGroup.Item>3. Advanced computer user</ListGroup.Item>
-                      <ListGroup.Item>4. Network and programming skills</ListGroup.Item>
-                      <ListGroup.Item>5. Security penetration skills</ListGroup.Item>
+                      <ListGroup.Item style={{fontWeight: 'bold', padding: 6}}>Threat Capability</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>1. No technical skills</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>2. Some technical skills</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>3. Advanced computer user</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>4. Network and programming skills</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. Security penetration skills</ListGroup.Item>
                     </ListGroup>
                   </Col>
                 </Row>
@@ -443,11 +466,11 @@ export function Page5(props){
                   <Col>
                     <ListGroup variant="flush" style={{fontSize:12}}>
                       <ListGroup.Item style={{fontWeight: 'bold'}}>Resistance Strength</ListGroup.Item>
-                      <ListGroup.Item>1. Only protects against bottom 2% of an average threat population</ListGroup.Item>
-                      <ListGroup.Item>2. Only protects against bottom 16% of an average threat population</ListGroup.Item>
-                      <ListGroup.Item>3. Protects against the average threat agent</ListGroup.Item>
-                      <ListGroup.Item>4. Protects against all but the top 16% of an average threat population</ListGroup.Item>
-                      <ListGroup.Item>5. Protects against all but the top 2% of an average threat population</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>1. Only protects against bottom 2% of an average threat population</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>2. Only protects against bottom 16% of an average threat population</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>3. Protects against the average threat agent</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>4. Protects against all but the top 16% of an average threat population</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. Protects against all but the top 2% of an average threat population</ListGroup.Item>
                     </ListGroup>
                   </Col>
                   </Row>
