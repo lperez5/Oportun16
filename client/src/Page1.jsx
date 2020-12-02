@@ -24,13 +24,13 @@ export function Page1(props){
   const [padI, setpadI] = useState('');
   const [padC, setpadC] = useState('');
   const [cfaI, setcfaI] = useState('');
-  const [cfaC, setcfaR] = useState('');
+  const [cfaC, setcfaC] = useState('');
   const [rsI, setrsI] = useState('');
-  const [rsC, setrsR] = useState('');
+  const [rsC, setrsC] = useState('');
   const [plmrI, setplmrI] = useState('');
-  const [plmrC, setplmrR] = useState('');
+  const [plmrC, setplmrC] = useState('');
   const [slmrI, setslmrI] = useState('');
-  const [slmrC, setslmrR] = useState('');
+  const [slmrC, setslmrC] = useState('');
   const [tc, settc] = useState('');
   const [slp, setslp] = useState('');
 
@@ -137,7 +137,7 @@ export function Page1(props){
   const handleSelectcfaC=(value)=>{
     Tool.setCFAControls(value-1);
     Tool.calculateTreeResiduals();
-    setcfaR(value);
+    setcfaC(value);
     setButtonDisabled4(false);
   }
   const handleSelectrsI=(value)=>{
@@ -149,7 +149,7 @@ export function Page1(props){
   const handleSelectrsC=(value)=>{
     Tool.setRSControls(value-1);
     Tool.calculateTreeResiduals();
-    setrsR(value);
+    setrsC(value);
     setButtonDisabled6(false);
   }
   const handleSelectplmrI=(value)=>{
@@ -161,7 +161,7 @@ export function Page1(props){
   const handleSelectplmrC=(value)=>{
     Tool.setPLMRControls(value-1);
     Tool.calculateTreeResiduals();
-    setplmrR(value);
+    setplmrC(value);
     setButtonDisabled8(false);
   }
   const handleSelectslmrI=(value)=>{
@@ -173,7 +173,7 @@ export function Page1(props){
   const handleSelectslmrC=(value)=>{
     Tool.setSLMRControls(value-1);
     Tool.calculateTreeResiduals();
-    setslmrR(value);
+    setslmrC(value);
     setButtonDisabled10(false);
   }
   const handleSelecttc=(value)=>{

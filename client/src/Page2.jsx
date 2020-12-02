@@ -35,8 +35,21 @@ export function Page2(props){
     }
 
     const handleDelete = props => {
+        //delete entry from database
         deleteEntry(props);
         //delete entry from dbCacheArray
+        const temp = new Array(dbCacheArray.length);
+        let currentIndex = 0;
+
+        console.log(props);
+
+        for(let i = 0; i < dbCacheArray.length; i++){
+            if(props._id !== dbCacheArray[i]._id){
+                temp[currentIndex] = dbCacheArray[i];
+                currentIndex++;
+            }
+        }
+        setdbCacheArray(temp.slice(0,dbCacheArray.length-1));
     }
 
     const handleEdit = event => {
@@ -145,7 +158,7 @@ export function Page2(props){
                     </Button>
                 </Col>
                 <Col style={{justifyContent: 'stretch'}}>
-                    <Button variant="outline-danger" size='lg' onClick={()=>handleDelete(props)} block>
+                    <Button variant="outline-danger" size='lg' onClick={()=>{if(window.confirm('Are you sure you want to delete?')) handleDelete(props)}} block>
                         Delete
                     </Button>
                 </Col>

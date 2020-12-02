@@ -11,7 +11,9 @@ export function Navbar(props){
 
     const {dbCacheArray, setdbCacheArray} = props;
     const [active, setActive] = useState(1);
-    const [entryToUpdate, setEntryToUpdate] = useState({});
+    const [entryToUpdate, setEntryToUpdate] = useState({
+        data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    });
 
     return(
         <React.Fragment>
