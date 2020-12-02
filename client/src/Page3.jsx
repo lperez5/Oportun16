@@ -4,11 +4,11 @@ import Button from 'react-bootstrap/Button'
 
 export function Page3(props){
 
-  const {active, dbCacheArray, setdbCacheArray} = props;
+  const {active, dbCacheArray} = props;
   let numVeryHighInherentOR = 0;
 
   for(let j=0; j<getTotalDocs(dbCacheArray); j++){
-    if(dbCacheArray[j].data[0] === 4){
+    if(dbCacheArray[j].data[2] === 4){
       numVeryHighInherentOR += 1;
     };
   }

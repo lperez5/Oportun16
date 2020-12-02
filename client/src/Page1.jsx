@@ -46,29 +46,71 @@ export function Page1(props){
   const [buttonDisabled10, setButtonDisabled10] = useState(true);
   const [buttonDisabled11, setButtonDisabled11] = useState(true);
   const [buttonDisabled12, setButtonDisabled12] = useState(true);
+  const [textbool1, settextbool1] = useState(true);
+  const [textbool2, settextbool2] = useState(true);
+  const [textbool3, settextbool3] = useState(true);
+  const [textbool4, settextbool4] = useState(true);
+  const [textbool5, settextbool5] = useState(true);
+  const [textbool6, settextbool6] = useState(true);
 
   const handleName = event => {
     setNameEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool1(true);
+    }
+    else{
+      settextbool1(false);
+    }
   }
 
   const handleCategory = event => {
     setCategoryEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool2(true);
+    }
+    else{
+      settextbool2(false);
+    }
   }
 
   const handleNotes = event => {
     setNotesEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool3(true);
+    }
+    else{
+      settextbool3(false);
+    }
   }
 
   const handleAsset = event => {
     setAssetEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool4(true);
+    }
+    else{
+      settextbool4(false);
+    }
   }
 
   const handleThreat = event => {
     setThreatEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool5(true);
+    }
+    else{
+      settextbool5(false);
+    }
   }
 
   const handleLoss = event => {
     setLossEntered(event.target.value);
+    if(event.target.value === ''){
+      settextbool6(true);
+    }
+    else{
+      settextbool6(false);
+    }
   }
 
   const handleSelectpadI=(value)=>{
@@ -149,17 +191,18 @@ export function Page1(props){
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const tempDateCreated = new Intl.DateTimeFormat('en-US').format(Date.now());
     const treeData = Tool.getTreeData();
     const newEntry = {
       name: nameEntered,
       category: categoryEntered,
+      dateCreated: tempDateCreated,
       data: treeData,
       notes: notesEntered,
       asset: assetEntered,
       threat: threatEntered,
       loss: lossEntered
     };
-    console.log(dbCacheArray);
     setdbCacheArray([newEntry,...dbCacheArray]);
     submit(newEntry);
   };
@@ -220,7 +263,10 @@ export function Page1(props){
               </Col>
             </Row>
             <Row>
-              <Col><Button onClick = {handleSubmit} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12} style={{backgroundColor: '#0B0C10', borderColor: '#45A293', color: '#45A293', borderRadius: '100px'}} >Submit</Button>{' '}
+              <Col><Button onClick = {handleSubmit} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12
+                                                              || textbool1 || textbool2 || textbool3 || textbool4 || textbool5 || textbool6}
+                            variant={'success'}
+                            >Submit</Button>
                 <DropdownButton title={padI} id = "PADInherent">
                     <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadI(1)}>1</Dropdown.Item>
                     <Dropdown.Item eventKey="2" onSelect={()=>handleSelectpadI(2)}>2</Dropdown.Item>
@@ -352,40 +398,40 @@ export function Page1(props){
                 <Row>
                   <Col>
                     <ListGroup variant="flush" style={{fontSize:12}}>
-                      <ListGroup.Item style={{fontWeight: 'bold'}}>Loss Magnitude</ListGroup.Item>
-                      <ListGroup.Item>1. &#60;$9,999</ListGroup.Item>
-                      <ListGroup.Item>2. $10,000 - $99,999</ListGroup.Item>
-                      <ListGroup.Item>3. $100,000 - $999,999</ListGroup.Item>
-                      <ListGroup.Item>4. $1,000,000 - $9,999,999</ListGroup.Item>
-                      <ListGroup.Item>5. &#62;$10,000,000</ListGroup.Item>
+                      <ListGroup.Item style={{fontWeight: 'bold', padding: 6}}>Loss Magnitude</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>1. &#60;$9,999</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>2. $10,000 - $99,999</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>3. $100,000 - $999,999</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>4. $1,000,000 - $9,999,999</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. &#62;$10,000,000</ListGroup.Item>
                     </ListGroup>
                     <br/>
                     <ListGroup variant="flush" style={{fontSize:12}}>
-                      <ListGroup.Item   style={{fontWeight: 'bold'}}>Contact Frequency</ListGroup.Item>
-                      <ListGroup.Item>1. &#60;0.1 times per year</ListGroup.Item>
-                      <ListGroup.Item>2. 0.1 - 1 times per year</ListGroup.Item>
-                      <ListGroup.Item>3. 1 - 10 times per year</ListGroup.Item>
-                      <ListGroup.Item>4. 10 - 100 times per year</ListGroup.Item>
-                      <ListGroup.Item>5. &#62;100 times per year</ListGroup.Item>
+                      <ListGroup.Item style={{fontWeight: 'bold', padding: 6}}>Contact Frequency</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>1. &#60;0.1 times per year</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>2. 0.1 - 1 times per year</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>3. 1 - 10 times per year</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>4. 10 - 100 times per year</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. &#62;100 times per year</ListGroup.Item>
                     </ListGroup>
                   </Col>
                   <Col>
                     <ListGroup variant="flush"  style={{fontSize:12}}>
-                      <ListGroup.Item style={{fontWeight: 'bold'}}>Probability</ListGroup.Item>
-                      <ListGroup.Item>1. 0% - 10%</ListGroup.Item>
-                      <ListGroup.Item>2. 10% - 30%</ListGroup.Item>
-                      <ListGroup.Item>3. 30% - 70%</ListGroup.Item>
-                      <ListGroup.Item>4. 70% - 90%</ListGroup.Item>
-                      <ListGroup.Item>5. 90% - 100%</ListGroup.Item>
+                      <ListGroup.Item style={{fontWeight: 'bold', padding: 6}}>Probability</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>1. 0% - 10%</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>2. 10% - 30%</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>3. 30% - 70%</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>4. 70% - 90%</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. 90% - 100%</ListGroup.Item>
                     </ListGroup>
                     <br/>
                     <ListGroup variant="flush" style={{fontSize:12}}>
-                      <ListGroup.Item style={{fontWeight: 'bold'}}>Threat Capability</ListGroup.Item>
-                      <ListGroup.Item>1. No technical skills</ListGroup.Item>
-                      <ListGroup.Item>2. Some technical skills</ListGroup.Item>
-                      <ListGroup.Item>3. Advanced computer user</ListGroup.Item>
-                      <ListGroup.Item>4. Network and programming skills</ListGroup.Item>
-                      <ListGroup.Item>5. Security penetration skills</ListGroup.Item>
+                      <ListGroup.Item style={{fontWeight: 'bold', padding: 6}}>Threat Capability</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>1. No technical skills</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>2. Some technical skills</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>3. Advanced computer user</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>4. Network and programming skills</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. Security penetration skills</ListGroup.Item>
                     </ListGroup>
                   </Col>
                 </Row>
@@ -393,11 +439,11 @@ export function Page1(props){
                   <Col>
                     <ListGroup variant="flush" style={{fontSize:12}}>
                       <ListGroup.Item style={{fontWeight: 'bold'}}>Resistance Strength</ListGroup.Item>
-                      <ListGroup.Item>1. Only protects against bottom 2% of an average threat population</ListGroup.Item>
-                      <ListGroup.Item>2. Only protects against bottom 16% of an average threat population</ListGroup.Item>
-                      <ListGroup.Item>3. Protects against the average threat agent</ListGroup.Item>
-                      <ListGroup.Item>4. Protects against all but the top 16% of an average threat population</ListGroup.Item>
-                      <ListGroup.Item>5. Protects against all but the top 2% of an average threat population</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>1. Only protects against bottom 2% of an average threat population</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>2. Only protects against bottom 16% of an average threat population</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>3. Protects against the average threat agent</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>4. Protects against all but the top 16% of an average threat population</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. Protects against all but the top 2% of an average threat population</ListGroup.Item>
                     </ListGroup>
                   </Col>
                   </Row>

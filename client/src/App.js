@@ -19,7 +19,6 @@ class App extends React.Component {
     const posts = await response.json();
     posts.reverse();
     this.setState({posts});
-    console.log("mounted");
   };
 
   setStateHandler(posts){
