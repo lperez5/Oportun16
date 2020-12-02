@@ -242,10 +242,10 @@ class ToolState{
     return this.PADInherent;
   }
   setPADControls(x){
-    this.RSInherent = x;
+    this.PADControls = x;
   }
   getPADControls(){
-    return this.PADC
+    return this.PADControls;
   }
 
   setCFAInherent(x){
