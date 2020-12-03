@@ -243,7 +243,6 @@ export function Page5(props){
       asset: assetEntered,
       threat: threatEntered,
       loss: lossEntered,
-      //IDtoUpdate: id
     };
 
     //update entry in dbCacheArray
