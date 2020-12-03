@@ -33,7 +33,7 @@ export function Page3(props){
   function getTotalDocs(arr){
     return arr.length;
   }
-                     
+
   function getYear(DBobjectDate){
     const year = new Date(DBobjectDate).getFullYear();
     return year;
@@ -42,6 +42,42 @@ export function Page3(props){
   function getThisMonth(DBobjectDate){
     const month = new Date(DBobjectDate).getMonth();
     return month;
+  }
+
+  function monthlyChange(arr, x){
+    let thisMonthAvg = 0;
+    let lastMonthAvg = 0;
+    let thisMonth = new Date().getMonth();
+    let thisYear = new Date().getFullYear();
+    let counter1 = 0;
+    let counter2 = 0;
+
+    for(let i=0; i < arr.length; i++){
+      if(getYear(arr[i].dateCreated) === thisYear && getThisMonth(arr[i].dateCreated) === thisMonth){
+        counter1++;
+        thisMonthAvg += arr[i].data[x];
+      }
+      if(getYear(arr[i].dateCreated) === thisYear && getThisMonth(arr[i].dateCreated) === (thisMonth-1)){
+        counter2++;
+        lastMonthAvg += arr[i].data[x];
+      }
+    }
+
+    if(counter1 === 0){
+      thisMonthAvg = 0;
+    }
+    else{
+      thisMonthAvg = thisMonthAvg/counter1;
+    }
+
+    if(counter2 === 0){
+      lastMonthAvg = 0;
+    }
+    else{
+      lastMonthAvg = lastMonthAvg/counter2;
+    }
+
+    return (thisMonthAvg - lastMonthAvg);
   }
 
   return(
@@ -71,64 +107,27 @@ export function Page3(props){
         <Card className="derivation-row" style={{borderColor: 'transparent', elevation: 0}}>
             <CardGroup>
               <Card style={{borderColor: 'transparent', elevation: 0}}>
-                <Card.Img src = {PR} className="DerivationTable"></Card.Img> 
+                <Card.Img src = {PR} className="DerivationTable"></Card.Img>
               </Card>
               <Card style={{borderColor: 'transparent', elevation: 0}}>
-                <Card.Img src = {SR} className="DerivationTable"></Card.Img>   
+                <Card.Img src = {SR} className="DerivationTable"></Card.Img>
               </Card>
             </CardGroup>
         </Card>
         <Card className="derivation-row" style={{borderColor: 'transparent', elevation: 0}}>
             <CardGroup>
               <Card style={{borderColor: 'transparent', elevation: 0}}>
-                <Card.Img src = {PLEF} className="DerivationTable"></Card.Img> 
+                <Card.Img src = {PLEF} className="DerivationTable"></Card.Img>
               </Card>
               <Card style={{borderColor: 'transparent', elevation: 0}}>
-                <Card.Img src = {SLEF} className="DerivationTable"></Card.Img> 
+                <Card.Img src = {SLEF} className="DerivationTable"></Card.Img>
               </Card>
               <Card style={{borderColor: 'transparent', elevation: 0}}>
-                <Card.Img src = {Vuln} className="DerivationTable"></Card.Img> 
+                <Card.Img src = {Vuln} className="DerivationTable"></Card.Img>
               </Card>
             </CardGroup>
         </Card>
       </Container>
     </div>
   );
-}
-         
-                     
- function monthlyChange(arr, x){
-  let thisMonthAvg = 0;
-  let lastMonthAvg = 0;
-  let thisMonth = new Date().getMonth();
-  let thisYear = new Date().getFullYear();
-  let counter1 = 0;
-  let counter2 = 0;
-
-  for(let i=0; i < arr.length; i++){
-    if(getYear(arr[i].dateCreated) === thisYear && getThisMonth(arr[i].dateCreated) === thisMonth){
-      counter1++;
-      thisMonthAvg += arr[i].data[x];
-    }
-    if(getYear(arr[i].dateCreated) === thisYear && getThisMonth(arr[i].dateCreated) === (thisMonth-1)){
-      counter2++;
-      lastMonthAvg += arr[i].data[x];
-    }
-  }
-
-  if(counter1 === 0){
-    thisMonthAvg = 0;
-  }
-  else{
-    thisMonthAvg = thisMonthAvg/counter1;
-  }
-
-  if(counter2 === 0){
-    lastMonthAvg = 0;
-  }
-  else{
-    lastMonthAvg = lastMonthAvg/counter2;
-  }
-
-  return (thisMonthAvg - lastMonthAvg);
 }
