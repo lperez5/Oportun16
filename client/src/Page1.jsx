@@ -115,7 +115,7 @@ export function Page1(props){
 
   const handleSelectpadI=(value)=>{
     Tool.setPADInherent(value-1);
-    Tool.calculateTreeInherents();
+    Tool.calculateTree();
     //get potentially changed values of calculated variables
     Tool.getState();
     //update visuals of those variables
@@ -124,55 +124,55 @@ export function Page1(props){
   }
   const handleSelectpadC=(value)=>{
     Tool.setPADControls(value-1);
-    Tool.calculateTreeResiduals();
+    Tool.calculateTree();
     setpadC(value);
     setButtonDisabled2(false);
   }
   const handleSelectcfaI=(value)=>{
     Tool.setCFAInherent(value-1);
-    Tool.calculateTreeInherents();
+    Tool.calculateTree();
     setcfaI(value);
     setButtonDisabled3(false);
   }
   const handleSelectcfaC=(value)=>{
     Tool.setCFAControls(value-1);
-    Tool.calculateTreeResiduals();
+    Tool.calculateTree();
     setcfaC(value);
     setButtonDisabled4(false);
   }
   const handleSelectrsI=(value)=>{
     Tool.setRSInherent(value-1);
-    Tool.calculateTreeInherents();
+    Tool.calculateTree();
     setrsI(value);
     setButtonDisabled5(false);
   }
   const handleSelectrsC=(value)=>{
     Tool.setRSControls(value-1);
-    Tool.calculateTreeResiduals();
+    Tool.calculateTree();
     setrsC(value);
     setButtonDisabled6(false);
   }
   const handleSelectplmrI=(value)=>{
     Tool.setPLMRInherent(value-1);
-    Tool.calculateTreeInherents();
+    Tool.calculateTree();
     setplmrI(value);
     setButtonDisabled7(false);
   }
   const handleSelectplmrC=(value)=>{
     Tool.setPLMRControls(value-1);
-    Tool.calculateTreeResiduals();
+    Tool.calculateTree();
     setplmrC(value);
     setButtonDisabled8(false);
   }
   const handleSelectslmrI=(value)=>{
     Tool.setSLMRInherent(value-1);
-    Tool.calculateTreeInherents();
+    Tool.calculateTree();
     setslmrI(value);
     setButtonDisabled9(false);
   }
   const handleSelectslmrC=(value)=>{
     Tool.setSLMRControls(value-1);
-    Tool.calculateTreeResiduals();
+    Tool.calculateTree();
     setslmrC(value);
     setButtonDisabled10(false);
   }
