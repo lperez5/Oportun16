@@ -1,6 +1,6 @@
 import React from 'react'
 import {  Table, Container, Row, Col } from 'react-bootstrap';
-import Tree from '../src/tree.png'
+import Tree from '../src/Pics/tree.png'
 
 export function Page4(props){
     const {active} = props;
@@ -142,9 +142,10 @@ export function Page4(props){
     </tr>
   </tbody>
 
-            </Table>
-        </Row>
-    </Container>
+</Table>
+</Row>
+</Container>
+
 </div>
     );
 }

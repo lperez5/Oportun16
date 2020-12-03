@@ -1,0 +1,7 @@
+.unindented-row {
+    align-items: center;
+}
+.indented-row {
+    align-items: center;
+    margin-left: 7rem;
+}
