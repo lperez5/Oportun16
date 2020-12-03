@@ -313,4 +313,63 @@ class ToolState{
   getSLP(){
     return this.SLP;
   }
+
+  //calculated values' getter functions
+  getORInherent(){
+    return this.ORInherent;
+  }
+  getORResidual(){
+    return this.ORResidual;
+  }
+  getPRInherent(){
+    return this.PRInherent;
+  }
+  getPRResidual(){
+    return this.PRResidual;
+  }
+  getSRInherent(){
+    return this.SRInherent;
+  }
+  getSRResidual(){
+    return this.SRResidual;
+  }
+  getPLMRResidual(){
+    return this.PLMRResidual;
+  }
+  getSLMRResidual(){
+    return this.SLMRResidual;
+  }
+  getPLEFInherent(){
+    return this.PLEFInherent;
+  }
+  getPLEFResidual(){
+    return this.PLEFResidual;
+  }
+  getSLEFInherent(){
+    return this.SLEFInherent;
+  }
+  getSLEFResidual(){
+    return this.SLEFResidual;
+  }
+  getTEFInherent(){
+    return this.TEFInherent;
+  }
+  getTEFResidual(){
+    return this.TEFResidual;
+  }
+  getVULNInherent(){
+    return this.VULNInherent;
+  }
+  getVULNResidual(){
+    return this.VULNResidual;
+  }
+  getCFAResidual(){
+    return this.CFAResidual;
+  }
+  getPADResidual(){
+    return this.PADResidual;
+  }
+  getRSResidual(){
+    return this.RSResidual;
+  }
 }
