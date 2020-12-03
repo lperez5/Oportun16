@@ -1,3 +1,4 @@
+<<<<<<< HEAD:client/src/Navbar.css
 
 
 .unindented-row {
@@ -32,4 +33,12 @@
 .font3 {
     align-items: center;
     font-size: 20px;
+=======
+.unindented-row {
+    align-items: center;
+}
+.indented-row {
+    align-items: center;
+    margin-left: 7rem;
+>>>>>>> be0f28492470b0f48861e621facb570a4c366b41:client/src/Tree.css
 }
