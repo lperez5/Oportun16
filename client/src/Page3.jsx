@@ -1,29 +1,60 @@
-import React, {useState} from 'react'
-import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton';
-
-
+import React, { useState } from 'react'
+import { Container, Row, Col } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button'
 
 export function Page3(props){
-    const {active} = props;
 
-    const [d1, setd1] = useState('');
+  const {active, dbCacheArray} = props;
+  let numVeryHighInherentOR = 0;
 
-    const handleSelect=(e)=>{
-        console.log(e);
-        setd1(e);
-    }
+  for(let j=0; j<getTotalDocs(dbCacheArray); j++){
+    if(dbCacheArray[j].data[2] === 4){
+      numVeryHighInherentOR += 1;
+    };
+  }
 
-    return(
-        <div hidden={!active}>
-            <DropdownButton title={d1} id = "dropdown" onSelect={handleSelect}>
-                <Dropdown.Item eventKey="1">1</Dropdown.Item>
-                <Dropdown.Item eventKey="2">2</Dropdown.Item>
-                <Dropdown.Item eventKey="3">3</Dropdown.Item>
-                <Dropdown.Item eventKey="4">3</Dropdown.Item>
-                <Dropdown.Item eventKey="5">3</Dropdown.Item>
-            </DropdownButton>
+  console.log(numVeryHighInherentOR);
 
-        </div>
-    );
+  return(
+    <div hidden={!active}>
+      <Container>
+        <Row>
+          <Col><Button variant="primary" onClick={()=>xRecent(dbCacheArray,5)}>xRecent</Button>{' '}
+          <Button variant="primary" onClick={()=>getTotalDocs(dbCacheArray)}>Total Docs</Button>{' '}</Col>
+          <Col lg = {8}> HEAT MAP</Col>
+        </Row>
+        <Row>
+          <Col>
+            <Button variant="primary">button</Button>{' '}
+          </Col>
+          <Col lg={8}>HEAT MAP</Col>
+        </Row>
+      </Container>
+    </div>
+  );
+}
+
+function xRecent(arr, x){
+  const newArr = [];
+  for(let i=arr.length-1; i>=(arr.length-5); i--){
+    newArr.push(arr[i]);
+  }
+  console.log(newArr);
+  return newArr;
+}
+
+function getTotalDocs(arr){
+  console.log(arr.length);
+  return arr.length;
+}
+
+function monthlyChangePRInherent(arr){
+  let thisMonthAvg = 0;
+  let lastMonthAvg = 0;
+  let difference = 0;
+  //for loop check every date until we leave this month
+  //for loop check every date after ^^ until we leave the month before this month
+  //this month avg - [last month avg]
+  difference = thisMonthAvg - lastMonthAvg;
+  return difference;
 }
