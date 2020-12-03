@@ -6,6 +6,7 @@ import {Page2} from '../../Page2.jsx'
 import {Page3} from '../../Page3.jsx'
 import {Page4} from '../../Page4.jsx'
 import {Page5} from '../../Page5.jsx'
+import '../../Navbar.css'
 
 export function Navbar(props){
 

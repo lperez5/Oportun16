@@ -280,10 +280,7 @@ export function Page1(props){
               </Col>
             </Row>
             <Row>
-              <Col><Button onClick = {handleSubmit} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12
-                                                              || textbool1 || textbool2 || textbool3 || textbool4 || textbool5 || textbool6}
-                            variant={'success'}
-                            >Submit</Button>
+             <Col>
                      <Card className="unindented-row" style={{borderColor: 'transparent', elevation: 0}}>
                         <Card.Body >
                             <Card style={{ width: '21rem', height: '9rem' }} className="text-center" >
@@ -771,7 +768,10 @@ export function Page1(props){
                             <Card style={{ borderColor: 'transparent', elevation: 0 }}>
                                 <Card.Body>
                                     <Card style={{ width: '21rem', height: '9rem', borderColor: 'transparent', elevation: 0 }} className="text-center" >
-                                    <Button  onClick={handleClick} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12} style={{width: '21rem', height: '9rem'}} >Submit</Button>
+                                    <Button onClick = {handleSubmit} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12
+                                                              || textbool1 || textbool2 || textbool3 || textbool4 || textbool5 || textbool6}
+                                    variant={'success'}
+                                    >Submit</Button>
                                     </Card>
                                 </Card.Body>
                             </Card>

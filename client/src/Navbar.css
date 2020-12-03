@@ -5,14 +5,5 @@
 }
 .indented-row { 
     align-items: center;
-    margin-left: 15rem;
-}
-.tester3 {
-    margin-right: 10rem;
-}
-.logo-style{
-    height: 100px;
-    width: 250px;
-    justify-self: start;
-    margin-left: 20px;
+    margin-left: 7rem;
 }
