@@ -1,7 +1,35 @@
+
+
 .unindented-row {
     align-items: center;
+    display:flex;
 }
-.indented-row {
+.indented-row { 
     align-items: center;
     margin-left: 7rem;
+    display: flex;
+}
+.newCard{
+    width: 18.5rem;
+    height: 8rem;
+}
+.newCard2{
+    width: 18.5rem;
+    height: 9rem;
+}
+.newCard3{
+    width: 16.5rem;
+    height: 8rem;
+}
+.font1 {
+    align-items: center;
+    font-size: 16px;
+}
+.font2 {
+    align-items: center;
+    font-size: 14px;
+}
+.font3 {
+    align-items: center;
+    font-size: 20px;
 }
