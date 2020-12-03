@@ -237,7 +237,24 @@ export function Page1(props){
       case 4:
         return "very high"
       default:
-        return 0;
+        return "default";
+    }
+  }
+
+  const convertToMoney=(num)=>{
+    switch(num) {
+      case 0:
+        return "<$9,999"
+      case 1:
+        return "$10,000 - $99,999"
+      case 2:
+        return "$100,000 - $999,999"
+      case 3:
+        return "$1,000,000 - $9,999,999"
+      case 4:
+        return ">=$10,000,000"
+      default:
+        return "default";
     }
   }
 
@@ -801,7 +818,7 @@ export function Page1(props){
             <Container fluid>
               <Row>
                 <Col>
-                  <Table striped bordered hover>
+                  <Table striped bordered>
                     <thead>
                       <tr>
                         <th>Summary</th>
@@ -812,18 +829,18 @@ export function Page1(props){
                     <tbody>
                       <tr>
                         <td>Overall Risk</td>
-                        <td>Very High</td>
-                        <td>Very Low</td>
+                        <td>{convertToOutputText(Tool.getORInherent())}</td>
+                        <td>{convertToOutputText(Tool.getORResidual())}</td>
                       </tr>
                       <tr>
                         <td>Primary LM</td>
-                        <td> &#60;$9,999 </td>
-                        <td> &#60;$9,999</td>
+                        <td>{convertToMoney(Tool.getPLMRInherent())}</td>
+                        <td>{convertToMoney(Tool.getPLMRResidual())}</td>
                       </tr>
                       <tr>
                         <td>Secondary LM</td>
-                        <td>&#60;$10,000,000</td>
-                        <td>&#60;$100,000</td>
+                        <td>{convertToMoney(Tool.getSLMRInherent())}</td>
+                        <td>{convertToMoney(Tool.getSLMRResidual())}</td>
                       </tr>
                     </tbody>
                   </Table>
@@ -835,7 +852,7 @@ export function Page1(props){
                       <ListGroup.Item style={{padding: 6}}>2. $10,000 - $99,999</ListGroup.Item>
                       <ListGroup.Item style={{padding: 6}}>3. $100,000 - $999,999</ListGroup.Item>
                       <ListGroup.Item style={{padding: 6}}>4. $1,000,000 - $9,999,999</ListGroup.Item>
-                      <ListGroup.Item style={{padding: 6}}>5. &#62;$10,000,000</ListGroup.Item>
+                      <ListGroup.Item style={{padding: 6}}>5. &#62;=$10,000,000</ListGroup.Item>
                     </ListGroup>
                     <br/>
                     <ListGroup variant="flush" style={{fontSize:12}}>
