@@ -190,7 +190,7 @@ export function Page1(props){
     setButtonDisabled12(false);
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const tempDateCreated = new Intl.DateTimeFormat('en-US').format(Date.now());
     const treeData = Tool.getTreeData();
@@ -204,8 +204,11 @@ export function Page1(props){
       threat: threatEntered,
       loss: lossEntered
     };
+    //submit to DB
+    const id = await submit(newEntry);
+    //update dbCacheArray
+    newEntry._id = id;
     setdbCacheArray([newEntry,...dbCacheArray]);
-    submit(newEntry);
   };
 
   const handleColor=(num)=>{

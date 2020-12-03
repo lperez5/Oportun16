@@ -228,12 +228,11 @@ export function Page5(props){
     event.preventDefault();
     const tempLastUpdated = new Intl.DateTimeFormat('en-US').format(Date.now());
     const treeData = Tool.getTreeData();
-    const id = Entry._id;
-    console.log(id);
+    const _id = Entry._id;
     const dateCreated = Entry.dateCreated;
 
     const updatedEntry = {
-      _id: id,
+      _id: _id,
       name: nameEntered,
       category: categoryEntered,
       dateCreated: dateCreated,
@@ -248,7 +247,7 @@ export function Page5(props){
     //update entry in dbCacheArray
     const temp = new Array(dbCacheArray.length);
     for(let i = 0; i < dbCacheArray.length; i++){
-        if(id !== dbCacheArray[i]._id){
+        if(_id !== dbCacheArray[i]._id){
           temp[i] = dbCacheArray[i];
         }
         else{
