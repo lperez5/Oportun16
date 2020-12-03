@@ -222,7 +222,24 @@ export function Page1(props){
     } else if (cfaI === '5') {
         setbackgroundcolor('#B22222')
     }
-}
+  }
+
+  const convertToOutputText=(num)=>{
+    switch(num) {
+      case 0:
+        return "very low"
+      case 1:
+        return "low"
+      case 2:
+        return "medium"
+      case 3:
+        return "high"
+      case 4:
+        return "very high"
+      default:
+        return 0;
+    }
+  }
 
   return(
     <div hidden={!active}>
@@ -289,8 +306,8 @@ export function Page1(props){
                                 <CardGroup>
                                     <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                         <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
-                                        <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                            {Tool.getORInherent()}
+                                        <Card.Text style={{ fontSize: 17, backgroundColor: backgroundcolor }} >
+                                            {convertToOutputText(Tool.getORInherent())}
                                         </Card.Text>
                                     </Card>
                                     <Card style={{borderColor: 'transparent', elevation: 0}}>
@@ -298,8 +315,8 @@ export function Page1(props){
                                     </Card>
                                     <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                         <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
-                                        <Card.Text style={{ fontSize: 25 }}>
-                                            {Tool.getORResidual()}
+                                        <Card.Text style={{ fontSize: 17 }}>
+                                            {convertToOutputText(Tool.getORResidual())}
                                         </Card.Text>
                                     </Card>
                                 </CardGroup>
@@ -317,8 +334,8 @@ export function Page1(props){
                                         <CardGroup>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
-                                                <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                                    {Tool.getPRInherent()}
+                                                <Card.Text style={{ fontSize: 17, backgroundColor: backgroundcolor }} >
+                                                    {convertToOutputText(Tool.getPRInherent())}
                                                 </Card.Text>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
@@ -326,8 +343,8 @@ export function Page1(props){
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
-                                                <Card.Text style={{ fontSize: 25 }}>
-                                                    {Tool.getPRResidual()}
+                                                <Card.Text style={{ fontSize: 17 }}>
+                                                    {convertToOutputText(Tool.getPRResidual())}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -348,8 +365,8 @@ export function Page1(props){
                                         <CardGroup>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
-                                                <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                                    {Tool.getSRInherent()}
+                                                <Card.Text style={{ fontSize: 17, backgroundColor: backgroundcolor }} >
+                                                    {convertToOutputText(Tool.getSRInherent())}
                                                 </Card.Text>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
@@ -357,8 +374,8 @@ export function Page1(props){
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
-                                                <Card.Text style={{ fontSize: 25 }}>
-                                                    {Tool.getSRResidual()}
+                                                <Card.Text style={{ fontSize: 17 }}>
+                                                    {convertToOutputText(Tool.getSRResidual())}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -379,7 +396,7 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
                                                 <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                                    {Tool.getPLEFInherent()}
+                                                    {Tool.getPLEFInherent()+1}
                                                 </Card.Text>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
@@ -388,7 +405,7 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {Tool.getPLEFResidual()}
+                                                    {Tool.getPLEFResidual()+1}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -425,7 +442,7 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {Tool.getPLMRResidual()}
+                                                    {Tool.getPLMRResidual()+1}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -452,17 +469,17 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Controls</Card.Title>
                                                 <DropdownButton title={slmrC} id = "SLMRControls">
-                                                    <Dropdown.Item eventKey="1" onSelect={()=>handleSelectslmrC(5)}>1</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="2" onSelect={()=>handleSelectslmrC(5)}>2</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="3" onSelect={()=>handleSelectslmrC(5)}>3</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="4" onSelect={()=>handleSelectslmrC(5)}>4</Dropdown.Item>
+                                                    <Dropdown.Item eventKey="1" onSelect={()=>handleSelectslmrC(1)}>1</Dropdown.Item>
+                                                    <Dropdown.Item eventKey="2" onSelect={()=>handleSelectslmrC(2)}>2</Dropdown.Item>
+                                                    <Dropdown.Item eventKey="3" onSelect={()=>handleSelectslmrC(3)}>3</Dropdown.Item>
+                                                    <Dropdown.Item eventKey="4" onSelect={()=>handleSelectslmrC(4)}>4</Dropdown.Item>
                                                     <Dropdown.Item eventKey="5" onSelect={()=>handleSelectslmrC(5)}>5</Dropdown.Item>
                                                 </DropdownButton>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {Tool.getSLMRResidual()}
+                                                    {Tool.getSLMRResidual()+1}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -479,7 +496,7 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
                                                 <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                                    {Tool.getSLEFInherent()}
+                                                    {Tool.getSLEFInherent()+1}
                                                 </Card.Text>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
@@ -488,7 +505,7 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {Tool.getSLEFResidual()}
+                                                    {Tool.getSLEFResidual()+1}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -509,7 +526,7 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
                                                 <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                                    {Tool.getTEFInherent()}
+                                                    {Tool.getTEFInherent()+1}
                                                 </Card.Text>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
@@ -518,7 +535,7 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {Tool.getTEFResidual()}
+                                                    {Tool.getTEFResidual()+1}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -535,7 +552,7 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
                                                 <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                                    {Tool.getVULNInherent()}
+                                                    {Tool.getVULNInherent()+1}
                                                 </Card.Text>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
@@ -544,7 +561,7 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {Tool.getVULNResidual()}
+                                                    {Tool.getVULNResidual()+1}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -614,7 +631,7 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {Tool.getCFAResidual()}
+                                                    {Tool.getCFAResidual()+1}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -660,7 +677,7 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
                                                 <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                                    {Tool.getPLEFInherent()}
+                                                    {Tool.getPLEFInherent()+1}
                                                 </Card.Text>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
@@ -669,7 +686,7 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {Tool.getPLEFResidual()}
+                                                    {Tool.getPLEFResidual()+1}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -710,7 +727,7 @@ export function Page1(props){
                                                 <Card style={{borderColor: 'transparent', elevation: 0}}>
                                                     <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                     <Card.Text style={{ fontSize: 25 }}>
-                                                        {Tool.getPADResidual()}
+                                                        {Tool.getPADResidual()+1}
                                                     </Card.Text>
                                                 </Card>
                                             </CardGroup>
@@ -747,7 +764,7 @@ export function Page1(props){
                                                 <Card style={{borderColor: 'transparent', elevation: 0}}>
                                                     <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                     <Card.Text style={{ fontSize: 25 }}>
-                                                        {Tool.getRSResidual()}
+                                                        {Tool.getRSResidual()+1}
                                                     </Card.Text>
                                                 </Card>
                                             </CardGroup>
