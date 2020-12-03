@@ -1,4 +1,12 @@
 .DerivationTable {
-    max-height: 50%;
-    max-width: 50%;
+    height: 300px;
+    width: 500px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.derivation-row{
+    align-items: center;
+    display: flex;
 }

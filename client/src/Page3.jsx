@@ -7,6 +7,8 @@ import SR from '../src/Pics/SR.png'
 import PLEF from '../src/Pics/PLEF.png'
 import SLEF from '../src/Pics/SLEF.png'
 import Vuln from '../src/Pics/Vuln.png'
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
 import '../src/derivation.css'
 
 export function Page3(props){
@@ -34,7 +36,7 @@ export function Page3(props){
 
   return(
     <div hidden={!active}>
-      <Container>
+      <Container fluid="1">
         <Row>
           <Col><Button variant="primary" onClick={()=>xRecent(dbCacheArray,5)}>xRecent</Button>
           </Col>
@@ -49,18 +51,34 @@ export function Page3(props){
             {}
           </Col>
         </Row>
-        <Row><Col><Col><Col>
-        <img src={OR} className="DerivationTable" alt={''}/>
-        </Col></Col></Col></Row>
-        <Row>
-          <Col><img src={PR} className="DerivationTable" alt={''} /></Col>
-          <Col><img src={SR} className="DerivationTable" alt={''}/></Col>
-        </Row>
-        <Row>
-          <Col><img src={PLEF} className="DerivationTable" alt={''} /></Col>
-          <Col><img src={SLEF} className="DerivationTable" alt={''} /></Col>
-          <Col><img src={Vuln} className="DerivationTable" alt={''} /></Col>
-        </Row>
+        <Card className="derivation-row" style={{borderColor: 'transparent', elevation: 0}}>
+            <Card style={{borderColor: 'transparent', elevation: 0}}>
+              <Card.Img src={OR} className="DerivationTable"></Card.Img>
+            </Card>
+        </Card>
+        <Card className="derivation-row" style={{borderColor: 'transparent', elevation: 0}}>
+            <CardGroup>
+              <Card style={{borderColor: 'transparent', elevation: 0}}>
+                <Card.Img src = {PR} className="DerivationTable"></Card.Img> 
+              </Card>
+              <Card style={{borderColor: 'transparent', elevation: 0}}>
+                <Card.Img src = {SR} className="DerivationTable"></Card.Img>   
+              </Card>
+            </CardGroup>
+        </Card>
+        <Card className="derivation-row" style={{borderColor: 'transparent', elevation: 0}}>
+            <CardGroup>
+              <Card style={{borderColor: 'transparent', elevation: 0}}>
+                <Card.Img src = {PLEF} className="DerivationTable"></Card.Img> 
+              </Card>
+              <Card style={{borderColor: 'transparent', elevation: 0}}>
+                <Card.Img src = {SLEF} className="DerivationTable"></Card.Img> 
+              </Card>
+              <Card style={{borderColor: 'transparent', elevation: 0}}>
+                <Card.Img src = {Vuln} className="DerivationTable"></Card.Img> 
+              </Card>
+            </CardGroup>
+        </Card>
       </Container>
     </div>
   );
