@@ -10,8 +10,8 @@ const entry = new Schema({
   asset: String,
   threat: String,
   loss: String,
-  dateCreated: {type: String, default: new Date(Date.now())},
-  lastUpdated: {type: String, default: new Date(Date.now())},
+  dateCreated: {type: String, default: new Intl.DateTimeFormat('en-US').format(Date.now())},
+  lastUpdated: {type: String, default: new Intl.DateTimeFormat('en-US').format(Date.now())},
 });
 
 //Model
