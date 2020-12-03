@@ -229,9 +229,11 @@ export function Page5(props){
     const tempLastUpdated = new Intl.DateTimeFormat('en-US').format(Date.now());
     const treeData = Tool.getTreeData();
     const id = Entry._id;
+    console.log(id);
     const dateCreated = Entry.dateCreated;
 
     const updatedEntry = {
+      _id: id,
       name: nameEntered,
       category: categoryEntered,
       dateCreated: dateCreated,
@@ -241,7 +243,7 @@ export function Page5(props){
       asset: assetEntered,
       threat: threatEntered,
       loss: lossEntered,
-      IDtoUpdate: id
+      //IDtoUpdate: id
     };
 
     //update entry in dbCacheArray
