@@ -23,12 +23,12 @@ router.post('/save', (req, res) => {
 
   const newentry = new entrymodel(data);
 
-  newentry.save((error) => {
+  newentry.save((error, doc) => {
     if(error){
       res.status(500).json({msg: 'Internal server error'});
     }
     else{
-      res.json({msg: 'Data received'});
+      res.json({msg: 'Data received', id: doc._id});
     }
   });
 });

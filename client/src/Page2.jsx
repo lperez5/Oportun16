@@ -82,7 +82,7 @@ export function Page2(props){
         }
     }
 
-    const DataRows = () => {
+    const DataRows = ({start,end}) => {
         if(dbCacheArray.length === 0){
             return(<p> "No results" </p>)
         }
@@ -97,8 +97,7 @@ export function Page2(props){
                 }
                 i++;
             }
-            Rows.length = 10;
-            return(<> {Rows} </>)
+            return(<> {Rows.slice(start,end)} </>)
         }
     }
 
@@ -195,7 +194,7 @@ export function Page2(props){
             </Container>
 
             <Container fluid>
-                <DataRows/>
+                <DataRows start={0} end={10}/>
             </Container>
         </div>
     );
