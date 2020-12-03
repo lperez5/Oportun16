@@ -3,10 +3,10 @@ import { ListGroup ,FormControl, InputGroup, Table, Container, Row, Col } from '
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import {getInstance} from './utils/ToolCalcs';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import {submit} from './utils/submit'
+import {getInstance} from './utils/ToolCalcs';
 
 
 export function Page1(props){
@@ -118,7 +118,7 @@ export function Page1(props){
 
   const handleSelectpadI=(value)=>{
     Tool.setPADInherent(value-1);
-    Tool.calculateTreeInherents();
+    Tool.calculateTree();
     //get potentially changed values of calculated variables
     Tool.getState();
     //update visuals of those variables
@@ -127,55 +127,55 @@ export function Page1(props){
   }
   const handleSelectpadC=(value)=>{
     Tool.setPADControls(value-1);
-    Tool.calculateTreeResiduals();
+    Tool.calculateTree();
     setpadC(value);
     setButtonDisabled2(false);
   }
   const handleSelectcfaI=(value)=>{
     Tool.setCFAInherent(value-1);
-    Tool.calculateTreeInherents();
+    Tool.calculateTree();
     setcfaI(value);
     setButtonDisabled3(false);
   }
   const handleSelectcfaC=(value)=>{
     Tool.setCFAControls(value-1);
-    Tool.calculateTreeResiduals();
+    Tool.calculateTree();
     setcfaC(value);
     setButtonDisabled4(false);
   }
   const handleSelectrsI=(value)=>{
     Tool.setRSInherent(value-1);
-    Tool.calculateTreeInherents();
+    Tool.calculateTree();
     setrsI(value);
     setButtonDisabled5(false);
   }
   const handleSelectrsC=(value)=>{
     Tool.setRSControls(value-1);
-    Tool.calculateTreeResiduals();
+    Tool.calculateTree();
     setrsC(value);
     setButtonDisabled6(false);
   }
   const handleSelectplmrI=(value)=>{
     Tool.setPLMRInherent(value-1);
-    Tool.calculateTreeInherents();
+    Tool.calculateTree();
     setplmrI(value);
     setButtonDisabled7(false);
   }
   const handleSelectplmrC=(value)=>{
     Tool.setPLMRControls(value-1);
-    Tool.calculateTreeResiduals();
+    Tool.calculateTree();
     setplmrC(value);
     setButtonDisabled8(false);
   }
   const handleSelectslmrI=(value)=>{
     Tool.setSLMRInherent(value-1);
-    Tool.calculateTreeInherents();
+    Tool.calculateTree();
     setslmrI(value);
     setButtonDisabled9(false);
   }
   const handleSelectslmrC=(value)=>{
     Tool.setSLMRControls(value-1);
-    Tool.calculateTreeResiduals();
+    Tool.calculateTree();
     setslmrC(value);
     setButtonDisabled10(false);
   }
@@ -211,15 +211,15 @@ export function Page1(props){
   };
 
   const handleColor=()=>{
-    if(cfaI == '1') {   /* first try at colors, but it updates one click late */
+    if(cfaI === '1') {   /* first try at colors, but it updates one click late */
         setbackgroundcolor('#32CD32')
-    } else if (cfaI == '2') {
+    } else if (cfaI === '2') {
         setbackgroundcolor('#7CFC00')
-    } else if (cfaI == '3') {
+    } else if (cfaI === '3') {
         setbackgroundcolor('#FFFF00')
-    } else if (cfaI == '4') {
+    } else if (cfaI === '4') {
         setbackgroundcolor('#FF0000')
-    } else if (cfaI == '5') {
+    } else if (cfaI === '5') {
         setbackgroundcolor('#B22222')
     }
 }
@@ -290,16 +290,16 @@ export function Page1(props){
                                     <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                         <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
                                         <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                            {cfaI}
+                                            {Tool.getORInherent()}
                                         </Card.Text>
                                     </Card>
                                     <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                        
+
                                     </Card>
                                     <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                         <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                         <Card.Text style={{ fontSize: 25 }}>
-                                            {cfaC}
+                                            {Tool.getORResidual()}
                                         </Card.Text>
                                     </Card>
                                 </CardGroup>
@@ -318,16 +318,16 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
                                                 <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                                    {cfaI}
+                                                    {Tool.getPRInherent()}
                                                 </Card.Text>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                
+
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {cfaC}
+                                                    {Tool.getPRResidual()}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -349,16 +349,16 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
                                                 <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                                    {cfaI}
+                                                    {Tool.getSRInherent()}
                                                 </Card.Text>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                
+
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {cfaC}
+                                                    {Tool.getSRResidual()}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -379,16 +379,16 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
                                                 <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                                    {cfaI}
+                                                    {Tool.getPLEFInherent()}
                                                 </Card.Text>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                
+
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {cfaC}
+                                                    {Tool.getPLEFResidual()}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -425,7 +425,7 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {padI}  
+                                                    {Tool.getPLMRResidual()}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -447,7 +447,7 @@ export function Page1(props){
                                                 <Dropdown.Item eventKey="3" onSelect={()=>handleSelectslmrI(3)}>3</Dropdown.Item>
                                                 <Dropdown.Item eventKey="4" onSelect={()=>handleSelectslmrI(4)}>4</Dropdown.Item>
                                                 <Dropdown.Item eventKey="5" onSelect={()=>handleSelectslmrI(5)}>5</Dropdown.Item>
-                                            </DropdownButton> 
+                                            </DropdownButton>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Controls</Card.Title>
@@ -462,7 +462,7 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {padI}  
+                                                    {Tool.getSLMRResidual()}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -479,16 +479,16 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
                                                 <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                                    {cfaI}
+                                                    {Tool.getSLEFInherent()}
                                                 </Card.Text>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                
+
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {cfaC}
+                                                    {Tool.getSLEFResidual()}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -509,16 +509,16 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
                                                 <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                                    {cfaI}
+                                                    {Tool.getTEFInherent()}
                                                 </Card.Text>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                
+
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {cfaC}
+                                                    {Tool.getTEFResidual()}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -535,16 +535,16 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
                                                 <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                                    {tc}
+                                                    {Tool.getVULNInherent()}
                                                 </Card.Text>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                
+
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {cfaC}
+                                                    {Tool.getVULNResidual()}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -562,7 +562,7 @@ export function Page1(props){
                                     <Card style={{ width: '21rem', height: '9rem', borderColor: 'transparent', elevation: 0 }} className="text-center" ></Card>
                                 </Card.Body>
                             </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}> 
+                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
                                 <Card.Body>
                                     <Card style={{ width: '21rem', height: '9rem' }} className="text-center" >
                                     <Card.Header as="h5" style={{fontSize: 17}}>Secondary Loss Proabability</Card.Header>
@@ -599,7 +599,7 @@ export function Page1(props){
                                                 <Dropdown.Item eventKey="3" onSelect={()=>handleSelectcfaI(3)}>3</Dropdown.Item>
                                                 <Dropdown.Item eventKey="4" onSelect={()=>handleSelectcfaI(4)}>4</Dropdown.Item>
                                                 <Dropdown.Item eventKey="5" onSelect={()=>handleSelectcfaI(5)}>5</Dropdown.Item>
-                                            </DropdownButton> 
+                                            </DropdownButton>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Controls</Card.Title>
@@ -614,7 +614,7 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {cfaI}  
+                                                    {Tool.getCFAResidual()}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -660,16 +660,16 @@ export function Page1(props){
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Inherent</Card.Title>
                                                 <Card.Text style={{ fontSize: 25, backgroundColor: backgroundcolor }} >
-                                                    {slp}
+                                                    {Tool.getPLEFInherent()}
                                                 </Card.Text>
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                
+
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                 <Card.Text style={{ fontSize: 25 }}>
-                                                    {tc}
+                                                    {Tool.getPLEFResidual()}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
@@ -695,7 +695,7 @@ export function Page1(props){
                                                         <Dropdown.Item eventKey="3" onSelect={()=>handleSelectpadI(3)}>3</Dropdown.Item>
                                                         <Dropdown.Item eventKey="4" onSelect={()=>handleSelectpadI(4)}>4</Dropdown.Item>
                                                         <Dropdown.Item eventKey="5" onSelect={()=>handleSelectpadI(5)}>5</Dropdown.Item>
-                                                    </DropdownButton>   
+                                                    </DropdownButton>
                                                 </Card>
                                                 <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                     <Card.Title style={{fontSize: 15}}>Controls</Card.Title>
@@ -710,7 +710,7 @@ export function Page1(props){
                                                 <Card style={{borderColor: 'transparent', elevation: 0}}>
                                                     <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                     <Card.Text style={{ fontSize: 25 }}>
-                                                        {padI}  
+                                                        {Tool.getPADResidual()}
                                                     </Card.Text>
                                                 </Card>
                                             </CardGroup>
@@ -732,7 +732,7 @@ export function Page1(props){
                                                     <Dropdown.Item eventKey="3" onSelect={()=>handleSelectrsI(3)}>3</Dropdown.Item>
                                                     <Dropdown.Item eventKey="4" onSelect={()=>handleSelectrsI(4)}>4</Dropdown.Item>
                                                     <Dropdown.Item eventKey="5" onSelect={()=>handleSelectrsI(5)}>5</Dropdown.Item>
-                                                </DropdownButton>   
+                                                </DropdownButton>
                                                 </Card>
                                                 <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                     <Card.Title style={{fontSize: 15}}>Controls</Card.Title>
@@ -747,7 +747,7 @@ export function Page1(props){
                                                 <Card style={{borderColor: 'transparent', elevation: 0}}>
                                                     <Card.Title style={{fontSize: 15}}>Residual</Card.Title>
                                                     <Card.Text style={{ fontSize: 25 }}>
-                                                        {rsI}  
+                                                        {Tool.getRSResidual()}
                                                     </Card.Text>
                                                 </Card>
                                             </CardGroup>

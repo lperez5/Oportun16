@@ -13,8 +13,6 @@ export function Page3(props){
     };
   }
 
-  console.log(numVeryHighInherentOR);
-
   return(
     <div hidden={!active}>
       <Container>
@@ -36,25 +34,36 @@ export function Page3(props){
 
 function xRecent(arr, x){
   const newArr = [];
-  for(let i=arr.length-1; i>=(arr.length-5); i--){
+  for(let i=0; i < x; i++){
     newArr.push(arr[i]);
   }
-  console.log(newArr);
   return newArr;
 }
 
 function getTotalDocs(arr){
-  console.log(arr.length);
   return arr.length;
 }
 
-function monthlyChangePRInherent(arr){
-  let thisMonthAvg = 0;
-  let lastMonthAvg = 0;
-  let difference = 0;
-  //for loop check every date until we leave this month
-  //for loop check every date after ^^ until we leave the month before this month
-  //this month avg - [last month avg]
-  difference = thisMonthAvg - lastMonthAvg;
-  return difference;
-}
+// function monthlyChangeORInherent(arr){
+//   let thisMonthAvg = 0;
+//   let lastMonthAvg = 0;
+//   let thisMonth = 0;
+//   let thisYear = 0;
+//   let counter1 = 0;
+//   let counter2 = 0;
+//   //for loop check every date until we leave this month
+//   for(let i=0; i < arr.length; i++){
+//     if(getYear(arr[i].date) === thisYear && getMonth(arr[i].date) === thisMonth){
+//       counter1++;
+//       thisMonthAvg += arr[i].data[0];
+//       thisMonthAvg = thisMonthAvg/counter1;
+//     }
+//     if(getYear(arr[i].date) === thisYear && getMonth(arr[i].date) === (thisMonth-1)){
+//       counter2++;
+//       lastMonthAvg += arr[i].data[0];
+//       lastMonthAvg = lastMonthAvg/counter2;
+//     }
+//   }
+//   //for loop check every date after ^^ until we leave the month before this month
+//   return (thisMonthAvg - lastMonthAvg);
+// }

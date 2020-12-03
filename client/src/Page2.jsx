@@ -156,13 +156,6 @@ export function Page2(props){
         )
     }
 
-    const [d2, setd2] = useState('');
-
-    const handleSelect2=(e)=>{
-        console.log(e);
-        setd2(e);
-    }
-
     return(
         <div hidden={!active}>
             <Container>
