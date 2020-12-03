@@ -369,7 +369,7 @@ export function Page1(props){
             <Container fluid>
               <Row>
                 <Col>
-                  <Table striped bordered hover>
+                  <Table striped bordered>
                     <thead>
                       <tr>
                         <th>Summary</th>
@@ -380,8 +380,8 @@ export function Page1(props){
                     <tbody>
                       <tr>
                         <td>Overall Risk</td>
-                        <td>Very High</td>
-                        <td>Very Low</td>
+                        <td></td>
+                        <td></td>
                       </tr>
                       <tr>
                         <td>Primary LM</td>
