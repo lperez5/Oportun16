@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .DerivationTable {
     height: 300px;
     width: 500px;
@@ -10,9 +9,4 @@
 .derivation-row{
     align-items: center;
     display: flex;
-=======
-.DerivationTable {
-    max-height: 50%;
-    max-width: 50%;
->>>>>>> f44dff9ad040f878f7ae2fd570b235eb2b5e5141
 }
