@@ -35,8 +35,7 @@ router.post('/save', (req, res) => {
 
 router.delete('/delete', (req, res) => {
   var id = req.body._id;
-  console.log(id)
-  entrymodel.findOneAndRemove({_id: id}, function(err){
+  entrymodel.deleteOne({_id: id}, function(err){
     if(err){
       console.log('Problem deleting data');
     }
@@ -47,8 +46,7 @@ router.delete('/delete', (req, res) => {
 });
 
 router.put('/update', (req,res ) => {
-  var id = req.body.IDtoUpdate;
-  //console.log(id);
+  var id = req.body._id;
   entrymodel.updateOne({_id: id}, {$set: {name: req.body.name, category: req.body.category, notes: req.body.notes, asset: req.body.asset, threat: req.body.threat, loss: req.body.loss, data: req.body.data, lastUpdated: req.body.lastUpdated}}, function(err){
     if(err){
       console.log('Problem updating data');
