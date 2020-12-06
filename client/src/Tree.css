@@ -1,57 +1,87 @@
-
-
-.unindented-row {
-    align-items: center;
-    display:flex;
+.overflow{
+    overflow: hidden;
 }
-.indented-row1 {
-    align-items: center;
-    display:flex;
-    flex-direction: row;
-    width: 75rem;
-    height: 10rem;
-}
-.indented-row12 {
-    align-items: center;
-    display:flex;
-    flex-direction: row;
-    width: 80rem;
-    height: 10rem;
-}
-.indented-row { 
-    align-items: center;
-    margin-left: 7rem;
-    display: flex;
+.margin{
+    margin-left: 3px;
 }
 .newCard{
-    width: 18.5rem;
-    height: 8rem;
-}
-.newCard21 {
-    width: 18rem;
-    height: 9rem;
+    width: 258px;
+    height: 100px;
+    margin-bottom: 5px;
 }
 .newCard2{
-    width: 14.25rem;
-    height: 9rem;
+    width: 300px;
+    height: 120px;
+    margin-left: 10px;
+    margin-bottom: 5px;
 }
-.newCard22{
-    width: 25rem;
-    height: 9rem;
+.newCard2last{
+    width: 200px;
+    height: 120px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+.newCard2lastbutton{
+    width: 200px;
+    height: 120px;
+    margin-bottom: 5px;
 }
 .newCard3{
-    width: 16.5rem;
-    height: 8rem;
+    width: 240px;
+    height: 120px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+.newCard30{
+    width: 395px;
+    height: 120px;
+    margin-left: 10px;
+    margin-bottom: 5px;
 }
 .font1 {
     align-items: center;
-    font-size: 16px;
+    font-size: 13px;
 }
 .font2 {
     align-items: center;
-    font-size: 14px;
+    font-size: 13px;
 }
 .font3 {
     align-items: center;
+    font-size: 19px;
+}
+.font4 {
+    align-items: center;
     font-size: 20px;
+}
+.font5 {
+    align-items: center;
+    font-size: 28px;
+}
+.row1{
+    align-items: center;
+}
+.placeholder{
+    height: 2px;
+    width: 95px;
+}
+.placeholder2{
+    height: 2px;
+    width: 70px;
+}
+.placeholder1row0{
+    height: 2px;
+    width: 330px;
+}
+.placeholder1row1{
+    height: 2px;
+    width: 278px;
+}
+.placeholder2row1{
+    height: 2px;
+    width: 360px;
+}
+.placeholder3row1{
+    height: 2px;
+    width: 238px;
 }

@@ -226,8 +226,8 @@ export function Page1(props){
 
   return(
     <div hidden={!active}>
-      <Container fluid="l">
-        <Row>
+      <Container fluid="l" className="overflow">
+        <Row className="margin">
           <Col lg="8">
             <Row>
               <Col>
@@ -279,16 +279,164 @@ export function Page1(props){
                 </div>
               </Col>
             </Row>
-            <Row>
+            <Row className="row1">
              <Col>
-                     <Card className="unindented-row" style={{borderColor: 'transparent', elevation: 0}}>
-                            <Card className="newCard" >
-                            <Card.Header as="h5" className="font1 text-center" >Overall Risk</Card.Header>
-                            <Card.Body>
+                <Row fluid="1">
+                    <Card style={{  textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="newCard" ></Card>
+                    <Card style={{  textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="placeholder1row0" ></Card>
+                    <Card className="newCard" >
+                    <Card.Header as="h5" className="font1 text-center" >Overall Risk</Card.Header>
+                        <CardGroup>
+                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                <Card.Title  className="font2">Inherent</Card.Title>
+                                <Card.Text  className="font3" style={{ backgroundColor: backgroundcolor }} >
+                                    {cfaI}
+                                </Card.Text>
+                            </Card>
+                            <Card style={{borderColor: 'transparent', elevation: 0}}>
+                            </Card>
+                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                <Card.Title  className="font2">Residual</Card.Title>
+                                <Card.Text  className="font3">
+                                    {cfaC}
+                                </Card.Text>
+                            </Card>
+                        </CardGroup>
+                    </Card>
+                </Row>
+                <Row className="row1">
+                        <Card style={{  textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="placeholder1row1" ></Card>   
+                        <Card style={{  textAlign: 'center' }} className="newCard" >
+                        <Card.Header as="h5"  className="font1">Primary Risk</Card.Header>
+                            <CardGroup>
+                                <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                    <Card.Title  className="font2">Inherent</Card.Title>
+                                    <Card.Text  className="font3" style={{ backgroundColor: backgroundcolor }} >
+                                        {cfaI}
+                                    </Card.Text>
+                                </Card>
+                                <Card style={{borderColor: 'transparent', elevation: 0}}>
+                                </Card>
+                                <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                    <Card.Title  className="font2">Residual</Card.Title>
+                                    <Card.Text  className="font3">
+                                        {cfaC}
+                                    </Card.Text>
+                                </Card>
+                            </CardGroup>
+                        </Card>
+                        <Card style={{  textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="placeholder2row1" ></Card>
+                        <Card style={{  textAlign: 'center' }} className="newCard" >
+                        <Card.Header as="h5"  className="font1">Secondary Risk</Card.Header>
+                            <CardGroup>
+                                <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                    <Card.Title  className="font2">Inherent</Card.Title>
+                                    <Card.Text  className="font3" style={{  backgroundColor: backgroundcolor }} >
+                                        {cfaI}
+                                    </Card.Text>
+                                </Card>
+                                <Card style={{borderColor: 'transparent', elevation: 0}}>
+                                    
+                                </Card>
+                                <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                    <Card.Title  className="font2">Residual</Card.Title>
+                                    <Card.Text  className="font3">
+                                        {cfaC}
+                                    </Card.Text>
+                                </Card>
+                            </CardGroup>
+                        </Card>
+                </Row>
+                <Row className="row1">
+                    <Card style={{  textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="placeholder" ></Card>
+                    <Card style={{ textAlign: 'center' }} className="newCard2" >
+                        <Card.Header as="h5" style={{fontSize: 10}}>Primary Loss Event Frequency</Card.Header>
+                            <CardGroup>
+                                <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                    <Card.Title  className="font2">Inherent</Card.Title>
+                                    <Card.Text  className="font5" style={{ backgroundColor: backgroundcolor }} >
+                                        {cfaI}
+                                    </Card.Text>
+                                </Card>
+                                <Card style={{borderColor: 'transparent', elevation: 0}}>
+                                    
+                                </Card>
+                                <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                    <Card.Title  className="font2">Residual</Card.Title>
+                                    <Card.Text  className="font5">
+                                        {cfaC}
+                                    </Card.Text>
+                                </Card>
+                            </CardGroup>
+                    </Card>
+                        <Card style={{ textAlign: 'center' }} className="newCard2" >
+                        <Card.Header as="h5"  style={{fontSize: 11}}>Primary Loss Magnitude Responsive</Card.Header>
+                            <CardGroup>
+                                <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                <Card.Title  className="font2" >Inherent</Card.Title>
+                                <DropdownButton size="sm" title={plmrI} id = "PLMRInherent" >
+                                    <Dropdown.Item eventKey="1" onSelect={()=>handleSelectplmrI(1)}>1</Dropdown.Item>
+                                    <Dropdown.Item eventKey="2" onSelect={()=>handleSelectplmrI(2)}>2</Dropdown.Item>
+                                    <Dropdown.Item eventKey="3" onSelect={()=>handleSelectplmrI(3)}>3</Dropdown.Item>
+                                    <Dropdown.Item eventKey="4" onSelect={()=>handleSelectplmrI(4)}>4</Dropdown.Item>
+                                    <Dropdown.Item eventKey="5" onSelect={()=>handleSelectplmrI(5)}>5</Dropdown.Item>
+                                </DropdownButton>
+                                </Card>
+                                <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                    <Card.Title  className="font2">Controls</Card.Title>
+                                    <DropdownButton size="sm" title={plmrC} id = "PLMRControls" >
+                                        <Dropdown.Item eventKey="1" onSelect={()=>handleSelectplmrC(1)}>1</Dropdown.Item>
+                                        <Dropdown.Item eventKey="2" onSelect={()=>handleSelectplmrC(2)}>2</Dropdown.Item>
+                                        <Dropdown.Item eventKey="3" onSelect={()=>handleSelectplmrC(3)}>3</Dropdown.Item>
+                                        <Dropdown.Item eventKey="4" onSelect={()=>handleSelectplmrC(4)}>4</Dropdown.Item>
+                                        <Dropdown.Item eventKey="5" onSelect={()=>handleSelectplmrC(5)}>5</Dropdown.Item>
+                                    </DropdownButton>
+                                </Card>
+                                <Card style={{borderColor: 'transparent', elevation: 0}}>
+                                    <Card.Title  className="font2" >Residual</Card.Title>
+                                    <Card.Text className="font4">
+                                        {padI}  
+                                    </Card.Text>
+                                </Card>
+                            </CardGroup>
+                    </Card>
+                        <Card style={{  textAlign: 'center' }} className="newCard2" >
+                            <Card.Header as="h5"  style={{ fontSize: 11}}>Secondary Loss Magnitude Responsive</Card.Header>
+                                <CardGroup>
+                                    <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                    <Card.Title  className="font2">Inherent</Card.Title>
+                                    <DropdownButton size="sm" title={slmrI} id = "SLMRInherent" >
+                                        <Dropdown.Item eventKey="1" onSelect={()=>handleSelectslmrI(1)}>1</Dropdown.Item>
+                                        <Dropdown.Item eventKey="2" onSelect={()=>handleSelectslmrI(2)}>2</Dropdown.Item>
+                                        <Dropdown.Item eventKey="3" onSelect={()=>handleSelectslmrI(3)}>3</Dropdown.Item>
+                                        <Dropdown.Item eventKey="4" onSelect={()=>handleSelectslmrI(4)}>4</Dropdown.Item>
+                                        <Dropdown.Item eventKey="5" onSelect={()=>handleSelectslmrI(5)}>5</Dropdown.Item>
+                                    </DropdownButton> 
+                                    </Card>
+                                    <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                        <Card.Title  className="font2">Controls</Card.Title>
+                                        <DropdownButton size="sm" title={slmrC} id = "SLMRControls" >
+                                            <Dropdown.Item eventKey="1" onSelect={()=>handleSelectslmrC(5)}>1</Dropdown.Item>
+                                            <Dropdown.Item eventKey="2" onSelect={()=>handleSelectslmrC(5)}>2</Dropdown.Item>
+                                            <Dropdown.Item eventKey="3" onSelect={()=>handleSelectslmrC(5)}>3</Dropdown.Item>
+                                            <Dropdown.Item eventKey="4" onSelect={()=>handleSelectslmrC(5)}>4</Dropdown.Item>
+                                            <Dropdown.Item eventKey="5" onSelect={()=>handleSelectslmrC(5)}>5</Dropdown.Item>
+                                        </DropdownButton>
+                                    </Card>
+                                    <Card style={{borderColor: 'transparent', elevation: 0}}>
+                                        <Card.Title  className="font2">Residual</Card.Title>
+                                        <Card.Text  className="font4">
+                                            {padI}  
+                                        </Card.Text>
+                                    </Card>
+                                </CardGroup>
+                            </Card>
+                            <Card style={{  textAlign: 'center' }} className="newCard2last" >
+                            <Card.Header as="h5"  className="font1">Secondary LEF</Card.Header>
                                 <CardGroup>
                                     <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                         <Card.Title  className="font2">Inherent</Card.Title>
-                                        <Card.Text  className="font3" style={{ backgroundColor: backgroundcolor }} >
+                                        <Card.Text  className="font5" style={{ backgroundColor: backgroundcolor }} >
                                             {cfaI}
                                         </Card.Text>
                                     </Card>
@@ -297,232 +445,20 @@ export function Page1(props){
                                     </Card>
                                     <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                         <Card.Title  className="font2">Residual</Card.Title>
-                                        <Card.Text  className="font3">
+                                        <Card.Text  className="font5">
                                             {cfaC}
                                         </Card.Text>
                                     </Card>
                                 </CardGroup>
-                            </Card.Body>
-                            </Card>
-                    </Card>
-                    <Card className="unindented-row" style={{borderColor: 'transparent', elevation: 0}}>
-                        <CardGroup>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-                                    <Card style={{  textAlign: 'center' }} className="newCard" >
-                                    <Card.Header as="h5"  className="font1">Primary Risk</Card.Header>
-                                    <Card.Body>
-                                        <CardGroup>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                <Card.Title  className="font2">Inherent</Card.Title>
-                                                <Card.Text  className="font3" style={{ backgroundColor: backgroundcolor }} >
-                                                    {cfaI}
-                                                </Card.Text>
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                <Card.Title  className="font2">Residual</Card.Title>
-                                                <Card.Text  className="font3">
-                                                    {cfaC}
-                                                </Card.Text>
-                                            </Card>
-                                        </CardGroup>
-                                    </Card.Body>
-                                    </Card>
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-                                    <Card style={{  textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="newCard" ></Card>
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-                                    <Card style={{  textAlign: 'center' }} className="newCard" >
-                                    <Card.Header as="h5"  className="font1">Secondary Risk</Card.Header>
-                                    <Card.Body>
-                                        <CardGroup>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                <Card.Title  className="font2">Inherent</Card.Title>
-                                                <Card.Text  className="font3" style={{  backgroundColor: backgroundcolor }} >
-                                                    {cfaI}
-                                                </Card.Text>
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                <Card.Title  className="font2">Residual</Card.Title>
-                                                <Card.Text  className="font3">
-                                                    {cfaC}
-                                                </Card.Text>
-                                            </Card>
-                                        </CardGroup>
-                                    </Card.Body>
-                                    </Card>
-                                </Card.Body>
-                            </Card>
-                        </CardGroup>
-                    </Card>
-                    <Card className="unindented-row" style={{borderColor: 'transparent', elevation: 0}}>
-                        <CardGroup>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }} >
-                                <Card.Body>
-<<<<<<< HEAD
-                                    <Card style={{ textAlign: 'center' }} className="newCard2" >
-=======
-                                    <Card style={{ textAlign: 'center' }} className="newCard21" >
->>>>>>> 9470d9453d95236c914fe8df85e224157cd7c7fd
-                                    <Card.Header as="h5" style={{fontSize: 14}}>Primary Loss Event Frequency</Card.Header>
-                                    <Card.Body>
-                                        <CardGroup>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                <Card.Title  className="font2">Inherent</Card.Title>
-                                                <Card.Text  className="font3" style={{ backgroundColor: backgroundcolor }} >
-                                                    {cfaI}
-                                                </Card.Text>
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                <Card.Title  className="font2">Residual</Card.Title>
-                                                <Card.Text  className="font3">
-                                                    {cfaC}
-                                                </Card.Text>
-                                            </Card>
-                                        </CardGroup>
-                                    </Card.Body>
-                                    </Card>
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-<<<<<<< HEAD
-                                    <Card style={{ textAlign: 'center' }} className="newCard2" >
-=======
-                                    <Card style={{ textAlign: 'center' }} className="newCard21" >
->>>>>>> 9470d9453d95236c914fe8df85e224157cd7c7fd
-                                    <Card.Header as="h5"  style={{fontSize: 12}}>Primary Loss Magnitude Responsive</Card.Header>
-                                    <Card.Body>
-                                        <CardGroup>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                            <Card.Title  className="font2" >Inherent</Card.Title>
-                                            <DropdownButton title={plmrI} id = "PLMRInherent">
-                                                <Dropdown.Item eventKey="1" onSelect={()=>handleSelectplmrI(1)}>1</Dropdown.Item>
-                                                <Dropdown.Item eventKey="2" onSelect={()=>handleSelectplmrI(2)}>2</Dropdown.Item>
-                                                <Dropdown.Item eventKey="3" onSelect={()=>handleSelectplmrI(3)}>3</Dropdown.Item>
-                                                <Dropdown.Item eventKey="4" onSelect={()=>handleSelectplmrI(4)}>4</Dropdown.Item>
-                                                <Dropdown.Item eventKey="5" onSelect={()=>handleSelectplmrI(5)}>5</Dropdown.Item>
-                                            </DropdownButton>
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                <Card.Title  className="font2">Controls</Card.Title>
-                                                <DropdownButton title={plmrC} id = "PLMRControls">
-                                                    <Dropdown.Item eventKey="1" onSelect={()=>handleSelectplmrC(1)}>1</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="2" onSelect={()=>handleSelectplmrC(2)}>2</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="3" onSelect={()=>handleSelectplmrC(3)}>3</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="4" onSelect={()=>handleSelectplmrC(4)}>4</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="5" onSelect={()=>handleSelectplmrC(5)}>5</Dropdown.Item>
-                                                </DropdownButton>
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                <Card.Title  className="font2" >Residual</Card.Title>
-                                                <Card.Text className="font3">
-                                                    {padI}  
-                                                </Card.Text>
-                                            </Card>
-                                        </CardGroup>
-                                    </Card.Body>
-                                    </Card>
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-<<<<<<< HEAD
-                                    <Card style={{  textAlign: 'center' }} className="newCard2" >
-=======
-                                    <Card style={{  textAlign: 'center' }} className="newCard21" >
->>>>>>> 9470d9453d95236c914fe8df85e224157cd7c7fd
-                                    <Card.Header as="h5"  style={{ fontSize: 12}}>Secondary Loss Magnitude Responsive</Card.Header>
-                                    <Card.Body>
-                                        <CardGroup>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                            <Card.Title  className="font2">Inherent</Card.Title>
-                                            <DropdownButton title={slmrI} id = "SLMRInherent">
-                                                <Dropdown.Item eventKey="1" onSelect={()=>handleSelectslmrI(1)}>1</Dropdown.Item>
-                                                <Dropdown.Item eventKey="2" onSelect={()=>handleSelectslmrI(2)}>2</Dropdown.Item>
-                                                <Dropdown.Item eventKey="3" onSelect={()=>handleSelectslmrI(3)}>3</Dropdown.Item>
-                                                <Dropdown.Item eventKey="4" onSelect={()=>handleSelectslmrI(4)}>4</Dropdown.Item>
-                                                <Dropdown.Item eventKey="5" onSelect={()=>handleSelectslmrI(5)}>5</Dropdown.Item>
-                                            </DropdownButton> 
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                <Card.Title  className="font2">Controls</Card.Title>
-                                                <DropdownButton title={slmrC} id = "SLMRControls">
-                                                    <Dropdown.Item eventKey="1" onSelect={()=>handleSelectslmrC(5)}>1</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="2" onSelect={()=>handleSelectslmrC(5)}>2</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="3" onSelect={()=>handleSelectslmrC(5)}>3</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="4" onSelect={()=>handleSelectslmrC(5)}>4</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="5" onSelect={()=>handleSelectslmrC(5)}>5</Dropdown.Item>
-                                                </DropdownButton>
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                <Card.Title  className="font2">Residual</Card.Title>
-                                                <Card.Text  className="font3">
-                                                    {padI}  
-                                                </Card.Text>
-                                            </Card>
-                                        </CardGroup>
-                                    </Card.Body>
-                                    </Card>
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-<<<<<<< HEAD
-                                    <Card style={{  textAlign: 'center' }} className="newCard2" >
-=======
-                                    <Card style={{  textAlign: 'center' }} className="newCard21" >
->>>>>>> 9470d9453d95236c914fe8df85e224157cd7c7fd
-                                    <Card.Header as="h5"  className="font1">Secondary LEF</Card.Header>
-                                    <Card.Body>
-                                        <CardGroup>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                <Card.Title  className="font2">Inherent</Card.Title>
-                                                <Card.Text  className="font3" style={{ backgroundColor: backgroundcolor }} >
-                                                    {cfaI}
-                                                </Card.Text>
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                <Card.Title  className="font2">Residual</Card.Title>
-                                                <Card.Text  className="font3">
-                                                    {cfaC}
-                                                </Card.Text>
-                                            </Card>
-                                        </CardGroup>
-                                    </Card.Body>
-                                    </Card>
-                                </Card.Body>
-                            </Card>
-                        </CardGroup>
-                    </Card>
-                    <Card className="unindented-row" style={{borderColor: 'transparent', elevation: 0}}>
-                        <CardGroup>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-                                    <Card style={{  textAlign: 'center' }} className="newCard2" >
+                             </Card>
+                    </Row>
+                    <Row className="row1">
+                                    <Card style={{  textAlign: 'center' }} className="newCard3" >
                                     <Card.Header as="h5"  className="font1">Threat Event Frequency</Card.Header>
-                                    <Card.Body>
                                         <CardGroup>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title  className="font2">Inherent</Card.Title>
-                                                <Card.Text  className="font3" style={{  backgroundColor: backgroundcolor }} >
+                                                <Card.Text  className="font5" style={{  backgroundColor: backgroundcolor }} >
                                                     {cfaI}
                                                 </Card.Text>
                                             </Card>
@@ -531,24 +467,18 @@ export function Page1(props){
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title  className="font2">Residual</Card.Title>
-                                                <Card.Text  className="font3">
+                                                <Card.Text  className="font5">
                                                     {cfaC}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
-                                    </Card.Body>
                                     </Card>
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-                                    <Card style={{  textAlign: 'center' }} className="newCard2" >
+                                    <Card style={{  textAlign: 'center' }} className="newCard3" >
                                     <Card.Header as="h5"  className="font1">Vulnerability</Card.Header>
-                                    <Card.Body>
                                         <CardGroup>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title  className="font2">Inherent</Card.Title>
-                                                <Card.Text  className="font3" style={{ backgroundColor: backgroundcolor }} >
+                                                <Card.Text  className="font5" style={{ backgroundColor: backgroundcolor }} >
                                                     {tc}
                                                 </Card.Text>
                                             </Card>
@@ -557,41 +487,20 @@ export function Page1(props){
                                             </Card>
                                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                                 <Card.Title  className="font2">Residual</Card.Title>
-                                                <Card.Text  className="font3">
+                                                <Card.Text  className="font5">
                                                     {cfaC}
                                                 </Card.Text>
                                             </Card>
                                         </CardGroup>
-                                    </Card.Body>
                                     </Card>
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-<<<<<<< HEAD
-                                    <Card style={{  textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="newCard2" ></Card>
-=======
-                                    <Card style={{  textAlign: 'center', elevation: 0 }} className="newCard2" ></Card>
->>>>>>> 9470d9453d95236c914fe8df85e224157cd7c7fd
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-<<<<<<< HEAD
-                                    <Card style={{ textAlign: 'center' , borderColor: 'transparent', elevation: 0 }} className="newCard2" ></Card>
-=======
-                                    <Card style={{ textAlign: 'center', elevation: 0 }} className="newCard2" ></Card>
->>>>>>> 9470d9453d95236c914fe8df85e224157cd7c7fd
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}> 
-                                <Card.Body>
-                                    <Card style={{  textAlign: 'center' }} className="newCard2" >
-                                    <Card.Header as="h5"  style={{fontSize: 14}}>Secondary Loss Proabability</Card.Header>
-                                    <Card.Body>
+                                <Card style={{ textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="newCard3" ></Card>
+                                <Card style={{ textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="newCard3" ></Card>
+                                <Card style={{ textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="placeholder2" ></Card>
+                                <Card style={{ textAlign: 'center' }} className="newCard2last" >
+                                    <Card.Header as="h5"  style={{fontSize: 11}}>Secondary Loss Probability</Card.Header>
                                         <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                         <Card.Title  className="font1">%</Card.Title>
-                                        <DropdownButton title={slp} id = "SLP">
+                                        <DropdownButton size="sm" title={slp} id = "SLP" >
                                             <Dropdown.Item eventKey="1" onSelect={()=>handleSelectslp(1)}>1</Dropdown.Item>
                                             <Dropdown.Item eventKey="2" onSelect={()=>handleSelectslp(2)}>2</Dropdown.Item>
                                             <Dropdown.Item eventKey="3" onSelect={()=>handleSelectslp(3)}>3</Dropdown.Item>
@@ -599,327 +508,151 @@ export function Page1(props){
                                             <Dropdown.Item eventKey="5" onSelect={()=>handleSelectslp(5)}>5</Dropdown.Item>
                                         </DropdownButton>
                                         </Card>
-                                    </Card.Body>
                                     </Card>
-                                </Card.Body>
+                    </Row>
+                    <Row className="row1">
+                        <Card style={{ textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="placeholder" ></Card>
+                        <Card style={{  textAlign: 'center' }} className="newCard3">
+                        <Card.Header as="h5"  style={{fontSize: 13}}>Control Frequency Avoidance</Card.Header>
+                            <CardGroup>
+                                <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                <Card.Title  className="font2">Inherent</Card.Title>
+                                <DropdownButton size="sm" title={cfaI} id = "CFAInherent" >
+                                    <Dropdown.Item eventKey="1" onSelect={()=>handleSelectcfaI(1)}>1</Dropdown.Item>
+                                    <Dropdown.Item eventKey="2" onSelect={()=>handleSelectcfaI(2)}>2</Dropdown.Item>
+                                    <Dropdown.Item eventKey="3" onSelect={()=>handleSelectcfaI(3)}>3</Dropdown.Item>
+                                    <Dropdown.Item eventKey="4" onSelect={()=>handleSelectcfaI(4)}>4</Dropdown.Item>
+                                    <Dropdown.Item eventKey="5" onSelect={()=>handleSelectcfaI(5)}>5</Dropdown.Item>
+                                </DropdownButton> 
+                                </Card>
+                                <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                    <Card.Title  className="font2">Controls</Card.Title>
+                                    <DropdownButton size="sm" title={cfaC} id = "CFAControls" >
+                                        <Dropdown.Item eventKey="1" onSelect={()=>handleSelectcfaC(1)}>1</Dropdown.Item>
+                                        <Dropdown.Item eventKey="2" onSelect={()=>handleSelectcfaC(2)}>2</Dropdown.Item>
+                                        <Dropdown.Item eventKey="3" onSelect={()=>handleSelectcfaC(3)}>3</Dropdown.Item>
+                                        <Dropdown.Item eventKey="4" onSelect={()=>handleSelectcfaC(4)}>4</Dropdown.Item>
+                                        <Dropdown.Item eventKey="5" onSelect={()=>handleSelectcfaC(5)}>5</Dropdown.Item>
+                                    </DropdownButton>
+                                </Card>
+                                <Card style={{borderColor: 'transparent', elevation: 0}}>
+                                    <Card.Title  className="font2">Residual</Card.Title>
+                                    <Card.Text  className="font4">
+                                        {cfaI}  
+                                    </Card.Text>
+                                </Card>
+                            </CardGroup>
+                        </Card>
+                        <Card style={{  textAlign: 'center' }} className="newCard3">
+                        <Card.Header as="h5"  className="font1">Threat Capability</Card.Header>
+                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                            <Card.Title  className="font2">OWASP</Card.Title>
+                            <DropdownButton size="sm" title={tc} id = "TC" >
+                                <Dropdown.Item eventKey="1" onSelect={()=>handleSelecttc(1)}>1</Dropdown.Item>
+                                <Dropdown.Item eventKey="2" onSelect={()=>handleSelecttc(2)}>2</Dropdown.Item>
+                                <Dropdown.Item eventKey="3" onSelect={()=>handleSelecttc(3)}>3</Dropdown.Item>
+                                <Dropdown.Item eventKey="4" onSelect={()=>handleSelecttc(4)}>4</Dropdown.Item>
+                                <Dropdown.Item eventKey="5" onSelect={()=>handleSelecttc(5)}>5</Dropdown.Item>
+                            </DropdownButton>
                             </Card>
-                        </CardGroup>
-                    </Card>
-                    <Card className="indented-row" style={{borderColor: 'transparent', elevation: 0}}>
-                        <CardGroup>
-<<<<<<< HEAD
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-                                    <Card style={{  textAlign: 'center' }} className="newCard2">
-                                    <Card.Header as="h5"  style={{fontSize: 14}}>Control Frequency Avoidance</Card.Header>
-                                    <Card.Body>
-                                        <CardGroup>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                            <Card.Title  className="font2">Inherent</Card.Title>
-                                            <DropdownButton title={cfaI} id = "CFAInherent" className='button'>
-                                                <Dropdown.Item eventKey="1" onSelect={()=>handleSelectcfaI(1)}>1</Dropdown.Item>
-                                                <Dropdown.Item eventKey="2" onSelect={()=>handleSelectcfaI(2)}>2</Dropdown.Item>
-                                                <Dropdown.Item eventKey="3" onSelect={()=>handleSelectcfaI(3)}>3</Dropdown.Item>
-                                                <Dropdown.Item eventKey="4" onSelect={()=>handleSelectcfaI(4)}>4</Dropdown.Item>
-                                                <Dropdown.Item eventKey="5" onSelect={()=>handleSelectcfaI(5)}>5</Dropdown.Item>
-                                            </DropdownButton> 
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                <Card.Title  className="font2">Controls</Card.Title>
-                                                <DropdownButton title={cfaC} id = "CFAControls">
-                                                    <Dropdown.Item eventKey="1" onSelect={()=>handleSelectcfaC(1)}>1</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="2" onSelect={()=>handleSelectcfaC(2)}>2</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="3" onSelect={()=>handleSelectcfaC(3)}>3</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="4" onSelect={()=>handleSelectcfaC(4)}>4</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="5" onSelect={()=>handleSelectcfaC(5)}>5</Dropdown.Item>
-                                                </DropdownButton>
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                <Card.Title  className="font2">Residual</Card.Title>
-                                                <Card.Text  className="font3">
-                                                    {cfaI}  
-                                                </Card.Text>
-                                            </Card>
-                                        </CardGroup>
-                                        </Card.Body>
+                        </Card>
+                        <Card style={{  textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="newCard30" ></Card>
+                        <Card style={{ textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="placeholder2" ></Card>
+                        <Card style={{  textAlign: 'center' }} className="newCard2last" > 
+                            <Card.Header as="h5"  style={{fontSize: 12}}>Primary Loss Event Frequency</Card.Header>
+                                <CardGroup>
+                                    <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                        <Card.Title  className="font2">Inherent</Card.Title>
+                                        <Card.Text  className="font3" style={{ backgroundColor: backgroundcolor }} >
+                                            {slp}
+                                        </Card.Text>
                                     </Card>
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-                                    <Card style={{  textAlign: 'center' }} className="newCard2">
-                                    <Card.Header as="h5"  className="font1">Threat Capability</Card.Header>
-                                    <Card.Body>
+                                    <Card style={{borderColor: 'transparent', elevation: 0}}>
+                                        
+                                    </Card>
+                                    <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                        <Card.Title  className="font2">Residual</Card.Title>
+                                        <Card.Text  className="font3">
+                                            {tc}
+                                        </Card.Text>
+                                    </Card>
+                                </CardGroup>
+                              </Card>
+                    </Row>
+                    <Row className="row1">
+                         <Card style={{ textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="placeholder" ></Card>
+                            <Card style={{  textAlign: 'center' }} className="newCard3">
+                                <Card.Header as="h5"  style={{fontSize: 11}}>Probability of Action Deterrence</Card.Header>
+                                    <CardGroup>
                                         <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                        <Card.Title  className="font2">OWASP</Card.Title>
-                                        <DropdownButton title={tc} id = "TC">
-                                            <Dropdown.Item eventKey="1" onSelect={()=>handleSelecttc(1)}>1</Dropdown.Item>
-                                            <Dropdown.Item eventKey="2" onSelect={()=>handleSelecttc(2)}>2</Dropdown.Item>
-                                            <Dropdown.Item eventKey="3" onSelect={()=>handleSelecttc(3)}>3</Dropdown.Item>
-                                            <Dropdown.Item eventKey="4" onSelect={()=>handleSelecttc(4)}>4</Dropdown.Item>
-                                            <Dropdown.Item eventKey="5" onSelect={()=>handleSelecttc(5)}>5</Dropdown.Item>
-                                        </DropdownButton>
+                                        <Card.Title  className="font2">Inherent</Card.Title>
+                                            <DropdownButton size="sm" title={padI} id = "PADInherent" >
+                                                <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadI(1)}>1</Dropdown.Item>
+                                                <Dropdown.Item eventKey="2" onSelect={()=>handleSelectpadI(2)}>2</Dropdown.Item>
+                                                <Dropdown.Item eventKey="3" onSelect={()=>handleSelectpadI(3)}>3</Dropdown.Item>
+                                                <Dropdown.Item eventKey="4" onSelect={()=>handleSelectpadI(4)}>4</Dropdown.Item>
+                                                <Dropdown.Item eventKey="5" onSelect={()=>handleSelectpadI(5)}>5</Dropdown.Item>
+                                            </DropdownButton>   
                                         </Card>
-                                    </Card.Body>
-                                    </Card>
-                                </Card.Body>
+                                        <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                            <Card.Title  className="font2">Controls</Card.Title>
+                                            <DropdownButton size="sm" title={padC} id = "PADControls" >
+                                                <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadC(1)}>1</Dropdown.Item>
+                                                <Dropdown.Item eventKey="2" onSelect={()=>handleSelectpadC(2)}>2</Dropdown.Item>
+                                                <Dropdown.Item eventKey="3" onSelect={()=>handleSelectpadC(3)}>3</Dropdown.Item>
+                                                <Dropdown.Item eventKey="4" onSelect={()=>handleSelectpadC(4)}>4</Dropdown.Item>
+                                                <Dropdown.Item eventKey="5" onSelect={()=>handleSelectpadC(5)}>5</Dropdown.Item>`
+                                            </DropdownButton>
+                                        </Card>
+                                        <Card style={{borderColor: 'transparent', elevation: 0}}>
+                                            <Card.Title  className="font2">Residual</Card.Title>
+                                            <Card.Text  className="font4" >
+                                                {padI}  
+                                            </Card.Text>
+                                        </Card>
+                                    </CardGroup>
                             </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-                                    <Card style={{  textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="newCard2" ></Card>
-                                </Card.Body>
+                            <Card style={{  textAlign: 'center' }} className="newCard3" >
+                            <Card.Header as="h5"  style={{fontSize: 11}}>Resistance Strength Vulnerability</Card.Header>
+                                    <CardGroup>
+                                        <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                        <Card.Title  className="font2">Inherent</Card.Title>
+                                        <DropdownButton size="sm" title={rsI} id = "RSInherent" >
+                                            <Dropdown.Item eventKey="1" onSelect={()=>handleSelectrsI(1)}>1</Dropdown.Item>
+                                            <Dropdown.Item eventKey="2" onSelect={()=>handleSelectrsI(2)}>2</Dropdown.Item>
+                                            <Dropdown.Item eventKey="3" onSelect={()=>handleSelectrsI(3)}>3</Dropdown.Item>
+                                            <Dropdown.Item eventKey="4" onSelect={()=>handleSelectrsI(4)}>4</Dropdown.Item>
+                                            <Dropdown.Item eventKey="5" onSelect={()=>handleSelectrsI(5)}>5</Dropdown.Item>
+                                        </DropdownButton>   
+                                        </Card>
+                                        <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
+                                            <Card.Title  className="font2">Controls</Card.Title>
+                                            <DropdownButton size="sm" title={rsC} id = "RSControls" >
+                                                <Dropdown.Item eventKey="1" onSelect={()=>handleSelectrsC(1)}>1</Dropdown.Item>
+                                                <Dropdown.Item eventKey="2" onSelect={()=>handleSelectrsC(2)}>2</Dropdown.Item>
+                                                <Dropdown.Item eventKey="3" onSelect={()=>handleSelectrsC(3)}>3</Dropdown.Item>
+                                                <Dropdown.Item eventKey="4" onSelect={()=>handleSelectrsC(4)}>4</Dropdown.Item>
+                                                <Dropdown.Item eventKey="5" onSelect={()=>handleSelectrsC(5)}>5</Dropdown.Item>
+                                            </DropdownButton>
+                                        </Card>
+                                        <Card style={{borderColor: 'transparent', elevation: 0}}>
+                                            <Card.Title  className="font2">Residual</Card.Title>
+                                            <Card.Text  className="font4">
+                                                {rsI}  
+                                            </Card.Text>
+                                        </Card>
+                                    </CardGroup>
                             </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-                                    <Card style={{  textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="newCard2" ></Card>
-                                </Card.Body>
+                            <Card style={{ borderColor: 'transparent', elevation: 0 }} className="newCard30" ></Card>
+                            <Card style={{ textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="placeholder2" ></Card>
+                            <Card style={{ borderColor: 'transparent', elevation: 0 }} className="newCard2last" >
+                                <Button onClick = {handleSubmit} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12
+                                                        || textbool1 || textbool2 || textbool3 || textbool4 || textbool5 || textbool6}
+                                variant={'success'}
+                                className="newCard2lastbutton"
+                                >Submit</Button>
                             </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-                                    <Card style={{  textAlign: 'center' }} className="newCard2" >
-                                    <Card.Header as="h5"  style={{fontSize: 14}}>Primary Loss Event Frequency</Card.Header>
-                                    <Card.Body>
-                                        <CardGroup>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                <Card.Title  className="font2">Inherent</Card.Title>
-                                                <Card.Text  className="font3" style={{ backgroundColor: backgroundcolor }} >
-                                                    {slp}
-                                                </Card.Text>
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                
-                                            </Card>
-                                            <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                <Card.Title  className="font2">Residual</Card.Title>
-                                                <Card.Text  className="font3">
-                                                    {tc}
-                                                </Card.Text>
-                                            </Card>
-                                        </CardGroup>
-                                    </Card.Body>
-                                    </Card>
-                                </Card.Body>
-=======
-                          <Card className="indented-row1" style={{borderColor: 'transparent', elevation: 0}} >
-                              <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                  <Card.Body>
-                                      <Card style={{  textAlign: 'center' }} className="newCard2">
-                                      <Card.Header as="h5"  style={{fontSize: 14}}>Control Frequency Avoidance</Card.Header>
-                                      <Card.Body>
-                                          <CardGroup>
-                                              <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                              <Card.Title  className="font2">Inherent</Card.Title>
-                                              <DropdownButton title={cfaI} id = "CFAInherent" className='button'>
-                                                  <Dropdown.Item eventKey="1" onSelect={()=>handleSelectcfaI(1)}>1</Dropdown.Item>
-                                                  <Dropdown.Item eventKey="2" onSelect={()=>handleSelectcfaI(2)}>2</Dropdown.Item>
-                                                  <Dropdown.Item eventKey="3" onSelect={()=>handleSelectcfaI(3)}>3</Dropdown.Item>
-                                                  <Dropdown.Item eventKey="4" onSelect={()=>handleSelectcfaI(4)}>4</Dropdown.Item>
-                                                  <Dropdown.Item eventKey="5" onSelect={()=>handleSelectcfaI(5)}>5</Dropdown.Item>
-                                              </DropdownButton> 
-                                              </Card>
-                                              <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                  <Card.Title  className="font2">Controls</Card.Title>
-                                                  <DropdownButton title={cfaC} id = "CFAControls">
-                                                      <Dropdown.Item eventKey="1" onSelect={()=>handleSelectcfaC(1)}>1</Dropdown.Item>
-                                                      <Dropdown.Item eventKey="2" onSelect={()=>handleSelectcfaC(2)}>2</Dropdown.Item>
-                                                      <Dropdown.Item eventKey="3" onSelect={()=>handleSelectcfaC(3)}>3</Dropdown.Item>
-                                                      <Dropdown.Item eventKey="4" onSelect={()=>handleSelectcfaC(4)}>4</Dropdown.Item>
-                                                      <Dropdown.Item eventKey="5" onSelect={()=>handleSelectcfaC(5)}>5</Dropdown.Item>
-                                                  </DropdownButton>
-                                              </Card>
-                                              <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                  <Card.Title  className="font2">Residual</Card.Title>
-                                                  <Card.Text  className="font3">
-                                                      {cfaI}  
-                                                  </Card.Text>
-                                              </Card>
-                                          </CardGroup>
-                                          </Card.Body>
-                                      </Card>
-                                  </Card.Body>
-                              </Card>
-                              <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                  <Card.Body>
-                                      <Card style={{  textAlign: 'center' }} className="newCard2">
-                                      <Card.Header as="h5"  className="font1">Threat Capability</Card.Header>
-                                      <Card.Body>
-                                          <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                          <Card.Title  className="font2">OWASP</Card.Title>
-                                          <DropdownButton title={tc} id = "TC">
-                                              <Dropdown.Item eventKey="1" onSelect={()=>handleSelecttc(1)}>1</Dropdown.Item>
-                                              <Dropdown.Item eventKey="2" onSelect={()=>handleSelecttc(2)}>2</Dropdown.Item>
-                                              <Dropdown.Item eventKey="3" onSelect={()=>handleSelecttc(3)}>3</Dropdown.Item>
-                                              <Dropdown.Item eventKey="4" onSelect={()=>handleSelecttc(4)}>4</Dropdown.Item>
-                                              <Dropdown.Item eventKey="5" onSelect={()=>handleSelecttc(5)}>5</Dropdown.Item>
-                                          </DropdownButton>
-                                          </Card>
-                                      </Card.Body>
-                                      </Card>
-                                  </Card.Body>
-                              </Card>
-                          </Card>
-                          <Card className="indented-row12" style={{borderColor: 'transparent', elevation: 0}} >
-                              <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                  <Card.Body>
-                                      <Card style={{  textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="newCard22" ></Card>
-                                  </Card.Body>
-                              </Card>
-                              <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                  <Card.Body>
-                                      <Card style={{  textAlign: 'center' }} className="newCard2" > 
-                                      <Card.Header as="h5"  style={{fontSize: 14}}>Primary Loss Event Frequency</Card.Header>
-                                      <Card.Body>
-                                          <CardGroup>
-                                              <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                  <Card.Title  className="font2">Inherent</Card.Title>
-                                                  <Card.Text  className="font3" style={{ backgroundColor: backgroundcolor }} >
-                                                      {slp}
-                                                  </Card.Text>
-                                              </Card>
-                                              <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                  
-                                              </Card>
-                                              <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                  <Card.Title  className="font2">Residual</Card.Title>
-                                                  <Card.Text  className="font3">
-                                                      {tc}
-                                                  </Card.Text>
-                                              </Card>
-                                          </CardGroup>
-                                      </Card.Body>
-                                      </Card>
-                                  </Card.Body>
-                              </Card>
->>>>>>> 9470d9453d95236c914fe8df85e224157cd7c7fd
-                            </Card>
-                        </CardGroup>
-                    </Card>
-                    <Card className="indented-row" style={{borderColor: 'transparent', elevation: 0}}>
-                        <CardGroup>
-<<<<<<< HEAD
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-=======
-                            <Card className="indented-row1" style={{borderColor: 'transparent', elevation: 0}} >
->>>>>>> 9470d9453d95236c914fe8df85e224157cd7c7fd
-                                <Card.Body>
-                                    <Card style={{  textAlign: 'center' }} className="newCard2">
-                                        <Card.Header as="h5"  style={{fontSize: 13}}>Probability of Action Deterrence</Card.Header>
-                                        <Card.Body>
-                                            <CardGroup>
-                                                <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                <Card.Title  className="font2">Inherent</Card.Title>
-                                                    <DropdownButton title={padI} id = "PADInherent" >
-                                                        <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadI(1)}>1</Dropdown.Item>
-                                                        <Dropdown.Item eventKey="2" onSelect={()=>handleSelectpadI(2)}>2</Dropdown.Item>
-                                                        <Dropdown.Item eventKey="3" onSelect={()=>handleSelectpadI(3)}>3</Dropdown.Item>
-                                                        <Dropdown.Item eventKey="4" onSelect={()=>handleSelectpadI(4)}>4</Dropdown.Item>
-                                                        <Dropdown.Item eventKey="5" onSelect={()=>handleSelectpadI(5)}>5</Dropdown.Item>
-                                                    </DropdownButton>   
-                                                </Card>
-                                                <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                    <Card.Title  className="font2">Controls</Card.Title>
-                                                    <DropdownButton title={padC} id = "PADControls" >
-                                                        <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadC(1)}>1</Dropdown.Item>
-                                                        <Dropdown.Item eventKey="2" onSelect={()=>handleSelectpadC(2)}>2</Dropdown.Item>
-                                                        <Dropdown.Item eventKey="3" onSelect={()=>handleSelectpadC(3)}>3</Dropdown.Item>
-                                                        <Dropdown.Item eventKey="4" onSelect={()=>handleSelectpadC(4)}>4</Dropdown.Item>
-                                                        <Dropdown.Item eventKey="5" onSelect={()=>handleSelectpadC(5)}>5</Dropdown.Item>`
-                                                    </DropdownButton>
-                                                </Card>
-                                                <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                    <Card.Title  className="font2">Residual</Card.Title>
-                                                    <Card.Text  className="font3" >
-                                                        {padI}  
-                                                    </Card.Text>
-                                                </Card>
-                                            </CardGroup>
-                                        </Card.Body>
-                                    </Card>
-                                </Card.Body>
-<<<<<<< HEAD
-                            </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-=======
->>>>>>> 9470d9453d95236c914fe8df85e224157cd7c7fd
-                                <Card.Body>
-                                    <Card style={{  textAlign: 'center' }} className="newCard2" >
-                                    <Card.Header as="h5"  style={{fontSize: 12}}>Resistance Strength Vulnerability</Card.Header>
-                                        <Card.Body>
-                                            <CardGroup>
-                                                <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                <Card.Title  className="font2">Inherent</Card.Title>
-                                                <DropdownButton title={rsI} id = "RSInherent">
-                                                    <Dropdown.Item eventKey="1" onSelect={()=>handleSelectrsI(1)}>1</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="2" onSelect={()=>handleSelectrsI(2)}>2</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="3" onSelect={()=>handleSelectrsI(3)}>3</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="4" onSelect={()=>handleSelectrsI(4)}>4</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="5" onSelect={()=>handleSelectrsI(5)}>5</Dropdown.Item>
-                                                </DropdownButton>   
-                                                </Card>
-                                                <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
-                                                    <Card.Title  className="font2">Controls</Card.Title>
-                                                    <DropdownButton title={rsC} id = "RSControls">
-                                                        <Dropdown.Item eventKey="1" onSelect={()=>handleSelectrsC(1)}>1</Dropdown.Item>
-                                                        <Dropdown.Item eventKey="2" onSelect={()=>handleSelectrsC(2)}>2</Dropdown.Item>
-                                                        <Dropdown.Item eventKey="3" onSelect={()=>handleSelectrsC(3)}>3</Dropdown.Item>
-                                                        <Dropdown.Item eventKey="4" onSelect={()=>handleSelectrsC(4)}>4</Dropdown.Item>
-                                                        <Dropdown.Item eventKey="5" onSelect={()=>handleSelectrsC(5)}>5</Dropdown.Item>
-                                                    </DropdownButton>
-                                                </Card>
-                                                <Card style={{borderColor: 'transparent', elevation: 0}}>
-                                                    <Card.Title  className="font2">Residual</Card.Title>
-                                                    <Card.Text  className="font3">
-                                                        {rsI}  
-                                                    </Card.Text>
-                                                </Card>
-                                            </CardGroup>
-                                        </Card.Body>
-                                    </Card>
-                                </Card.Body>
-                            </Card>
-<<<<<<< HEAD
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-                                    <Card style={{ width: '19rem', height: '8rem', borderColor: 'transparent', elevation: 0 }} className="text-center" ></Card>
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-                                    <Card style={{ width: '19rem', height: '8rem', borderColor: 'transparent', elevation: 0 }} className="text-center" ></Card>
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                <Card.Body>
-                                    <Card style={{ width: '19rem', height: '9rem', borderColor: 'transparent', elevation: 0 }} className="text-center" >
-                                    <Button onClick = {handleSubmit} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12
-                                                              || textbool1 || textbool2 || textbool3 || textbool4 || textbool5 || textbool6}
-                                    variant={'success'}
-                                    className={"newCard"}
-                                    >Submit</Button>
-                                    </Card>
-                                </Card.Body>
-=======
-                            <Card className="indented-row12" style={{borderColor: 'transparent', elevation: 0}} >
-                              <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                  <Card.Body>
-                                      <Card style={{ borderColor: 'transparent', elevation: 0 }} className="newCard22" ></Card>
-                                  </Card.Body>
-                              </Card>
-                              <Card style={{ borderColor: 'transparent', elevation: 0 }}>
-                                  <Card.Body>
-                                      <Card style={{ borderColor: 'transparent', elevation: 0 }} className="newCard2" >
-                                      <Button onClick = {handleSubmit} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12
-                                                                || textbool1 || textbool2 || textbool3 || textbool4 || textbool5 || textbool6}
-                                      variant={'success'}
-                                      className={"newCard"}
-                                      >Submit</Button>
-                                      </Card>
-                                  </Card.Body>
-                              </Card>
->>>>>>> 9470d9453d95236c914fe8df85e224157cd7c7fd
-                            </Card>
-                        </CardGroup>
-                    </Card>
+                    </Row>
               </Col>
             </Row>
           </Col>
