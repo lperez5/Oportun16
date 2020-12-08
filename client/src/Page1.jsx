@@ -187,11 +187,13 @@ export function Page1(props){
   const handleSubmit = async (event) => {
     event.preventDefault();
     const tempDateCreated = new Intl.DateTimeFormat('en-US').format(Date.now());
+    const templastUpdated = new Intl.DateTimeFormat('en-US').format(Date.now());
     const treeData = Tool.getTreeData();
     const newEntry = {
       name: nameEntered,
       category: categoryEntered,
       dateCreated: tempDateCreated,
+      lastUpdated: templastUpdated,
       data: treeData,
       notes: notesEntered,
       asset: assetEntered,
