@@ -76,6 +76,10 @@ export function Page1(props){
 
   const handleNotes = event => {
     setNotesEntered(event.target.value);
+  }
+
+  const handleAsset = event => {
+    setAssetEntered(event.target.value);
     if(event.target.value === ''){
       settextbool3(true);
     }
@@ -84,8 +88,8 @@ export function Page1(props){
     }
   }
 
-  const handleAsset = event => {
-    setAssetEntered(event.target.value);
+  const handleThreat = event => {
+    setThreatEntered(event.target.value);
     if(event.target.value === ''){
       settextbool4(true);
     }
@@ -94,23 +98,13 @@ export function Page1(props){
     }
   }
 
-  const handleThreat = event => {
-    setThreatEntered(event.target.value);
+  const handleLoss = event => {
+    setLossEntered(event.target.value);
     if(event.target.value === ''){
       settextbool5(true);
     }
     else{
       settextbool5(false);
-    }
-  }
-
-  const handleLoss = event => {
-    setLossEntered(event.target.value);
-    if(event.target.value === ''){
-      settextbool6(true);
-    }
-    else{
-      settextbool6(false);
     }
   }
 
@@ -804,7 +798,7 @@ export function Page1(props){
                                 <Card.Body>
                                     <Card style={{ width: '21rem', height: '9rem', borderColor: 'transparent', elevation: 0 }} className="text-center" >
                                     <Button onClick = {handleSubmit} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12
-                                                              || textbool1 || textbool2 || textbool3 || textbool4 || textbool5 || textbool6}
+                                                              || textbool1 || textbool2 || textbool3 || textbool4 || textbool5}
                                     variant={'success'}
                                     >Submit</Button>
                                     </Card>

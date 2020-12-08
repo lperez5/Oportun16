@@ -77,7 +77,7 @@ export function Page3(props){
       lastMonthAvg = lastMonthAvg/counter2;
     }
 
-    return (thisMonthAvg - lastMonthAvg);
+    return [thisMonthAvg+1, (thisMonthAvg - lastMonthAvg)];
   }
 
   return(
@@ -86,14 +86,14 @@ export function Page3(props){
         <Row>
           <Col><Button variant="primary" onClick={()=>xRecent(dbCacheArray,5)}>xRecent</Button>
           </Col>
-          <Col lg = {8}> Total Documents in Database: {`${getTotalDocs(dbCacheArray)}`}
-          </Col>
         </Row>
         <Row>
           <Col>
-            <Col lg = {8}> Monthly Change Overall Risk Inherent: {`${monthlyChange(dbCacheArray, 0)}`}</Col>
-            <Col lg = {8}> Monthly Change Primary Risk Inherent: {`${monthlyChange(dbCacheArray,2)}`}</Col>
             <Col lg = {8}> Total Documents in Database: {`${getTotalDocs(dbCacheArray)}`}</Col>
+            <Col lg = {8}> Monthly Average Overall Risk Inherent: {`${monthlyChange(dbCacheArray, 0)[0].toFixed(4)}`}</Col>
+            <Col lg = {8}> Monthly Average Overall Risk Residual: {`${monthlyChange(dbCacheArray, 1)[0].toFixed(4)}`}</Col>
+            <Col lg = {8}> Monthly Change Overall Risk Inherent: {`${monthlyChange(dbCacheArray, 0)[1].toFixed(4)}`}</Col>
+            <Col lg = {8}> Monthly Change Overall Risk Residual: {`${monthlyChange(dbCacheArray, 1)[1].toFixed(4)}`}</Col>
           </Col>
           <Col lg={8}>
             {}
