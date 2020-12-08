@@ -99,6 +99,43 @@ export function Page3(props){
             {}
           </Col>
         </Row>
+        <Container>
+          <Row>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>1 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'orange', borderColor: 'transparent'}}>2 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>3 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>4 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>5 of 5</Card></Col>
+          </Row>
+          <Row>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>1 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>2 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'orange', borderColor: 'transparent'}}>3 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>4 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>5 of 5</Card></Col>
+          </Row>
+          <Row>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>1 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>2 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>3 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'orange', borderColor: 'transparent'}}>4 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>5 of 5</Card></Col>
+          </Row>
+          <Row>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>1 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>2 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>3 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>4 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'orange', borderColor: 'transparent'}}>5 of 5</Card></Col>
+          </Row>
+          <Row>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>1 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>2 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>3 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>4 of 5</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>5 of 5</Card></Col>
+          </Row>
+        </Container>
         <Card className="derivation-row" style={{borderColor: 'transparent', elevation: 0}}>
             <Card style={{borderColor: 'transparent', elevation: 0}}>
               <Card.Img src={OR} className="DerivationTable"></Card.Img>
