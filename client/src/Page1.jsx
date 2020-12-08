@@ -52,7 +52,6 @@ export function Page1(props){
   const [textbool3, settextbool3] = useState(true);
   const [textbool4, settextbool4] = useState(true);
   const [textbool5, settextbool5] = useState(true);
-  const [textbool6, settextbool6] = useState(true);
 
   const handleName = event => {
     setNameEntered(event.target.value);

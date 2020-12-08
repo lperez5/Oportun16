@@ -95,10 +95,44 @@ export function Page3(props){
             <Col lg = {8}> Monthly Change Overall Risk Inherent: {`${monthlyChange(dbCacheArray, 0)[1].toFixed(4)}`}</Col>
             <Col lg = {8}> Monthly Change Overall Risk Residual: {`${monthlyChange(dbCacheArray, 1)[1].toFixed(4)}`}</Col>
           </Col>
-          <Col lg={8}>
-            {}
-          </Col>
         </Row>
+        <Container>
+          <Row>
+  <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+  <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+          </Row>
+          <Row>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+          </Row>
+          <Row>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+          </Row>
+          <Row>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
+          </Row>
+          <Row>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+          </Row>
+        </Container>
         <Card className="derivation-row" style={{borderColor: 'transparent', elevation: 0}}>
             <Card style={{borderColor: 'transparent', elevation: 0}}>
               <Card.Img src={OR} className="DerivationTable"></Card.Img>
