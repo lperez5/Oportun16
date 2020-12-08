@@ -136,7 +136,7 @@ export function Page2(props){
                     <Card style={{ width: '12rem' }}>
                         <Card.Body>
                             <Card.Text>
-                                {data[0]}, {data[1]}
+                                Inherent: {data[0]+1} Residual: {data[1]+1}
                             </Card.Text>
                         </Card.Body>
                     </Card>
