@@ -100,7 +100,7 @@ export function Page3(props){
         </Row>
         <Container>
           <Row>
-            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'center'}}>&#62;100</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>&#62;100</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
@@ -108,7 +108,7 @@ export function Page3(props){
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
           </Row>
           <Row>
-            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'center'}}>10-100</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>10-100</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
@@ -116,7 +116,7 @@ export function Page3(props){
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
           </Row>
           <Row>
-            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'center'}}>1-10</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>1-10</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
@@ -124,7 +124,7 @@ export function Page3(props){
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
           </Row>
           <Row>
-            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'center'}}>0.1-1</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>0.1-1</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
@@ -132,7 +132,7 @@ export function Page3(props){
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
           </Row>
           <Row>
-            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'center'}}>&#60;0.1</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>&#60;0.1</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
@@ -140,7 +140,7 @@ export function Page3(props){
             <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
           </Row>
           <Row>
-            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'center'}}></Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}></Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', textAlign: 'center', borderColor: 'transparent'}}>&#60;$10k</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', textAlign: 'center', borderColor: 'transparent'}}>$10k-$100k</Card></Col>
             <Col><Card style={{ width: '8rem', height: '8rem', textAlign: 'center', borderColor: 'transparent'}}>$100k-$1m</Card></Col>
