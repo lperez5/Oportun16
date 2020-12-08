@@ -98,39 +98,39 @@ export function Page3(props){
         </Row>
         <Container>
           <Row>
-  <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
-  <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
           </Row>
           <Row>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
           </Row>
           <Row>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
           </Row>
           <Row>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
           </Row>
           <Row>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '10rem', height: '10rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
           </Row>
         </Container>
         <Card className="derivation-row" style={{borderColor: 'transparent', elevation: 0}}>
