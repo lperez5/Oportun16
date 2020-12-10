@@ -412,7 +412,7 @@ export function Page1(props){
                             <CardGroup>
                                 <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                 <Card.Title  className="font2" >Inherent</Card.Title>
-                                <DropdownButton size="sm" variant="success" title={plmrI} id = "PLMRInherent" >
+                                <DropdownButton size="sm" variant="secondary" title={plmrI} id = "PLMRInherent" >
                                     <Dropdown.Item eventKey="1" onSelect={()=>handleSelectplmrI(1)}>1</Dropdown.Item>
                                     <Dropdown.Item eventKey="2" onSelect={()=>handleSelectplmrI(2)}>2</Dropdown.Item>
                                     <Dropdown.Item eventKey="3" onSelect={()=>handleSelectplmrI(3)}>3</Dropdown.Item>
@@ -422,7 +422,7 @@ export function Page1(props){
                                 </Card>
                                 <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                     <Card.Title  className="font2">Controls</Card.Title>
-                                    <DropdownButton size="sm" variant="success" title={plmrC} id = "PLMRControls" >
+                                    <DropdownButton size="sm" variant="secondary" title={plmrC} id = "PLMRControls" >
                                         <Dropdown.Item eventKey="1" onSelect={()=>handleSelectplmrC(1)}>1</Dropdown.Item>
                                         <Dropdown.Item eventKey="2" onSelect={()=>handleSelectplmrC(2)}>2</Dropdown.Item>
                                         <Dropdown.Item eventKey="3" onSelect={()=>handleSelectplmrC(3)}>3</Dropdown.Item>
@@ -443,7 +443,7 @@ export function Page1(props){
                                 <CardGroup>
                                     <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                     <Card.Title  className="font2">Inherent</Card.Title>
-                                    <DropdownButton size="sm" variant="success" title={slmrI} id = "SLMRInherent" >
+                                    <DropdownButton size="sm" variant="secondary" title={slmrI} id = "SLMRInherent" >
                                         <Dropdown.Item eventKey="1" onSelect={()=>handleSelectslmrI(1)}>1</Dropdown.Item>
                                         <Dropdown.Item eventKey="2" onSelect={()=>handleSelectslmrI(2)}>2</Dropdown.Item>
                                         <Dropdown.Item eventKey="3" onSelect={()=>handleSelectslmrI(3)}>3</Dropdown.Item>
@@ -453,7 +453,7 @@ export function Page1(props){
                                     </Card>
                                     <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                         <Card.Title  className="font2">Controls</Card.Title>
-                                        <DropdownButton size="sm" variant="success" title={slmrC} id = "SLMRControls" >
+                                        <DropdownButton size="sm" variant="secondary" title={slmrC} id = "SLMRControls" >
                                             <Dropdown.Item eventKey="1" onSelect={()=>handleSelectslmrC(5)}>1</Dropdown.Item>
                                             <Dropdown.Item eventKey="2" onSelect={()=>handleSelectslmrC(5)}>2</Dropdown.Item>
                                             <Dropdown.Item eventKey="3" onSelect={()=>handleSelectslmrC(5)}>3</Dropdown.Item>
@@ -538,7 +538,7 @@ export function Page1(props){
                                     <Card.Header as="h5"  style={{fontSize: 11}}>Secondary Loss Probability</Card.Header>
                                         <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                         <Card.Title  className="font1">%</Card.Title>
-                                        <DropdownButton size="sm" variant="success" title={slp} id = "SLP" >
+                                        <DropdownButton size="sm" variant="secondary" title={slp} id = "SLP" >
                                             <Dropdown.Item eventKey="1" onSelect={()=>handleSelectslp(1)}>1</Dropdown.Item>
                                                 <Dropdown.Item eventKey="2" onSelect={()=>handleSelectslp(2)}>2</Dropdown.Item>
                                                 <Dropdown.Item eventKey="3" onSelect={()=>handleSelectslp(3)}>3</Dropdown.Item>
@@ -555,7 +555,7 @@ export function Page1(props){
                             <CardGroup>
                                 <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                 <Card.Title  className="font2">Inherent</Card.Title>
-                                <DropdownButton size="sm" variant="success" title={cfaI} id = "CFAInherent" >
+                                <DropdownButton size="sm" variant="secondary" title={cfaI} id = "CFAInherent" >
                                     <Dropdown.Item eventKey="1" onSelect={()=>handleSelectcfaI(1)}>1</Dropdown.Item>
                                     <Dropdown.Item eventKey="2" onSelect={()=>handleSelectcfaI(2)}>2</Dropdown.Item>
                                     <Dropdown.Item eventKey="3" onSelect={()=>handleSelectcfaI(3)}>3</Dropdown.Item>
@@ -565,7 +565,7 @@ export function Page1(props){
                                 </Card>
                                 <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                     <Card.Title  className="font2">Controls</Card.Title>
-                                    <DropdownButton size="sm" variant="success" title={cfaC} id = "CFAControls" >
+                                    <DropdownButton size="sm" variant="secondary" title={cfaC} id = "CFAControls" >
                                         <Dropdown.Item eventKey="1" onSelect={()=>handleSelectcfaC(1)}>1</Dropdown.Item>
                                         <Dropdown.Item eventKey="2" onSelect={()=>handleSelectcfaC(2)}>2</Dropdown.Item>
                                         <Dropdown.Item eventKey="3" onSelect={()=>handleSelectcfaC(3)}>3</Dropdown.Item>
@@ -585,7 +585,7 @@ export function Page1(props){
                         <Card.Header as="h5"  className="font1">Threat Capability</Card.Header>
                             <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                             <Card.Title  className="font2">OWASP</Card.Title>
-                            <DropdownButton size="sm" variant="success" title={tc} id = "TC" >
+                            <DropdownButton size="sm" variant="secondary" title={tc} id = "TC" >
                                 <Dropdown.Item eventKey="1" onSelect={()=>handleSelecttc(1)}>1</Dropdown.Item>
                                 <Dropdown.Item eventKey="2" onSelect={()=>handleSelecttc(2)}>2</Dropdown.Item>
                                 <Dropdown.Item eventKey="3" onSelect={()=>handleSelecttc(3)}>3</Dropdown.Item>
@@ -624,7 +624,7 @@ export function Page1(props){
                                     <CardGroup>
                                         <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                         <Card.Title  className="font2">Inherent</Card.Title>
-                                            <DropdownButton size="sm" variant="success" title={padI} id = "PADInherent" >
+                                            <DropdownButton size="sm" variant="secondary" title={padI} id = "PADInherent" >
                                                 <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadI(1)}>1</Dropdown.Item>
                                                 <Dropdown.Item eventKey="2" onSelect={()=>handleSelectpadI(2)}>2</Dropdown.Item>
                                                 <Dropdown.Item eventKey="3" onSelect={()=>handleSelectpadI(3)}>3</Dropdown.Item>
@@ -634,7 +634,7 @@ export function Page1(props){
                                         </Card>
                                         <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                             <Card.Title  className="font2">Controls</Card.Title>
-                                            <DropdownButton size="sm" variant="success" title={padC} id = "PADControls" >
+                                            <DropdownButton size="sm" variant="secondary" title={padC} id = "PADControls" >
                                                 <Dropdown.Item eventKey="1" onSelect={()=>handleSelectpadC(1)}>1</Dropdown.Item>
                                                 <Dropdown.Item eventKey="2" onSelect={()=>handleSelectpadC(2)}>2</Dropdown.Item>
                                                 <Dropdown.Item eventKey="3" onSelect={()=>handleSelectpadC(3)}>3</Dropdown.Item>
@@ -655,7 +655,7 @@ export function Page1(props){
                                     <CardGroup>
                                         <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                         <Card.Title  className="font2">Inherent</Card.Title>
-                                        <DropdownButton size="sm" variant="success" title={rsI} id = "RSInherent" >
+                                        <DropdownButton size="sm" variant="secondary" title={rsI} id = "RSInherent" >
                                             <Dropdown.Item eventKey="1" onSelect={()=>handleSelectrsI(1)}>1</Dropdown.Item>
                                             <Dropdown.Item eventKey="2" onSelect={()=>handleSelectrsI(2)}>2</Dropdown.Item>
                                             <Dropdown.Item eventKey="3" onSelect={()=>handleSelectrsI(3)}>3</Dropdown.Item>
@@ -665,7 +665,7 @@ export function Page1(props){
                                         </Card>
                                         <Card style={{borderColor: 'transparent', elevation: 0}} className="text-center">
                                             <Card.Title  className="font2">Controls</Card.Title>
-                                            <DropdownButton size="sm" variant="success" title={rsC} id = "RSControls" >
+                                            <DropdownButton size="sm" variant="secondary" title={rsC} id = "RSControls" >
                                                 <Dropdown.Item eventKey="1" onSelect={()=>handleSelectrsC(1)}>1</Dropdown.Item>
                                                 <Dropdown.Item eventKey="2" onSelect={()=>handleSelectrsC(2)}>2</Dropdown.Item>
                                                 <Dropdown.Item eventKey="3" onSelect={()=>handleSelectrsC(3)}>3</Dropdown.Item>
