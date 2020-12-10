@@ -49,7 +49,6 @@ export function Page5(props){
   const [textbool3, settextbool3] = useState(false);
   const [textbool4, settextbool4] = useState(false);
   const [textbool5, settextbool5] = useState(false);
-  const [textbool6, settextbool6] = useState(false);
 
   useEffect(()=>{
     //set
@@ -110,6 +109,10 @@ export function Page5(props){
 
   const handleNotes = event => {
     setNotesEntered(event.target.value);
+  }
+
+  const handleAsset = event => {
+    setAssetEntered(event.target.value);
     if(event.target.value === ''){
       settextbool3(true);
     }
@@ -118,8 +121,8 @@ export function Page5(props){
     }
   }
 
-  const handleAsset = event => {
-    setAssetEntered(event.target.value);
+  const handleThreat = event => {
+    setThreatEntered(event.target.value);
     if(event.target.value === ''){
       settextbool4(true);
     }
@@ -128,23 +131,13 @@ export function Page5(props){
     }
   }
 
-  const handleThreat = event => {
-    setThreatEntered(event.target.value);
+  const handleLoss = event => {
+    setLossEntered(event.target.value);
     if(event.target.value === ''){
       settextbool5(true);
     }
     else{
       settextbool5(false);
-    }
-  }
-
-  const handleLoss = event => {
-    setLossEntered(event.target.value);
-    if(event.target.value === ''){
-      settextbool6(true);
-    }
-    else{
-      settextbool6(false);
     }
   }
 
@@ -228,12 +221,11 @@ export function Page5(props){
     event.preventDefault();
     const tempLastUpdated = new Intl.DateTimeFormat('en-US').format(Date.now());
     const treeData = Tool.getTreeData();
-    const id = Entry._id;
-    console.log(id);
+    const _id = Entry._id;
     const dateCreated = Entry.dateCreated;
 
     const updatedEntry = {
-      _id: id,
+      _id: _id,
       name: nameEntered,
       category: categoryEntered,
       dateCreated: dateCreated,
@@ -248,7 +240,7 @@ export function Page5(props){
     //update entry in dbCacheArray
     const temp = new Array(dbCacheArray.length);
     for(let i = 0; i < dbCacheArray.length; i++){
-        if(id !== dbCacheArray[i]._id){
+        if(_id !== dbCacheArray[i]._id){
           temp[i] = dbCacheArray[i];
         }
         else{
@@ -855,7 +847,7 @@ export function Page5(props){
                                 <Card.Body>
                                     <Card style={{ width: '21rem', height: '9rem', borderColor: 'transparent', elevation: 0 }} className="text-center" >
                                     <Button onClick = {handleUpdate} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12
-                                                              || textbool1 || textbool2 || textbool3 || textbool4 || textbool5 || textbool6}
+                                                              || textbool1 || textbool2 || textbool3 || textbool4 || textbool5}
                                     variant={'success'}
                                     >Update</Button>
                                     </Card>

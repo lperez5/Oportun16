@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< HEAD:client/.gitignore
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
@@ -23,6 +24,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 =======
+=======
+>>>>>>> c4b85b0b44ea8a6a40c2ba57b1f550e5cae56ff5
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -48,4 +51,8 @@ yarn-debug.log*
 yarn-error.log*
 
 .env
+<<<<<<< HEAD
 >>>>>>> c5227edeaceccfe81fcf27bd9246647a57203f34:.gitignore
+=======
+client/.eslintcache
+>>>>>>> c4b85b0b44ea8a6a40c2ba57b1f550e5cae56ff5

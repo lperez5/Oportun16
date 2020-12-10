@@ -14,12 +14,14 @@ import '../src/derivation.css'
 export function Page3(props){
 
   const {active, dbCacheArray} = props;
-  let numVeryHighInherentOR = 0;
 
-  for(let j=0; j<getTotalDocs(dbCacheArray); j++){
-    if(dbCacheArray[j].data[2] === 4){
-      numVeryHighInherentOR += 1;
-    };
+  function veryHigh(){
+    let numVeryHighInherentOR = 0;
+    for(let j=0; j<getTotalDocs(dbCacheArray); j++){
+      if(dbCacheArray[j].data[2] === 4){
+        numVeryHighInherentOR += 1;
+      };
+    }
   }
 
   function xRecent(arr, x){
@@ -28,6 +30,10 @@ export function Page3(props){
       newArr.push(arr[i]);
     }
     return newArr;
+  }
+
+  function getTEF(arr){
+
   }
 
   function getTotalDocs(arr){
@@ -77,28 +83,74 @@ export function Page3(props){
       lastMonthAvg = lastMonthAvg/counter2;
     }
 
-    return (thisMonthAvg - lastMonthAvg);
+    return [thisMonthAvg+1, (thisMonthAvg - lastMonthAvg)];
   }
 
   return(
     <div hidden={!active}>
       <Container fluid="1">
         <Row>
-          <Col><Button variant="primary" onClick={()=>xRecent(dbCacheArray,5)}>xRecent</Button>
-          </Col>
-          <Col lg = {8}> Total Documents in Database: {`${getTotalDocs(dbCacheArray)}`}
-          </Col>
-        </Row>
-        <Row>
           <Col>
-            <Col lg = {8}> Monthly Change Overall Risk Inherent: {`${monthlyChange(dbCacheArray, 0)}`}</Col>
-            <Col lg = {8}> Monthly Change Primary Risk Inherent: {`${monthlyChange(dbCacheArray,2)}`}</Col>
             <Col lg = {8}> Total Documents in Database: {`${getTotalDocs(dbCacheArray)}`}</Col>
-          </Col>
-          <Col lg={8}>
-            {}
+            <Col lg = {8}> Monthly Average Overall Risk Inherent: {`${monthlyChange(dbCacheArray, 0)[0].toFixed(4)}`}</Col>
+            <Col lg = {8}> Monthly Average Overall Risk Residual: {`${monthlyChange(dbCacheArray, 1)[0].toFixed(4)}`}</Col>
+            <Col lg = {8}> Monthly Change Overall Risk Inherent: {`${monthlyChange(dbCacheArray, 0)[1].toFixed(4)}`}</Col>
+            <Col lg = {8}> Monthly Change Overall Risk Residual: {`${monthlyChange(dbCacheArray, 1)[1].toFixed(4)}`}</Col>
           </Col>
         </Row>
+        <Container>
+          <Row>
+            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>&#62;100</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+          </Row>
+          <Row>
+            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>10-100</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+          </Row>
+          <Row>
+            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>1-10</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+          </Row>
+          <Row>
+            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>0.1-1</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
+          </Row>
+          <Row>
+            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>&#60;0.1</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+          </Row>
+          <Row>
+            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}></Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', textAlign: 'center', borderColor: 'transparent'}}>&#60;$10k</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', textAlign: 'center', borderColor: 'transparent'}}>$10k-$100k</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', textAlign: 'center', borderColor: 'transparent'}}>$100k-$1m</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '8rem', textAlign: 'center', borderColor: 'transparent'}}>$1m-$10m</Card></Col>
+            <Col><Card style={{ width: '8rem', height: '3rem', textAlign: 'center', borderColor: 'transparent'}}>&#62;$10m</Card></Col>
+          </Row>
+          <Row>
+            <Col><Card style={{textAlign: 'center', borderColor: 'transparent', backgroundColor: 'lightgrey'}}>Loss Magnitude</Card></Col>
+          </Row>
+        </Container>
         <Card className="derivation-row" style={{borderColor: 'transparent', elevation: 0}}>
             <Card style={{borderColor: 'transparent', elevation: 0}}>
               <Card.Img src={OR} className="DerivationTable"></Card.Img>

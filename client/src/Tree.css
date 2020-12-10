@@ -48,15 +48,15 @@
 }
 .font3 {
     align-items: center;
-    font-size: 19px;
+    font-size: 15px;
 }
 .font4 {
     align-items: center;
-    font-size: 20px;
+    font-size: 15px;
 }
 .font5 {
     align-items: center;
-    font-size: 28px;
+    font-size: 15px;
 }
 .row1{
     align-items: center;
@@ -84,4 +84,13 @@
 .placeholder3row1{
     height: 2px;
     width: 238px;
+}
+
+.color{
+    background-color: yellow;
+    color: hotpink;
+}
+.color:hover {
+    background-color: #4CAF50;
+    color: red;
 }
