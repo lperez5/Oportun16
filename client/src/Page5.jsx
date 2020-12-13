@@ -469,7 +469,7 @@ export function Page5(props){
                                 </Card>
                                 <Card style={{borderColor: 'transparent', elevation: 0}}>
                                     <Card.Title  className="font2" >Residual</Card.Title>
-                                    <Card.Text className="font4">
+                                    <Card.Text className="font4" style={{ backgroundColor: "LightGrey"}}>
                                          {Tool.getPLMRResidual()+1}
                                     </Card.Text>
                                 </Card>
@@ -500,7 +500,7 @@ export function Page5(props){
                                     </Card>
                                     <Card style={{borderColor: 'transparent', elevation: 0}}>
                                         <Card.Title  className="font2">Residual</Card.Title>
-                                        <Card.Text  className="font4">
+                                        <Card.Text  className="font4" style={{ backgroundColor: "LightGrey"}}>
                                             {Tool.getSLMRResidual()+1}
                                         </Card.Text>
                                     </Card>
@@ -612,7 +612,7 @@ export function Page5(props){
                                 </Card>
                                 <Card style={{borderColor: 'transparent', elevation: 0}}>
                                     <Card.Title  className="font2">Residual</Card.Title>
-                                    <Card.Text  className="font4">
+                                    <Card.Text  className="font4" style={{ backgroundColor: "LightGrey"}}>
                                         {Tool.getCFAResidual()+1}
                                     </Card.Text>
                                 </Card>
@@ -681,7 +681,7 @@ export function Page5(props){
                                         </Card>
                                         <Card style={{borderColor: 'transparent', elevation: 0}}>
                                             <Card.Title  className="font2">Residual</Card.Title>
-                                            <Card.Text  className="font4" >
+                                            <Card.Text  className="font4" style={{ backgroundColor: "LightGrey"}}>
                                                  {Tool.getPADResidual()+1}
                                             </Card.Text>
                                         </Card>
@@ -712,7 +712,7 @@ export function Page5(props){
                                         </Card>
                                         <Card style={{borderColor: 'transparent', elevation: 0}}>
                                             <Card.Title  className="font2">Residual</Card.Title>
-                                            <Card.Text  className="font4">
+                                            <Card.Text  className="font4" style={{ backgroundColor: "LightGrey"}}>
                                                 {Tool.getRSResidual()+1}
                                             </Card.Text>
                                         </Card>
