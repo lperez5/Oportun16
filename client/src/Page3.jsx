@@ -99,53 +99,53 @@ export function Page3(props){
           </Col>
         </Row>
         <Container>
-          <Row>
-            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>&#62;100</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+        <Row>
+        <Card className="row1 rounded-0" style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>&#62;100</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card>
           </Row>
           <Row>
-            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>10-100</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+            <Card className="row1 rounded-0" style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>10-100</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card>
           </Row>
           <Row>
-            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>1-10</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card></Col>
+            <Card className="row1 rounded-0" style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>1-10</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'red', borderColor: 'transparent'}}>{}</Card>
           </Row>
           <Row>
-            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>0.1-1</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card></Col>
+            <Card className="row1 rounded-0" style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>0.1-1</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'orange', borderColor: 'transparent'}}>{}</Card>
           </Row>
           <Row>
-            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>&#60;0.1</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card></Col>
+            <Card className="row1 rounded-0" style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}><br></br><br></br>&#60;0.1</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'green', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'LawnGreen', borderColor: 'transparent'}}>{}</Card>
+            <Card className="rounded-0 border-dark" style={{ width: '8rem', height: '8rem', backgroundColor: 'yellow', borderColor: 'transparent'}}>{}</Card>
           </Row>
           <Row>
-            <Col><Card style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}></Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', textAlign: 'center', borderColor: 'transparent'}}>&#60;$10k</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', textAlign: 'center', borderColor: 'transparent'}}>$10k-$100k</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', textAlign: 'center', borderColor: 'transparent'}}>$100k-$1m</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '8rem', textAlign: 'center', borderColor: 'transparent'}}>$1m-$10m</Card></Col>
-            <Col><Card style={{ width: '8rem', height: '3rem', textAlign: 'center', borderColor: 'transparent'}}>&#62;$10m</Card></Col>
+            <Card className="row1 row2" style={{ width: '8rem', height: '8rem', borderColor: 'transparent', textAlign: 'right'}}></Card>
+            <Card className="row2" style={{ width: '8rem', height: '8rem', textAlign: 'center', borderColor: 'transparent'}}>&#60;$10k</Card>
+            <Card className="row2" style={{ width: '8rem', height: '8rem', textAlign: 'center', borderColor: 'transparent'}}>$10k-$100k</Card>
+            <Card className="row2" style={{ width: '8rem', height: '8rem', textAlign: 'center', borderColor: 'transparent'}}>$100k-$1m</Card>
+            <Card className="row2" style={{ width: '8rem', height: '8rem', textAlign: 'center', borderColor: 'transparent'}}>$1m-$10m</Card>
+            <Card className="row2" style={{ width: '8rem', height: '3rem', textAlign: 'center', borderColor: 'transparent'}}>&#62;$10m</Card>
           </Row>
           <Row>
             <Col><Card style={{textAlign: 'center', borderColor: 'transparent', backgroundColor: 'lightgrey'}}>Loss Magnitude</Card></Col>
