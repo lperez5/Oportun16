@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button'
 import OR from '../src/Pics/OR.png'
 import PR from '../src/Pics/PR.png'
 import SR from '../src/Pics/SR.png'
