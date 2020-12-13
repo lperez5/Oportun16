@@ -110,9 +110,6 @@ export function Page1(props){
   const handleSelectpadI=(value)=>{
     Tool.setPADInherent(value-1);
     Tool.calculateTree();
-    //get potentially changed values of calculated variables
-    Tool.getState();
-    //update visuals of those variables
     setpadI(value);
     setButtonDisabled(false);
   }

@@ -115,68 +115,37 @@ class ToolState{
   }
 
   calculateTree(){
-    console.log("========new tree calculation============");
     //calculate residuals
-    console.log("----------------------------");
-    console.log("calculating residuals...");
     this.PADResidual = this.M_controls[this.PADInherent][this.PADControls];
     this.CFAResidual = this.M_controls[this.CFAInherent][this.CFAControls];
     this.RSResidual = this.M_controlsRS[this.RSInherent][this.RSControls];
     this.PLMRResidual = this.M_controls[this.PLMRInherent][this.PLMRControls];
     this.SLMRResidual = this.M_controls[this.SLMRInherent][this.SLMRControls];
-    console.log("PAD Residual: " + this.PADResidual);
-    console.log("CFA Residual: " + this.CFAResidual);
-    console.log("RS Residual: " + this.RSResidual);
-    console.log("PLMR Residual: " + this.PLMRResidual);
-    console.log("SLMR Residual: " + this.SLMRResidual);
     //calculate tree values
-    console.log("----------------------------");
-    console.log("calculating tree values...");
     this.TEFInherent = this.M_TEF[this.CFAInherent][this.PADInherent];
     this.TEFResidual = this.M_TEF[this.CFAResidual][this.PADResidual];
-    console.log("TEF Inherent: " + this.TEFInherent);
-    console.log("TEF Residual: " + this.TEFResidual);
     this.VULNInherent = this.M_VULN[this.TC][this.RSInherent];
     this.VULNResidual = this.M_VULN[this.TC][this.RSResidual];
-    console.log("Vulnerability Inherent: " + this.VULNInherent);
-    console.log("Vulnerability Residual: " + this.VULNResidual);
     this.PLEFInherent = this.M_PLEF[this.TEFInherent][this.VULNInherent];
     this.PLEFResidual = this.M_PLEF[this.TEFResidual][this.VULNResidual];
-    console.log("PLEF Inherent: " + this.PLEFInherent);
-    console.log("PLEF Residual: " + this.PLEFResidual);
     this.SLEFInherent = this.M_SLEF[this.PLEFInherent][this.SLP];
     this.SLEFResidual = this.M_SLEF[this.PLEFResidual][this.SLP];
-    console.log("Secondary LEF Inherent: " + this.SLEFInherent);
-    console.log("Secondary LEF Residual: " + this.SLEFResidual);
     this.PRInherent = this.M_primaryRisk[this.PLMRInherent][this.PLEFInherent];
     this.PRResidual = this.M_primaryRisk[this.PLMRResidual][this.PLEFResidual];
-    console.log("Primary Risk Inherent: " + this.PRInherent);
-    console.log("Primary Risk Residual: " + this.PRResidual);
     this.SRInherent = this.M_secondaryRisk[this.SLMRInherent][this.SLEFInherent];
     this.SRResidual = this.M_secondaryRisk[this.SLMRResidual][this.SLEFResidual];
-    console.log("Secondary Risk Inherent: " + this.SRInherent);
-    console.log("Secondary Risk Residual: " + this.SRResidual);
     this.ORInherent = this.M_overallRisk[this.SRInherent][this.PRInherent];
     this.ORResidual = this.M_overallRisk[this.SRResidual][this.PRResidual];
-    console.log("Overall Risk Inherent: " + this.ORInherent);
-    console.log("Overall Risk Residual: " + this.ORResidual);
   }
 
   calculateTreeInherents(){
     this.TEFInherent = this.M_TEF[this.CFAInherent][this.PADInherent];
-    console.log("TEF Inherent: " + this.TEFInherent);
     this.VULNInherent = this.M_VULN[this.TC][this.RSInherent];
-    console.log("Vulnerability Inherent: " + this.VULNInherent);
     this.PLEFInherent = this.M_PLEF[this.TEFInherent][this.VULNInherent];
-    console.log("PLEF Inherent: " + this.PLEFInherent);
     this.SLEFInherent = this.M_SLEF[this.PLEFInherent][this.SLP];
-    console.log("Secondary LEF Inherent: " + this.SLEFInherent);
     this.PRInherent = this.M_primaryRisk[this.PLMRInherent][this.PLEFInherent];
-    console.log("Primary Risk Inherent: " + this.PRInherent);
     this.SRInherent = this.M_secondaryRisk[this.SLMRInherent][this.SLEFInherent];
-    console.log("Secondary Risk Inherent: " + this.SRInherent);
     this.ORInherent = this.M_overallRisk[this.SRInherent][this.PRInherent];
-    console.log("Overall Risk Inherent: " + this.ORInherent);
   }
   calculateTreeResiduals(){
     this.PADResidual = this.M_controls[this.PADInherent][this.PADControls];
@@ -184,25 +153,13 @@ class ToolState{
     this.RSResidual = this.M_controlsRS[this.RSInherent][this.RSControls];
     this.PLMRResidual = this.M_controls[this.PLMRInherent][this.PLMRControls];
     this.SLMRResidual = this.M_controls[this.SLMRInherent][this.SLMRControls];
-    console.log("PAD Residual: " + this.PADResidual);
-    console.log("CFA Residual: " + this.CFAResidual);
-    console.log("RS Residual: " + this.RSResidual);
-    console.log("PLMR Residual: " + this.PLMRResidual);
-    console.log("SLMR Residual: " + this.SLMRResidual);
     this.TEFResidual = this.M_TEF[this.CFAResidual][this.PADResidual];
-    console.log("TEF Residual: " + this.TEFResidual);
     this.VULNResidual = this.M_VULN[this.TC][this.RSResidual];
-    console.log("Vulnerability Residual: " + this.VULNResidual);
     this.PLEFResidual = this.M_PLEF[this.TEFResidual][this.VULNResidual];
-    console.log("PLEF Residual: " + this.PLEFResidual);
     this.SLEFResidual = this.M_SLEF[this.PLEFResidual][this.SLP];
-    console.log("Secondary LEF Residual: " + this.SLEFResidual);
     this.PRResidual = this.M_primaryRisk[this.PLMRResidual][this.PLEFResidual];
-    console.log("Primary Risk Residual: " + this.PRResidual);
     this.SRResidual = this.M_secondaryRisk[this.SLMRResidual][this.SLEFResidual];
-    console.log("Secondary Risk Residual: " + this.SRResidual);
     this.ORResidual = this.M_overallRisk[this.SRResidual][this.PRResidual];
-    console.log("Overall Risk Residual: " + this.ORResidual);
   }
 
   getState(){
