@@ -51,8 +51,4 @@ yarn-debug.log*
 yarn-error.log*
 
 .env
-<<<<<<< HEAD
->>>>>>> c5227edeaceccfe81fcf27bd9246647a57203f34:.gitignore
-=======
 client/.eslintcache
->>>>>>> c4b85b0b44ea8a6a40c2ba57b1f550e5cae56ff5
