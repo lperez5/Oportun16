@@ -85,12 +85,10 @@
     height: 2px;
     width: 238px;
 }
-
-.color{
-    background-color: yellow;
-    color: hotpink;
+.row1{
+    margin-left: 1rem;
 }
-.color:hover {
-    background-color: #4CAF50;
-    color: red;
+
+.row2{
+    margin-top: 1rem;
 }
