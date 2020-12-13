@@ -12,6 +12,8 @@ export function Page2(props){
     const [nameEntered, setNameEntered] = useState('');
     const [date1, setDate1] = useState('');
     const [date2, setDate2] = useState('');
+    const [date1Disabled, setdate1Disabled] = useState('true');
+    const [date2Disabled, setdate2Disabled] = useState('true');
     const [categorySelected, setCategoryEntered] = useState('All');
 
     const [hasFilteredDate, sethasFilteredDate] = useState(false);
@@ -171,10 +173,10 @@ export function Page2(props){
                         <InputGroup.Prepend>
                             <InputGroup.Text>Dates</InputGroup.Text>
                         </InputGroup.Prepend>
-                        <FormControl onChange={(event)=>{handleDate1(event); sethasFilteredDate(false);}}/>
-                        <FormControl onChange={(event)=>{handleDate2(event); sethasFilteredDate(false);}}/>
+                        <FormControl onChange={(event)=>{handleDate1(event); sethasFilteredDate(false); setdate1Disabled(false); if(event.target.value===''){setdate1Disabled(true)}}}/>
+                        <FormControl onChange={(event)=>{handleDate2(event); sethasFilteredDate(false); setdate2Disabled(false); if(event.target.value===''){setdate2Disabled(true)}}}/>
                         <InputGroup.Prepend>
-                            <Button variant="outline-secondary" onClick={()=>sethasFilteredDate(true)}>Filter</Button>
+                            <Button variant="outline-secondary" disabled={date1Disabled || date2Disabled} onClick={()=>sethasFilteredDate(true)}>Filter</Button>
                         </InputGroup.Prepend>
                     </InputGroup>
                     </Col>

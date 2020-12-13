@@ -51,7 +51,7 @@ export function Page5(props){
   const [textbool5, settextbool5] = useState(false);
 
   useEffect(()=>{
-    //set
+    //set text fields
     setNameEntered(Entry.name);
     setCategoryEntered(Entry.category);
     setNotesEntered(Entry.notes);
@@ -144,9 +144,6 @@ export function Page5(props){
   const handleSelectpadI=(value)=>{
     Tool.setPADInherent(value-1);
     Tool.calculateTreeInherents();
-    //get potentially changed values of calculated variables
-    Tool.getState();
-    //update visuals of those variables
     setpadI(value);
     setButtonDisabled(false);
   }
