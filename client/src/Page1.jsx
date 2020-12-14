@@ -2,9 +2,11 @@ import React, {useState} from 'react'
 import { ListGroup ,FormControl, InputGroup, Table, Container, Row, Col } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Card from 'react-bootstrap/Card'
+import CardGroup from 'react-bootstrap/CardGroup'
+import Popover from 'react-bootstrap/Popover'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import {submit} from './utils/submit'
 import {getInstance} from './utils/ToolCalcs';
 
@@ -208,6 +210,15 @@ export function Page1(props){
     newEntry._id = id;
     setdbCacheArray([newEntry,...dbCacheArray]);
   };
+
+  const popover = (
+    <Popover id="popover-basic">
+      {/* <Popover.Title as="h3">Submitting...</Popover.Title> */}
+      <Popover.Content>
+         <strong>Submitted</strong>
+      </Popover.Content>
+    </Popover>
+  );
 
   const handleColor=(num)=>{
     if(num === '0') {
@@ -678,12 +689,14 @@ export function Page1(props){
                             </Card>
                             <Card style={{ borderColor: 'transparent', elevation: 0 }} className="newCard30" ></Card>
                             <Card style={{ textAlign: 'center', borderColor: 'transparent', elevation: 0 }} className="placeholder2" ></Card>
-                            <Card style={{ borderColor: 'transparent', elevation: 0 }} className="newCard2last" >
+                            <Card style={{ borderColor: 'transparent', elevation: 0 }} className="newCard2last">
+                            <OverlayTrigger trigger="click" rootClose placement="left" overlay={popover}>
                                 <Button onClick = {handleSubmit} disabled={buttonDisabled || buttonDisabled2 || buttonDisabled3 || buttonDisabled4 || buttonDisabled5 || buttonDisabled6 || buttonDisabled7 || buttonDisabled8 || buttonDisabled9 || buttonDisabled10 || buttonDisabled11 || buttonDisabled12
                                                         || textbool1 || textbool2 || textbool3 || textbool4 || textbool5}
                                 variant={'success'}
                                 className="newCard2lastbutton"
                                 >Submit</Button>
+                            </OverlayTrigger>
                             </Card>
                     </Row>
               </Col>
